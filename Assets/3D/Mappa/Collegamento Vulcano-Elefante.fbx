@@ -10,9 +10,9 @@ FBXHeaderExtension:  {
 		Month: 3
 		Day: 2
 		Hour: 19
-		Minute: 3
-		Second: 31
-		Millisecond: 581
+		Minute: 9
+		Second: 0
+		Millisecond: 520
 	}
 	Creator: "FBX SDK/FBX Plugins version 2020.3.2"
 	OtherFlags:  {
@@ -37,13 +37,13 @@ FBXHeaderExtension:  {
 			P: "Original|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "Original|ApplicationName", "KString", "", "", "Maya"
 			P: "Original|ApplicationVersion", "KString", "", "", "2024"
-			P: "Original|DateTime_GMT", "DateTime", "", "", "02/03/2024 18:03:31.579"
+			P: "Original|DateTime_GMT", "DateTime", "", "", "02/03/2024 18:09:00.518"
 			P: "Original|FileName", "KString", "", "", "C:\Users\marty\OneDrive\Desktop\Event Horizon\Game Lab\GameLab - 3\Descent-Team2\Assets\3D\Mappa\Collegamento Vulcano-Elefante.fbx"
 			P: "LastSaved", "Compound", "", ""
 			P: "LastSaved|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "LastSaved|ApplicationName", "KString", "", "", "Maya"
 			P: "LastSaved|ApplicationVersion", "KString", "", "", "2024"
-			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "02/03/2024 18:03:31.579"
+			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "02/03/2024 18:09:00.518"
 			P: "Original|ApplicationActiveProject", "KString", "", "", "C:\Users\marty\OneDrive\Desktop\Event Horizon\Game Lab\GameLab - 3\Descent-Team2\Assets\3D\Mappa"
 		}
 	}
@@ -79,7 +79,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 1913930246704, "", "Scene" {
+	Document: 1913631794800, "", "Scene" {
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
 			P: "ActiveAnimStackName", "KString", "", "", "Take 001"
@@ -265,7 +265,7 @@ Definitions:  {
 ;------------------------------------------------------------------
 
 Objects:  {
-	Geometry: 1913751096272, "Geometry::", "Mesh" {
+	Geometry: 1913751082384, "Geometry::", "Mesh" {
 		Vertices: *219 {
 			a: -50,-50,50,49.9999961853027,-50,50,-50,50,50,49.9999961853027,50,50,-50,50,-50,49.9999961853027,50,-50,-50,-50,-50,49.9999961853027,-50,-50,-50,50,-153.626190185547,49.9999961853027,50,-153.626190185547,49.9999961853027,-50,-153.626190185547,-50,-50,-153.626190185547,179.254425048828,-50,-72.7605285644531,180.873001098633,91.4940490722656,-68.9021911621094,179.254425048828,-50,-162.398406982422,169.46907043457,91.4940490722656,-179.520538330078,-126.650482177734,-50,-50,-126.650482177734,-50,2.75552368164062,-126.650482177734,50,78.8515625,-126.650482177734,50,-50,-126.650482177734,50,-108.632690429688,-126.650482177734,-50,-108.632690429688,-225.18115234375,-50,-50,-225.18115234375,-50,2.75552368164062,-225.18115234375,50,78.8515625,-225.18115234375,50,-50,-225.18115234375,50,-108.632690429688,-225.18115234375,-50,-108.632690429688,-126.650482177734,91.6122283935547,59.0114135742188,-126.650482177734,91.6122283935547,-43.3023681640625,-225.18115234375,91.6122283935547,-43.3023681640625,-225.18115234375,91.6122283935547,60.9688720703125,-126.650482177734,91.6122283935547,-90.7500305175781,-225.18115234375,91.6122283935547,-90.7500305175781,-126.650482177734,185.8583984375,14.4208679199219,-126.650482177734,185.8583984375,-68.1278991699219,-225.18115234375,185.8583984375,-87.8929138183594,-225.18115234375,185.8583984375,14.4208679199219,-126.650482177734,185.8583984375,-87.9620361328125,-225.18115234375,185.8583984375,-135.340545654297,-126.650482177734,91.6122283935547,-118.938446044922,-209.88395690918,91.6122283935547,-145.667205810547,-126.650482177734,185.8583984375,-116.150421142578,-225.18115234375,185.8583984375,-163.528961181641,-99.5673065185547,91.6122283935547,-175.402374267578,-193.04866027832,91.6122283935547,-210.809661865234,-99.3480377197266,191.829727172852,-174.866180419922,-193.296295166016,192.832824707031,-210.884552001953,-50,0,50,-126.650482177734,0,40.8035583496094,-225.18115234375,0,40.8035583496094,-225.18115234375,0,-50,-225.18115234375,0,-108.632690429688,-126.650482177734,0,-108.632690429688,
 -50,0,-153.626190185547,49.9999961853027,0,-153.626190185547,174.361755371094,20.7470245361328,-190.688140869141,180.063720703125,20.7470245361328,-51.1026916503906,49.9999961853027,0,50,265.549133300781,20.7470245361328,-190.688140869141,271.251098632812,20.7470245361328,-51.1026916503906,270.441833496094,-50,-72.7605285644531,270.441833496094,-50,-162.398406982422,274.583038330078,91.4940490722656,-33.7917633056641,251.982879638672,91.4940490722656,-255.944396972656,114.627212524414,-50,-61.3802642822266,114.627212524414,-50,-158.012298583984,112.180877685547,10.3735122680664,-172.157165527344,109.734535217285,95.4675750732422,-166.573364257812,115.436500549316,95.4675750732422,-59.4510955810547,109.451469421387,70.7470245361328,-19.7387733459473,115.882995605469,10.5092802047729,-1.21296119689941,114.627212524414,-50,-11.3802642822266
@@ -342,7 +342,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 1913588401568, "Model::pCube2", "Mesh" {
+	Model: 1913588304128, "Model::Collegamento_V_E", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationPivot", "Vector3D", "Vector", "",1.80873001098632,0.914940490722657,-0.689021911621097
@@ -359,7 +359,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Material: 1913926588512, "Material::standardSurface1", "" {
+	Material: 1913717297824, "Material::standardSurface1", "" {
 		Version: 102
 		ShadingModel: "unknown"
 		MultiLayer: 0
@@ -412,7 +412,7 @@ Objects:  {
 			P: "Maya|normalCameraFactor", "double", "Number", "",0
 		}
 	}
-	Implementation: 1913928082896, "Implementation::standardSurface1_Implementation", "" {
+	Implementation: 1913930039952, "Implementation::standardSurface1_Implementation", "" {
 		Version: 100
 		Properties70:  {
 			P: "ShaderLanguage", "KString", "", "", "StandardSSL"
@@ -421,7 +421,7 @@ Objects:  {
 			P: "RootBindingName", "KString", "", "", "root"
 		}
 	}
-	BindingTable: 1913924662144, "BindingTable::root 5", "" {
+	BindingTable: 1913832485088, "BindingTable::root 8", "" {
 		Version: 100
 		Properties70:  {
 			P: "TargetName", "KString", "", "", "root"
@@ -470,7 +470,7 @@ Objects:  {
 		Entry: "Maya|subsurfaceColor", "FbxPropertyEntry", "subsurface_color", "FbxSemanticEntry"
 		Entry: "Maya|transmissionScatter", "FbxPropertyEntry", "transmission_scatter", "FbxSemanticEntry"
 	}
-	AnimationStack: 1913729097760, "AnimStack::Take 001", "" {
+	AnimationStack: 1913729050544, "AnimStack::Take 001", "" {
 		Properties70:  {
 			P: "LocalStart", "KTime", "Time", "",1924423250
 			P: "LocalStop", "KTime", "Time", "",230930790000
@@ -478,7 +478,7 @@ Objects:  {
 			P: "ReferenceStop", "KTime", "Time", "",230930790000
 		}
 	}
-	AnimationLayer: 1913833197232, "AnimLayer::BaseLayer", "" {
+	AnimationLayer: 1913917774016, "AnimLayer::BaseLayer", "" {
 	}
 }
 
@@ -487,23 +487,23 @@ Objects:  {
 
 Connections:  {
 	
-	;Model::pCube2, Model::RootNode
-	C: "OO",1913588401568,0
+	;Model::Collegamento_V_E, Model::RootNode
+	C: "OO",1913588304128,0
 	
 	;AnimLayer::BaseLayer, AnimStack::Take 001
-	C: "OO",1913833197232,1913729097760
+	C: "OO",1913917774016,1913729050544
 	
 	;Material::standardSurface1, Implementation::standardSurface1_Implementation
-	C: "OO",1913926588512,1913928082896
+	C: "OO",1913717297824,1913930039952
 	
-	;BindingTable::root 5, Implementation::standardSurface1_Implementation
-	C: "OO",1913924662144,1913928082896
+	;BindingTable::root 8, Implementation::standardSurface1_Implementation
+	C: "OO",1913832485088,1913930039952
 	
-	;Geometry::, Model::pCube2
-	C: "OO",1913751096272,1913588401568
+	;Geometry::, Model::Collegamento_V_E
+	C: "OO",1913751082384,1913588304128
 	
-	;Material::standardSurface1, Model::pCube2
-	C: "OO",1913926588512,1913588401568
+	;Material::standardSurface1, Model::Collegamento_V_E
+	C: "OO",1913717297824,1913588304128
 }
 ;Takes section
 ;----------------------------------------------------
