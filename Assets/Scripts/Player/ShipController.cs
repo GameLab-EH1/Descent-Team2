@@ -11,7 +11,7 @@ public class ShipController : MonoBehaviour
     [SerializeField] private float _yawForce;
 
     [SerializeField] private float _pitchForce, _rollForce, _thrustForce, _upDownForce, _strafeForce;
-    private float _glideForce, _verticalGlide, _strafeGlide;
+    private float _glideForce, _strafeGlide, _verticalGlide;
     
     [SerializeField, Range(0f,1f)] private float
         _thrustReduction, _upDownReduction, _strafeReduction;
