@@ -4790,7 +4790,7 @@ MonoBehaviour:
   _yawForce: 7
   _pitchForce: 7
   _rollForce: 7
-  _thrustForce: 10
+  _thrustForce: 100
   _upDownForce: 100
   _strafeForce: 50
   _thrustReduction: 0.05
