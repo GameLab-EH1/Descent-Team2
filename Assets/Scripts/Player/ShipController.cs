@@ -15,10 +15,20 @@ public class ShipController : MonoBehaviour
     
     [SerializeField, Range(0f,1f)] private float
         _thrustReduction, _upDownReduction, _strafeReduction;
+
+    [Header("Shooting Variables")] [SerializeField]
+    private Transform[] _shootingPoints;
+
+    [SerializeField] private float _fireDelay;
+    private float s_Timer;
     
     //input
     private float _thrust, _upDown, _strafe, _roll;
     private Vector2 _pitch;
+    private bool _shoot;
+    
+    //logic variables
+    private bool isShooting1;
 
     private Rigidbody _rb;
 
@@ -27,6 +37,15 @@ public class ShipController : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
 
+    private void Update()
+    {
+        s_Timer += Time.deltaTime;
+        if (_shoot && s_Timer > _fireDelay)
+        {
+            Shoot();
+            s_Timer = 0;
+        }
+    }
     private void FixedUpdate()
     {
         MovementLogic();
@@ -84,7 +103,26 @@ public class ShipController : MonoBehaviour
             _strafeGlide *= _strafeReduction;
         }
     }
-    
+
+    private void Shoot()
+    {
+        if (isShooting1)
+        {
+            GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject();
+            bullet.transform.position = _shootingPoints[0].position;
+            bullet.transform.rotation = _shootingPoints[0].rotation;
+            bullet.SetActive(true);
+            isShooting1 = false;
+        }
+        else
+        {
+            GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject();
+            bullet.transform.position = _shootingPoints[1].position;
+            bullet.transform.rotation = _shootingPoints[1].rotation;
+            bullet.SetActive(true);
+            isShooting1 = true;
+        }
+    }
     #region Input
     
     public void OnThrust(InputAction.CallbackContext cont)
@@ -106,6 +144,11 @@ public class ShipController : MonoBehaviour
     public void OnPitch(InputAction.CallbackContext cont)
     {
         _pitch= cont.ReadValue<Vector2>();
+    }
+
+    public void OnShoot(InputAction.CallbackContext cont)
+    {
+        _shoot = cont.performed;
     }
     
     #endregion
