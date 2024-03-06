@@ -3288,6 +3288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 785567041}
   - component: {fileID: 785567042}
+  - component: {fileID: 785567043}
   m_Layer: 0
   m_Name: EnemyIA 1
   m_TagString: Untagged
@@ -3332,6 +3333,21 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &785567043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785567040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e140c35653cb1cc43a9a798587aef61e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PatrollingPoints: []
+  _ShipController: {fileID: 0}
+  _scriptableObject: {fileID: 0}
 --- !u!1 &795375803
 GameObject:
   m_ObjectHideFlags: 0
@@ -6649,9 +6665,9 @@ MonoBehaviour:
   _thrustReduction: 0.5
   _upDownReduction: 0.5
   _strafeReduction: 0.5
-  _shootingPoints:
-  - {fileID: 1527554745}
-  - {fileID: 62442958}
+  WeaponUsing: 0
+  _bullets: []
+  BulletDmg: 
   _fireDelay: 0.4
 --- !u!4 &1507663304
 Transform:

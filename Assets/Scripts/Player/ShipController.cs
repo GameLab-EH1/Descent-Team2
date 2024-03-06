@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Rigidbody))]
 public class ShipController : MonoBehaviour
@@ -16,8 +17,14 @@ public class ShipController : MonoBehaviour
     [SerializeField, Range(0f,1f)] private float
         _thrustReduction, _upDownReduction, _strafeReduction;
 
-    [Header("Shooting Variables")] [SerializeField]
+    [Header("Shooting Variables")]
+    [HideInInspector] public int WeaponUsing;
     private Transform[] _shootingPoints;
+
+    [SerializeField, Tooltip("Weapons")] private GameObject[] _bullets;
+
+    [SerializeField, Tooltip("Weapons Dmg")]
+    public int[] BulletDmg;
 
     [SerializeField] private float _fireDelay;
     private float s_Timer;
@@ -108,6 +115,7 @@ public class ShipController : MonoBehaviour
     {
         if (isShooting1)
         {
+            ObjectPooler.SharedInstance.objectToPool = _bullets[WeaponUsing];
             GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject();
             bullet.transform.position = _shootingPoints[0].position;
             bullet.transform.rotation = _shootingPoints[0].rotation;
@@ -116,6 +124,7 @@ public class ShipController : MonoBehaviour
         }
         else
         {
+            ObjectPooler.SharedInstance.objectToPool = _bullets[WeaponUsing];
             GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject();
             bullet.transform.position = _shootingPoints[1].position;
             bullet.transform.rotation = _shootingPoints[1].rotation;
