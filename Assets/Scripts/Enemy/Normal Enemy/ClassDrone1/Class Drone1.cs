@@ -24,7 +24,7 @@ public class ClassDrone1 : MonoBehaviour
 
     private void Awake()
     {
-        ChasingState = new ChasingState();
+        ChasingState = new ChasingState(this);
         PatrollingState = new PatrollingState(this);
         _hp = _scriptableObject.Hp;
     }

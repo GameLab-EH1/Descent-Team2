@@ -1,9 +1,10 @@
+using UnityEditor;
 using UnityEngine;
 
 public class PatrollingState : CurrentState
 {
     private ClassDrone1 _classDrone1;
-    private Transform _targetPos;
+    private Transform _targetPos, _targetPosSaver;
     private float _timer;
     private bool isTimeToMove;
 
@@ -11,22 +12,23 @@ public class PatrollingState : CurrentState
     {
         _classDrone1 = classDrone1;
     }
-    
+
     public override void EnterState(ClassDrone1 classDrone1)
     {
         isTimeToMove = true;
+        int moveIndex = Random.Range(0, classDrone1.PatrollingPoints.Length);
+        _targetPos = classDrone1.PatrollingPoints[moveIndex];
+        _targetPosSaver = _targetPos;
     }
 
     public override void UpdateState(ClassDrone1 classDrone1)
     {
-        
         if (isTimeToMove)
         {
-            int moveIndex = Random.Range(0, classDrone1.PatrollingPoints.Length + 1);
-            _targetPos = classDrone1.PatrollingPoints[moveIndex];
-            
-            classDrone1.transform.position = 
-                Vector3.MoveTowards(classDrone1.transform.position, _targetPos.position, classDrone1._scriptableObject.MovementSpeed * Time.deltaTime);
+            classDrone1.transform.position =
+                Vector3.MoveTowards(classDrone1.transform.position, _targetPos.position,
+                    classDrone1._scriptableObject.MovementSpeed * Time.deltaTime);
+            classDrone1.transform.LookAt(_targetPos);
             if (Vector3.Distance(classDrone1.transform.position, _targetPos.position) < 0.2f)
             {
                 isTimeToMove = false;
@@ -37,32 +39,38 @@ public class PatrollingState : CurrentState
             _timer += Time.deltaTime;
             if (_timer >= classDrone1._scriptableObject.TimeBeforeMoving)
             {
+                while (_targetPos == _targetPosSaver)
+                {
+                    int moveIndex = Random.Range(0, classDrone1.PatrollingPoints.Length);
+                    _targetPos = classDrone1.PatrollingPoints[moveIndex];
+                }
+                _targetPosSaver = _targetPos;
                 isTimeToMove = true;
+                _timer = 0;
             }
         }
-        if(isPlayerInRange(classDrone1))
+        if (isPlayerInRange())
         {
             classDrone1.SwitchState(classDrone1.ChasingState);
         }
     }
-    
 
-    private bool isPlayerInRange(ClassDrone1 classDrone1)
+
+    private bool isPlayerInRange()
     {
-        Vector3 toPlayer = (classDrone1._ShipController.transform.position - classDrone1.transform.position);
-        
-        if (
-            toPlayer.sqrMagnitude > classDrone1._scriptableObject.VisualRange * classDrone1._scriptableObject.VisualRange
-            )
+        Vector3 toPlayer = (_classDrone1._ShipController.transform.position - _classDrone1.transform.position);
+
+        if (toPlayer.sqrMagnitude >
+            _classDrone1._scriptableObject.VisualRange * _classDrone1._scriptableObject.VisualRange)
         {
             return false;
         }
         toPlayer.Normalize();
         
-        float angleToPlayer = Vector3.Angle(classDrone1.transform.position, toPlayer);
-
-
-        if (angleToPlayer <= classDrone1._scriptableObject.VisualAngle && IsPathClear(classDrone1.transform, classDrone1._ShipController.transform, classDrone1._scriptableObject.VisualRange))
+        float angleToPlayer = Vector3.Angle(_classDrone1.transform.forward, -_classDrone1._ShipController.transform.forward);
+        
+        if (angleToPlayer <= _classDrone1._scriptableObject.VisualAngle && IsPathClear(_classDrone1.transform,
+                _classDrone1._ShipController.transform, _classDrone1._scriptableObject.VisualRange))
         {
             return true;
         }
@@ -83,4 +91,3 @@ public class PatrollingState : CurrentState
         return false;
     }
 }
-

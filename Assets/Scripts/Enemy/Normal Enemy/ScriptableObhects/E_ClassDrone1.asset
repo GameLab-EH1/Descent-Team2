@@ -12,3 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fccca457f157c0547936d6a9da99ff7c, type: 3}
   m_Name: E_ClassDrone1
   m_EditorClassIdentifier: 
+  Hp: 15
+  FireRate: 0
+  MovementSpeed: 4
+  KnockbackForce: 10
+  score: 10
+  PUp_DropRate: 10
+  TimeBeforeMoving: 2
+  VisualRange: 10
+  VisualAngle: 45
+  StoppingDistance: 3
+  BulletPref: {fileID: 0}
+  PlayerLayer:
+    serializedVersion: 2
+    m_Bits: 1073741824
