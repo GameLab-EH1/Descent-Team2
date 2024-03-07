@@ -1,14 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ClassDrone1 : MonoBehaviour
 {
     //states
     private CurrentState _currentState;
-    public ChasingState _chasingState = new ChasingState();
-    public PatrollingState _patrollingState = new PatrollingState();
+    public PatrollingState PatrollingState;
+    public ChasingState ChasingState;
     
     //Movement
     public Transform[] PatrollingPoints;
@@ -23,16 +24,23 @@ public class ClassDrone1 : MonoBehaviour
 
     private void Awake()
     {
+        ChasingState = new ChasingState();
+        PatrollingState = new PatrollingState(this);
         _hp = _scriptableObject.Hp;
     }
     private void Start()
     {
-        _currentState = _patrollingState;
+        _currentState = PatrollingState;
         _currentState.EnterState(this);
     }
     private void Update()
     {
         _currentState.UpdateState(this);
+        if (_hp <= 0)
+        {
+            Debug.Log("i'm dead");
+            
+        }
     }
     public void SwitchState(CurrentState state)
     {

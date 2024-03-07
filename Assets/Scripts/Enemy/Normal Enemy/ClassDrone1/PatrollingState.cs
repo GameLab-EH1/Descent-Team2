@@ -2,9 +2,16 @@ using UnityEngine;
 
 public class PatrollingState : CurrentState
 {
+    private ClassDrone1 _classDrone1;
     private Transform _targetPos;
     private float _timer;
     private bool isTimeToMove;
+
+    public PatrollingState(ClassDrone1 classDrone1)
+    {
+        _classDrone1 = classDrone1;
+    }
+    
     public override void EnterState(ClassDrone1 classDrone1)
     {
         isTimeToMove = true;
@@ -35,7 +42,7 @@ public class PatrollingState : CurrentState
         }
         if(isPlayerInRange(classDrone1))
         {
-            classDrone1.SwitchState(classDrone1._chasingState);
+            classDrone1.SwitchState(classDrone1.ChasingState);
         }
     }
     
@@ -55,7 +62,7 @@ public class PatrollingState : CurrentState
         float angleToPlayer = Vector3.Angle(classDrone1.transform.position, toPlayer);
 
 
-        if (angleToPlayer <= classDrone1._scriptableObject.VisualAngle)
+        if (angleToPlayer <= classDrone1._scriptableObject.VisualAngle && IsPathClear(classDrone1.transform, classDrone1._ShipController.transform, classDrone1._scriptableObject.VisualRange))
         {
             return true;
         }
@@ -63,6 +70,17 @@ public class PatrollingState : CurrentState
         {
             return false;
         }
+    }
+    private bool IsPathClear(Transform self, Transform target, float maxDistance)
+    {
+        Vector3 direction = target.position - self.position;
+
+        RaycastHit hit;
+        if (Physics.Raycast(self.position, direction, out hit, maxDistance, _classDrone1._scriptableObject.PlayerLayer))
+        {
+            return true;
+        }
+        return false;
     }
 }
 
