@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class WeaponsManager : MonoBehaviour
 {
     [SerializeField, Tooltip("Weapons")] private GameObject[] _bullets;
-    [SerializeField] private float[] _fireSpeed;
+    [SerializeField] private float[] _fireDelay;
     [SerializeField] private int[] _dmg;
     [SerializeField] private int[] _ammo;
     [SerializeField] private bool[] _unlockedWeapons;
@@ -44,7 +45,7 @@ public class WeaponsManager : MonoBehaviour
     }
     public void Shoot()
     {
-        if (WeaponUsing == 0 && _fireSpeed[WeaponUsing] > _timer && _ammo[WeaponUsing] > 0)
+        if (WeaponUsing == 0 && _fireDelay[WeaponUsing] > _timer && _ammo[WeaponUsing] > 0)
         {
             for (int i = 0; i < 2; i++)
             {
@@ -54,14 +55,14 @@ public class WeaponsManager : MonoBehaviour
                 bullet.SetActive(true);
             }
         }
-        else if (WeaponUsing == 1 && _fireSpeed[WeaponUsing] > _timer && _ammo[WeaponUsing] > 0)
+        else if (WeaponUsing == 1 && _fireDelay[WeaponUsing] > _timer && _ammo[WeaponUsing] > 0)
         {
             GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject();
             bullet.transform.position = _shootingPointsW2.position;
             bullet.transform.rotation = _shootingPointsW2.rotation;
             bullet.SetActive(true);
         }
-        else if (WeaponUsing == 2 && _fireSpeed[WeaponUsing] > _timer && _ammo[WeaponUsing] > 0)
+        else if (WeaponUsing == 2 && _fireDelay[WeaponUsing] > _timer && _ammo[WeaponUsing] > 0)
         {
             GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject();
             bullet.transform.position = _shootingPointsW3.position;

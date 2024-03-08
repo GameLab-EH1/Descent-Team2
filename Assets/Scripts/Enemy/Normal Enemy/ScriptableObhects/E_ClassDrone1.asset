@@ -19,7 +19,7 @@ MonoBehaviour:
   score: 10
   PUp_DropRate: 10
   TimeBeforeMoving: 2
-  VisualRange: 15
+  VisualRange: 20
   VisualAngle: 90
   StoppingDistance: 3
   RotAroundDelay: 3
