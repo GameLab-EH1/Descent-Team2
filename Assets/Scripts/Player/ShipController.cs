@@ -17,11 +17,9 @@ public class ShipController : MonoBehaviour
     [SerializeField, Range(0f,1f)] private float
         _thrustReduction, _upDownReduction, _strafeReduction;
 
-    [Header("Shooting Variables")]
-    [HideInInspector] public int WeaponUsing;
-    private Transform[] _shootingPoints;
-
-    [SerializeField, Tooltip("Weapons")] private GameObject[] _bullets;
+    [Header("Shooting Variables")] 
+    public WeaponsManager WeaponsManager;
+    
 
     [SerializeField, Tooltip("Weapons Dmg")]
     public int[] BulletDmg;
@@ -47,11 +45,14 @@ public class ShipController : MonoBehaviour
     private void Update()
     {
         s_Timer += Time.deltaTime;
-        if (_shoot && s_Timer > _fireDelay)
+        if (_shoot)
         {
-            Shoot();
-            s_Timer = 0;
+            WeaponsManager.Shoot();
         }
+    }
+    public int DealingDmg()
+    {
+        return WeaponsManager.DealDmg();
     }
     private void FixedUpdate()
     {
@@ -110,28 +111,7 @@ public class ShipController : MonoBehaviour
             _strafeGlide *= _strafeReduction;
         }
     }
-
-    private void Shoot()
-    {
-        if (isShooting1)
-        {
-            ObjectPooler.SharedInstance.objectToPool = _bullets[WeaponUsing];
-            GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject();
-            bullet.transform.position = _shootingPoints[0].position;
-            bullet.transform.rotation = _shootingPoints[0].rotation;
-            bullet.SetActive(true);
-            isShooting1 = false;
-        }
-        else
-        {
-            ObjectPooler.SharedInstance.objectToPool = _bullets[WeaponUsing];
-            GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject();
-            bullet.transform.position = _shootingPoints[1].position;
-            bullet.transform.rotation = _shootingPoints[1].rotation;
-            bullet.SetActive(true);
-            isShooting1 = true;
-        }
-    }
+    
     #region Input
     
     public void OnThrust(InputAction.CallbackContext cont)

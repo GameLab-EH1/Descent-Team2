@@ -22,6 +22,7 @@ public class EnemyScriptableObject : ScriptableObject
     public float VisualRange;
     public float VisualAngle;
     public float StoppingDistance;
+    public float RotAroundDelay;
     
     [Header("Shooting Variables")]
     public GameObject BulletPref;

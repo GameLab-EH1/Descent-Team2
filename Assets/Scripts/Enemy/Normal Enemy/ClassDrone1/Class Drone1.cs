@@ -51,7 +51,7 @@ public class ClassDrone1 : MonoBehaviour
     {
         if (other.gameObject.layer == 31)
         {
-            _hp -= _ShipController.BulletDmg[_ShipController.WeaponUsing];
+            _hp -= _ShipController.DealingDmg();
         }
     }
 }

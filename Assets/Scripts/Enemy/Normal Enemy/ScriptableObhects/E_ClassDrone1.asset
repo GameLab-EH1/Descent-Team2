@@ -19,9 +19,10 @@ MonoBehaviour:
   score: 10
   PUp_DropRate: 10
   TimeBeforeMoving: 2
-  VisualRange: 10
-  VisualAngle: 45
+  VisualRange: 15
+  VisualAngle: 90
   StoppingDistance: 3
+  RotAroundDelay: 3
   BulletPref: {fileID: 0}
   PlayerLayer:
     serializedVersion: 2

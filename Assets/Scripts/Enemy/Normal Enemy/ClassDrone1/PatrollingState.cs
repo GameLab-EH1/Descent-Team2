@@ -67,7 +67,7 @@ public class PatrollingState : CurrentState
         }
         toPlayer.Normalize();
         
-        float angleToPlayer = Vector3.Angle(_classDrone1.transform.forward, -_classDrone1._ShipController.transform.forward);
+        float angleToPlayer = Vector3.Angle(_classDrone1.transform.forward, toPlayer);
         
         if (angleToPlayer <= _classDrone1._scriptableObject.VisualAngle && IsPathClear(_classDrone1.transform,
                 _classDrone1._ShipController.transform, _classDrone1._scriptableObject.VisualRange))
@@ -84,7 +84,7 @@ public class PatrollingState : CurrentState
         Vector3 direction = target.position - self.position;
 
         RaycastHit hit;
-        if (Physics.Raycast(self.position, direction, out hit, maxDistance, _classDrone1._scriptableObject.PlayerLayer))
+        if (Physics.Raycast(self.position, direction, out hit, maxDistance + 2, _classDrone1._scriptableObject.PlayerLayer))
         {
             return true;
         }
