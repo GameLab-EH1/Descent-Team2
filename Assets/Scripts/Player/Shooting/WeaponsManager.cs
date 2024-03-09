@@ -128,7 +128,7 @@ public class WeaponsManager : MonoBehaviour
             bulScript.Dmg = _dmg[WeaponUsing];
 
             bullet.SetActive(true);
-            EventManager.OnLaserShooting?.Invoke(true);
+            EventManager.OnLaserShooting?.Invoke(false);
             Debug.Log("sparoArma3");
             _timer3 = 0;
         }
