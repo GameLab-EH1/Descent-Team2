@@ -35,6 +35,7 @@ public class ShipLogic : MonoBehaviour
             if (_shootPowerSaver == 3)
             {
                 _shootPower--;
+                _shootPowerSaver = 0;
             }
             else
             {
