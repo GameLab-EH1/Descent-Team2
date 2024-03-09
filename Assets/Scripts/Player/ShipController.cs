@@ -19,13 +19,10 @@ public class ShipController : MonoBehaviour
 
     [Header("Shooting Variables")] 
     public WeaponsManager WeaponsManager;
+
+    private int _currentWeapon;
     
-
-    [SerializeField, Tooltip("Weapons Dmg")]
-    public int[] BulletDmg;
-
     [SerializeField] private float _fireDelay;
-    private float s_Timer;
     
     //input
     private float _thrust, _upDown, _strafe, _roll;
@@ -44,16 +41,12 @@ public class ShipController : MonoBehaviour
 
     private void Update()
     {
-        s_Timer += Time.deltaTime;
         if (_shoot)
         {
             WeaponsManager.Shoot();
         }
     }
-    public int DealingDmg()
-    {
-        return WeaponsManager.DealDmg();
-    }
+    
     private void FixedUpdate()
     {
         MovementLogic();
@@ -139,7 +132,34 @@ public class ShipController : MonoBehaviour
     {
         _shoot = cont.performed;
     }
-    
+    public void OnChangingWeapon()
+    {
+        _currentWeapon = WeaponsManager.WeaponUsing;
+        if (_currentWeapon == 2)
+        {
+            _currentWeapon = 0;
+        }
+        else
+        {
+            _currentWeapon++;
+        }
+        WeaponsManager.ChangeWeapon(_currentWeapon, true);
+    }
+    public void EquipWeapon0()
+    {
+        _currentWeapon = 0;
+        WeaponsManager.ChangeWeapon(_currentWeapon,false);
+    }
+    public void EquipWeapon1()
+    {
+        _currentWeapon = 1;
+        WeaponsManager.ChangeWeapon(_currentWeapon,false);
+    }
+    public void EquipWeapon2()
+    {
+        _currentWeapon = 2;
+        WeaponsManager.ChangeWeapon(_currentWeapon,false);
+    }
     #endregion
     
 }

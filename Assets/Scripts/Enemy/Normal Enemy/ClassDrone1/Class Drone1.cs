@@ -17,8 +17,11 @@ public class ClassDrone1 : MonoBehaviour
     //player ref
     public ShipController _ShipController;
     
-    //statistics
-    private int _hp;
+    //stats
+    [SerializeField] private HealthManager _healthManager;
+
+    [SerializeField] private WeaponsManager _weaponsManager;
+    
     
     public EnemyScriptableObject _scriptableObject;
 
@@ -26,17 +29,17 @@ public class ClassDrone1 : MonoBehaviour
     {
         ChasingState = new ChasingState(this);
         PatrollingState = new PatrollingState(this);
-        _hp = _scriptableObject.Hp;
     }
     private void Start()
     {
+        
         _currentState = PatrollingState;
         _currentState.EnterState(this);
     }
     private void Update()
     {
         _currentState.UpdateState(this);
-        if (_hp <= 0)
+        if (_healthManager.HP <= 0)
         {
             Debug.Log("i'm dead");
             
@@ -47,11 +50,6 @@ public class ClassDrone1 : MonoBehaviour
         _currentState = state;
         state.EnterState(this);
     }
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.layer == 31)
-        {
-            _hp -= _ShipController.DealingDmg();
-        }
-    }
+    
+    
 }

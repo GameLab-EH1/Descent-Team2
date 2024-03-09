@@ -58,6 +58,42 @@
                     "processors": "",
                     "interactions": "Hold(duration=0.1,pressPoint=0.3)",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Weapon1",
+                    "type": "PassThrough",
+                    "id": "117c0c8c-aa55-4185-a27a-ccbd3730b673",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=2,pressPoint=0.3)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Weapon2",
+                    "type": "PassThrough",
+                    "id": "09d0cfab-8c2e-47d1-bec7-4a4b78e082be",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=2,pressPoint=0.3)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Weapon3",
+                    "type": "PassThrough",
+                    "id": "ae422d41-aeb4-441f-853a-2754f47ec182",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=2,pressPoint=0.3)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "WeaponJoystic",
+                    "type": "PassThrough",
+                    "id": "9ac36e58-fab2-44e6-b388-6b4705165d2c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=2,pressPoint=0.3)",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -366,6 +402,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0c4d8965-0455-4f44-a901-a4bee2ca4045",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Weapon1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fc79a0d9-2fcf-4977-91fc-7c126c8e9d5c",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Weapon2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5321a753-8f93-4b5f-9c32-1ab0e912ef99",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Weapon3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "72ad1e04-aa50-4bdf-99f3-31b9f58de2db",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WeaponJoystic",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class LaserBullet : MonoBehaviour
 {
     [SerializeField] private float _movementSpeed;
-    
+    public int Dmg;
 
     
     void Update()
@@ -17,7 +17,14 @@ public class LaserBullet : MonoBehaviour
     {
         if (other.gameObject.layer != 30)
         {
-            gameObject.SetActive(false);
+            {
+                HealthManager enemy = other.transform.GetComponent<HealthManager>();
+                if (enemy != null)
+                {
+                    enemy.GotDmg(Dmg);
+                    gameObject.SetActive(false);
+                }
+            }
         }
     }
 }

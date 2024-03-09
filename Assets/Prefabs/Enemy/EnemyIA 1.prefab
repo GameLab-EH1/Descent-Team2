@@ -507,8 +507,10 @@ GameObject:
   - component: {fileID: 5424986812323903808}
   - component: {fileID: 8229595274864758725}
   - component: {fileID: 6567179560200276382}
+  - component: {fileID: 6722006592840157318}
+  - component: {fileID: 7921874063319997327}
   m_Layer: 0
-  m_Name: ClassClone1
+  m_Name: EnemyIA 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -568,7 +570,50 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _ShipController: {fileID: 0}
+  _healthManager: {fileID: 6722006592840157318}
+  _weaponsManager: {fileID: 0}
   _scriptableObject: {fileID: 11400000, guid: 361f4cc3fb9a8434ca19d8e154a43257, type: 2}
+--- !u!114 &6722006592840157318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8325541658078063803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a74f041dd7a2d014f80cdd1206f22833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObject: {fileID: 11400000, guid: 361f4cc3fb9a8434ca19d8e154a43257, type: 2}
+  HP: 0
+--- !u!54 &7921874063319997327
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8325541658078063803}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &9144694986319870751
 GameObject:
   m_ObjectHideFlags: 0
