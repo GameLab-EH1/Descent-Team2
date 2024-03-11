@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -14,6 +15,7 @@ public class WeaponsManager : MonoBehaviour
     [SerializeField] private bool[] _unlockedWeapons;
     
     [SerializeField] private float _minigunRange;
+    [SerializeField] private GameObject _hitEffect;
     
     [HideInInspector] public int WeaponUsing;
     
@@ -101,17 +103,20 @@ public class WeaponsManager : MonoBehaviour
         {
             RaycastHit hit;
             if (Physics.Raycast(_shootingPointsW2.position, transform.TransformDirection(Vector3.forward), out hit,
-                    200))
+                    _minigunRange))
             {
                 HealthManager enemy = hit.transform.GetComponent<HealthManager>();
                 if (enemy != null)
                 {
                     enemy.GotDmg(_dmg[WeaponUsing]);
                 }
+               // GameObject effect = Instantiate(_hitEffect, hit.point, quaternion.identity);
+               // Destroy(effect , 1f);
+                
             }
             Debug.DrawRay(_shootingPointsW2.position, transform.TransformDirection(Vector3.forward) * 200, Color.cyan);
             
-            Debug.Log("sparoArma2");
+            Debug.Log(hit.point);
 
             _timer2 = 0;
             _ammo[WeaponUsing]--;

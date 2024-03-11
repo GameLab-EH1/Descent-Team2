@@ -22,9 +22,9 @@ public class ChasingState : CurrentState
 
     public override void UpdateState(ClassDrone1 classDrone1)
     {
+        LookAtLerped(classDrone1.transform,classDrone1._ShipController.transform, 3f);
         if (isPlayerInRange())
         {
-            classDrone1.transform.LookAt(classDrone1._ShipController.transform.position);
 
             if (Vector3.Distance(classDrone1.transform.position, classDrone1._ShipController.transform.position) >
                 classDrone1._scriptableObject.StoppingDistance)
@@ -34,7 +34,8 @@ public class ChasingState : CurrentState
                     Vector3.MoveTowards(classDrone1.transform.position, _playerPos,
                         classDrone1._scriptableObject.MovementSpeed * Time.deltaTime);
             }
-            else if(isDirectionClear(classDrone1.transform, Vector3.back))
+            else if(isDirectionClear(classDrone1.transform, Vector3.back) && Vector3.Distance(classDrone1.transform.position, classDrone1._ShipController.transform.position) <
+                    classDrone1._scriptableObject.StoppingDistance - 1)
             {
                 Vector3 oppositeDirection = classDrone1.transform.position - classDrone1._ShipController.transform.position;
                 classDrone1.transform.position =
@@ -65,8 +66,9 @@ public class ChasingState : CurrentState
         }
         else
         {
+            Vector3 intermediatePoint = (classDrone1.transform.position + _playerPos) / 2f;
             classDrone1.transform.position =
-                Vector3.MoveTowards(classDrone1.transform.position, _playerPos,
+                Vector3.MoveTowards(classDrone1.transform.position, intermediatePoint,
                     classDrone1._scriptableObject.MovementSpeed * Time.deltaTime);
             if (Vector3.Distance(classDrone1.transform.position, _playerPos) < 0.2)
             {
@@ -122,5 +124,11 @@ public class ChasingState : CurrentState
             return false;
         }
         return true;
+    }
+    private void LookAtLerped(Transform self, Transform target, float t)
+    {
+        Vector3 relativePos = target.position - self.position;
+        Quaternion toRotation = Quaternion.LookRotation(relativePos);
+        self.rotation = Quaternion.Lerp(self.rotation, toRotation, t);
     }
 }

@@ -132,18 +132,21 @@ public class ShipController : MonoBehaviour
     {
         _shoot = cont.performed;
     }
-    public void OnChangingWeapon()
+    public void OnChangingWeapon(InputAction.CallbackContext cont)
     {
-        _currentWeapon = WeaponsManager.WeaponUsing;
-        if (_currentWeapon == 2)
+        if (cont.canceled)
         {
-            _currentWeapon = 0;
+            _currentWeapon = WeaponsManager.WeaponUsing;
+            if (_currentWeapon == 2)
+            {
+                _currentWeapon = 0;
+            }
+            else
+            {
+                _currentWeapon++;
+            }
+            WeaponsManager.ChangeWeapon(_currentWeapon, true);
         }
-        else
-        {
-            _currentWeapon++;
-        }
-        WeaponsManager.ChangeWeapon(_currentWeapon, true);
     }
     public void EquipWeapon0()
     {

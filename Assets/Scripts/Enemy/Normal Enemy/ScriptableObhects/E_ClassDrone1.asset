@@ -21,7 +21,7 @@ MonoBehaviour:
   TimeBeforeMoving: 2
   VisualRange: 20
   VisualAngle: 90
-  StoppingDistance: 3
+  StoppingDistance: 5
   RotAroundDelay: 3
   BulletPref: {fileID: 0}
   PlayerLayer:
