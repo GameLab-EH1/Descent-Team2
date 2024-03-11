@@ -110,8 +110,8 @@ public class WeaponsManager : MonoBehaviour
                 {
                     enemy.GotDmg(_dmg[WeaponUsing]);
                 }
-               // GameObject effect = Instantiate(_hitEffect, hit.point, quaternion.identity);
-               // Destroy(effect , 1f);
+               GameObject effect = Instantiate(_hitEffect, hit.point, quaternion.identity);
+               Destroy(effect , 1f);
                 
             }
             Debug.DrawRay(_shootingPointsW2.position, transform.TransformDirection(Vector3.forward) * 200, Color.cyan);
