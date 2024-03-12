@@ -7,6 +7,7 @@ using UnityEngine.Serialization;
 
 public class WeaponsManager : MonoBehaviour
 {
+    [Header("Weapons")]
     [SerializeField, Tooltip("Weapons")] private GameObject[] _bullets;
     [SerializeField] private float[] _fireDelay;
     public int[] _dmg;
@@ -25,9 +26,16 @@ public class WeaponsManager : MonoBehaviour
 
     private bool isLaserShootable = true;
     
-    private float _timer1;
-    private float _timer2;
-    private float _timer3;
+    private float _timerW1;
+    private float _timerW2;
+    private float _timerW3;
+
+    [Header("Rocket")] [SerializeField] private GameObject[] _rockets;
+    [SerializeField] private float _rocketDelay;
+
+    [SerializeField] private int[] _dmgRocket;
+    private bool _isNormRocket=true;
+    private float _timerR;
 
     private void Start()
     {
@@ -36,9 +44,10 @@ public class WeaponsManager : MonoBehaviour
     }
     private void Update()
     {
-        _timer1 += Time.deltaTime;
-        _timer2 += Time.deltaTime;
-        _timer3 += Time.deltaTime;
+        _timerW1 += Time.deltaTime;
+        _timerW2 += Time.deltaTime;
+        _timerW3 += Time.deltaTime;
+        _timerR += Time.deltaTime;
     }
     private void OnEnable()
     {
@@ -79,9 +88,20 @@ public class WeaponsManager : MonoBehaviour
             Debug.Log(_ammo[weaponIndex] + " new ammo");
         }
     }
+    public void ChangeRocket()
+    {
+        if (_isNormRocket)
+        {
+            _isNormRocket = false;
+        }
+        else
+        {
+            _isNormRocket = true;
+        }
+    }
     public void Shoot()
     {
-        if (WeaponUsing == 0 && _fireDelay[WeaponUsing] < _timer1 && isLaserShootable)
+        if (WeaponUsing == 0 && _fireDelay[WeaponUsing] < _timerW1 && isLaserShootable)
         {
             ObjectPooler.SharedInstance.objectToPool = _bullets[0];
             for (int i = 0; i < 2; i++)
@@ -96,10 +116,10 @@ public class WeaponsManager : MonoBehaviour
                 bullet.SetActive(true);
                 Debug.Log("sparoArma1");
             }
-            _timer1 = 0;
+            _timerW1 = 0;
             EventManager.OnLaserShooting?.Invoke(true);
         }
-        else if (WeaponUsing == 1 && _fireDelay[WeaponUsing] < _timer2 && _ammo[WeaponUsing] > 0)
+        else if (WeaponUsing == 1 && _fireDelay[WeaponUsing] < _timerW2 && _ammo[WeaponUsing] > 0)
         {
             RaycastHit hit;
             if (Physics.Raycast(_shootingPointsW2.position, transform.TransformDirection(Vector3.forward), out hit,
@@ -109,20 +129,20 @@ public class WeaponsManager : MonoBehaviour
                 if (enemy != null)
                 {
                     enemy.GotDmg(_dmg[WeaponUsing]);
-                }
-               GameObject effect = Instantiate(_hitEffect, hit.point, quaternion.identity);
-               Destroy(effect , 1f);
+                } 
+                GameObject effect = Instantiate(_hitEffect, hit.point, quaternion.identity); 
+                Destroy(effect , 1f);
                 
             }
             Debug.DrawRay(_shootingPointsW2.position, transform.TransformDirection(Vector3.forward) * 200, Color.cyan);
             
             Debug.Log(hit.point);
 
-            _timer2 = 0;
+            _timerW2 = 0;
             _ammo[WeaponUsing]--;
             EventManager.OnShooting?.Invoke(_ammo[WeaponUsing]);
         }
-        else if (WeaponUsing == 2 && _fireDelay[WeaponUsing] < _timer3 && isLaserShootable)
+        else if (WeaponUsing == 2 && _fireDelay[WeaponUsing] < _timerW3 && isLaserShootable)
         {
             ObjectPooler.SharedInstance.objectToPool = _bullets[2];
             GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject();
@@ -135,9 +155,42 @@ public class WeaponsManager : MonoBehaviour
             bullet.SetActive(true);
             EventManager.OnLaserShooting?.Invoke(false);
             Debug.Log("sparoArma3");
-            _timer3 = 0;
+            _timerW3 = 0;
         }
         
+    }
+
+    public void ShootRocket()
+    {
+        if (_timerR > _rocketDelay)
+        {
+            if (_isNormRocket)
+            {
+                GameObject rocket = Instantiate(_rockets[0], _shootingPointsW2.position, _shootingPointsW2.rotation);
+                
+                rocket.transform.position = _shootingPointsW2.position;
+                rocket.transform.rotation = _shootingPointsW2.rotation;
+                RocketScript rocScript = rocket.GetComponent<RocketScript>();
+                rocScript.Dmg = _dmgRocket[0];
+                rocScript.IsNormalRocket = true;
+                
+                rocket.SetActive(true);
+                Debug.Log("rocket1");
+            }
+            else
+            {
+                
+                GameObject rocket = Instantiate(_rockets[1], _shootingPointsW2.position, _shootingPointsW2.rotation);
+                
+                RocketScript rocScript = rocket.GetComponent<RocketScript>();
+                rocScript.Dmg = _dmgRocket[1];
+                rocScript.IsNormalRocket = false;
+                
+                Debug.Log("rocket2");
+            }
+            
+            _timerR = 0;
+        }
     }
     private void LaserNotShootable()
     {

@@ -6,7 +6,7 @@ using UnityEngine;
 public class LaserBullet : MonoBehaviour
 {
     [SerializeField] private float _movementSpeed;
-    public int Dmg;
+    [HideInInspector] public int Dmg;
 
     
     void Update()

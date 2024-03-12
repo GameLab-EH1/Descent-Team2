@@ -109,12 +109,14 @@ public class ChasingState : CurrentState
     private bool IsPathClear(Transform self, Transform target, float maxDistance)
     {
         Vector3 direction = target.position - self.position;
-
+        Debug.DrawRay(self.position, direction *200 ,Color.green);
         RaycastHit hit;
         if (Physics.Raycast(self.position, direction, out hit, maxDistance + 2, _classDrone1._scriptableObject.PlayerLayer))
         {
+            Debug.Log(hit.transform.name);
             return true;
         }
+        Debug.Log(hit.transform.name);
         return false;
     }
     private bool isDirectionClear(Transform self, Vector3 direction)

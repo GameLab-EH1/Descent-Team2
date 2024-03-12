@@ -60,6 +60,24 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Rocket",
+                    "type": "PassThrough",
+                    "id": "cb5c5bf2-717f-468f-a34c-7aa64f32cb55",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.1,pressPoint=0.3)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RocketSwap",
+                    "type": "PassThrough",
+                    "id": "6b88efb3-6622-47c8-8887-cc8e3245e751",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.1,pressPoint=0.3)",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Weapon1",
                     "type": "PassThrough",
                     "id": "117c0c8c-aa55-4185-a27a-ccbd3730b673",
@@ -446,6 +464,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "WeaponJoystic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "73d4cacd-26ab-43f9-a26c-dfd043ec4e64",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rocket",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b9d0e44b-dfd8-4b3c-9622-420c61a3c3a2",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rocket",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "74504fc6-b7c0-4717-9f9c-d5c76a1def0b",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RocketSwap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "784c25f6-459b-4a37-8986-b0e7e683c511",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RocketSwap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

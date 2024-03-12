@@ -27,7 +27,7 @@ public class ShipController : MonoBehaviour
     //input
     private float _thrust, _upDown, _strafe, _roll;
     private Vector2 _pitch;
-    private bool _shoot;
+    private bool _shoot, _rocket;
     
     //logic variables
     private bool isShooting1;
@@ -44,6 +44,10 @@ public class ShipController : MonoBehaviour
         if (_shoot)
         {
             WeaponsManager.Shoot();
+        }
+        if (_rocket)
+        {
+            WeaponsManager.ShootRocket();
         }
     }
     
@@ -162,6 +166,17 @@ public class ShipController : MonoBehaviour
     {
         _currentWeapon = 2;
         WeaponsManager.ChangeWeapon(_currentWeapon,false);
+    }
+    public void ShootRocket(InputAction.CallbackContext cont)
+    {
+        _rocket = cont.performed;
+    }
+    public void OnChangingRocket(InputAction.CallbackContext cont)
+    {
+        if (cont.canceled)
+        {
+            WeaponsManager.ChangeRocket();
+        }
     }
     #endregion
     

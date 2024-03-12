@@ -1742,6 +1742,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 9ac36e58-fab2-44e6-b388-6b4705165d2c
     m_ActionName: PlayerControlls/WeaponJoystic
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1507663303}
+        m_TargetAssemblyTypeName: ShipController, Assembly-CSharp
+        m_MethodName: ShootRocket
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: cb5c5bf2-717f-468f-a34c-7aa64f32cb55
+    m_ActionName: PlayerControlls/Rocket[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1507663303}
+        m_TargetAssemblyTypeName: ShipController, Assembly-CSharp
+        m_MethodName: OnChangingRocket
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6b88efb3-6622-47c8-8887-cc8e3245e751
+    m_ActionName: PlayerControlls/RocketSwap[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerControlls
@@ -1883,6 +1915,11 @@ MonoBehaviour:
   - {fileID: 62442958}
   _shootingPointsW2: {fileID: 1505972765}
   _shootingPointsW3: {fileID: 1505972765}
+  _rockets:
+  - {fileID: 674956266225932752, guid: c976d79c192b7de4b93937de1d9637fd, type: 3}
+  - {fileID: 674956266225932752, guid: fcb76195e8a71a548ac38c40435902bd, type: 3}
+  _rocketDelay: 5
+  _dmgRocket: 0a00000014000000
 --- !u!114 &1507663308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2630,6 +2667,10 @@ PrefabInstance:
     - target: {fileID: 8325541658078063803, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
       propertyPath: m_Name
       value: EnemyIA 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325541658078063803, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: m_Layer
+      value: 28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
