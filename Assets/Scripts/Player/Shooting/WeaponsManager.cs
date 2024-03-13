@@ -11,7 +11,7 @@ public class WeaponsManager : MonoBehaviour
     [SerializeField, Tooltip("Weapons")] private GameObject[] _bullets;
     [SerializeField] private float[] _fireDelay;
     public int[] _dmg;
-    [SerializeField] private int[] _ammo;
+    public int[] Ammo;
     [SerializeField] private int[] _chargingAmmo;
     [SerializeField] private bool[] _unlockedWeapons;
     
@@ -32,7 +32,8 @@ public class WeaponsManager : MonoBehaviour
 
     [Header("Rocket")] [SerializeField] private GameObject[] _rockets;
     [SerializeField] private float _rocketDelay;
-
+    [SerializeField] private int[] _rocketAmmo;
+    
     [SerializeField] private int[] _dmgRocket;
     private bool _isNormRocket=true;
     private float _timerR;
@@ -40,7 +41,7 @@ public class WeaponsManager : MonoBehaviour
     private void Start()
     {
         EventManager.OnWeaponSwap?.Invoke(WeaponUsing);
-        EventManager.OnShooting?.Invoke(_ammo[WeaponUsing]);
+        EventManager.OnShooting?.Invoke(Ammo[WeaponUsing]);
     }
     private void Update()
     {
@@ -73,7 +74,7 @@ public class WeaponsManager : MonoBehaviour
             WeaponUsing = weaponIndex;
         }
         EventManager.OnWeaponSwap?.Invoke(WeaponUsing);
-        EventManager.OnShooting?.Invoke(_ammo[WeaponUsing]);
+        EventManager.OnShooting?.Invoke(Ammo[WeaponUsing]);
     }
     public void PickUpWeapon(int weaponIndex)
     {
@@ -83,9 +84,9 @@ public class WeaponsManager : MonoBehaviour
         }
         else
         {
-            Debug.Log(_ammo[weaponIndex] + " old ammo");
-            _ammo[weaponIndex] += _chargingAmmo[weaponIndex];
-            Debug.Log(_ammo[weaponIndex] + " new ammo");
+            Debug.Log(Ammo[weaponIndex] + " old ammo");
+            Ammo[weaponIndex] += _chargingAmmo[weaponIndex];
+            Debug.Log(Ammo[weaponIndex] + " new ammo");
         }
     }
     public void ChangeRocket()
@@ -119,11 +120,12 @@ public class WeaponsManager : MonoBehaviour
             _timerW1 = 0;
             EventManager.OnLaserShooting?.Invoke(true);
         }
-        else if (WeaponUsing == 1 && _fireDelay[WeaponUsing] < _timerW2 && _ammo[WeaponUsing] > 0)
+        else if (WeaponUsing == 1 && _fireDelay[WeaponUsing] < _timerW2 && Ammo[WeaponUsing] > 0)
         {
             RaycastHit hit;
+            int pickuppableLayer = ~(1 << LayerMask.NameToLayer("Pickuppable"));
             if (Physics.Raycast(_shootingPointsW2.position, transform.TransformDirection(Vector3.forward), out hit,
-                    _minigunRange))
+                    _minigunRange, pickuppableLayer))
             {
                 HealthManager enemy = hit.transform.GetComponent<HealthManager>();
                 if (enemy != null)
@@ -139,8 +141,8 @@ public class WeaponsManager : MonoBehaviour
             Debug.Log(hit.point);
 
             _timerW2 = 0;
-            _ammo[WeaponUsing]--;
-            EventManager.OnShooting?.Invoke(_ammo[WeaponUsing]);
+            Ammo[WeaponUsing]--;
+            EventManager.OnShooting?.Invoke(Ammo[WeaponUsing]);
         }
         else if (WeaponUsing == 2 && _fireDelay[WeaponUsing] < _timerW3 && isLaserShootable)
         {
@@ -166,31 +168,50 @@ public class WeaponsManager : MonoBehaviour
         {
             if (_isNormRocket)
             {
-                GameObject rocket = Instantiate(_rockets[0], _shootingPointsW2.position, _shootingPointsW2.rotation);
-                
-                rocket.transform.position = _shootingPointsW2.position;
-                rocket.transform.rotation = _shootingPointsW2.rotation;
-                RocketScript rocScript = rocket.GetComponent<RocketScript>();
-                rocScript.Dmg = _dmgRocket[0];
-                rocScript.IsNormalRocket = true;
-                
-                rocket.SetActive(true);
-                Debug.Log("rocket1");
+                if (_rocketAmmo[0] > 0)
+                {
+                    GameObject rocket = Instantiate(_rockets[0], _shootingPointsW2.position, _shootingPointsW2.rotation);
+                    
+                    rocket.transform.position = _shootingPointsW2.position;
+                    rocket.transform.rotation = _shootingPointsW2.rotation;
+                    RocketScript rocScript = rocket.GetComponent<RocketScript>();
+                    rocScript.Dmg = _dmgRocket[0];
+                    rocScript.IsNormalRocket = true;
+                    
+                    rocket.SetActive(true);
+                    Debug.Log("rocket1");
+                    _rocketAmmo[0]--;
+                }
+                else
+                {
+                    Debug.Log("Finito i rocket 1");
+                }
             }
             else
             {
-                
-                GameObject rocket = Instantiate(_rockets[1], _shootingPointsW2.position, _shootingPointsW2.rotation);
-                
-                RocketScript rocScript = rocket.GetComponent<RocketScript>();
-                rocScript.Dmg = _dmgRocket[1];
-                rocScript.IsNormalRocket = false;
-                
-                Debug.Log("rocket2");
+                if (_rocketAmmo[1] > 0)
+                {
+                    GameObject rocket = Instantiate(_rockets[1], _shootingPointsW2.position, _shootingPointsW2.rotation);
+                    
+                    RocketScript rocScript = rocket.GetComponent<RocketScript>();
+                    rocScript.Dmg = _dmgRocket[1];
+                    rocScript.IsNormalRocket = false;
+                    
+                    Debug.Log("rocket2");
+                    _rocketAmmo[1]--;
+                }
+                else
+                {
+                    Debug.Log("Finito i rocket 2");
+                }
             }
             
             _timerR = 0;
         }
+    }
+    public void RocketAmmoReload(int AmmoToRecharge, int rocIndex)
+    {
+        _rocketAmmo[rocIndex] += AmmoToRecharge;
     }
     private void LaserNotShootable()
     {

@@ -72,7 +72,7 @@ public class PatrollingState : CurrentState
 
         if (angleToPlayer <= _classDrone1._scriptableObject.VisualAngle / 2f)
         {
-            if (IsPathClear(_classDrone1.transform.position, _classDrone1._ShipController.transform.position, _classDrone1._scriptableObject.VisualRange))
+            if (IsPathClear(_classDrone1.transform, _classDrone1._ShipController.transform, _classDrone1._scriptableObject.VisualRange))
             {
                 return true;
             }

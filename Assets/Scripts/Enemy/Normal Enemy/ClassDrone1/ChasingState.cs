@@ -34,8 +34,8 @@ public class ChasingState : CurrentState
                     Vector3.MoveTowards(classDrone1.transform.position, _playerPos,
                         classDrone1._scriptableObject.MovementSpeed * Time.deltaTime);
             }
-            else if(isDirectionClear(classDrone1.transform, Vector3.back) && Vector3.Distance(classDrone1.transform.position, classDrone1._ShipController.transform.position) <
-                    classDrone1._scriptableObject.StoppingDistance - 1)
+            else if(isDirectionClear(classDrone1.transform, -classDrone1._ShipController.transform.position) && 
+                    Vector3.Distance(classDrone1.transform.position, classDrone1._ShipController.transform.position) < classDrone1._scriptableObject.StoppingDistance - 1)
             {
                 Vector3 oppositeDirection = classDrone1.transform.position - classDrone1._ShipController.transform.position;
                 classDrone1.transform.position =
@@ -97,7 +97,7 @@ public class ChasingState : CurrentState
 
         if (angleToPlayer <= _classDrone1._scriptableObject.VisualAngle / 2f)
         {
-            if (IsPathClear(_classDrone1.transform.position, _classDrone1._ShipController.transform.position, _classDrone1._scriptableObject.VisualRange))
+            if (IsPathClear(_classDrone1.transform, _classDrone1._ShipController.transform, _classDrone1._scriptableObject.VisualRange))
             {
                 return true;
             }
@@ -106,31 +106,7 @@ public class ChasingState : CurrentState
         return false;
         }
 
-
-    /*private bool isPlayerInRange()
-    {
-        Vector3 toPlayer = (_classDrone1._ShipController.transform.position - _classDrone1.transform.position);
-
-        if (toPlayer.sqrMagnitude >
-            _classDrone1._scriptableObject.VisualRange * _classDrone1._scriptableObject.VisualRange)
-        {
-            return false;
-        }
-        toPlayer.Normalize();
-
-        float angleToPlayer = Vector3.Angle(_classDrone1.transform.position, toPlayer);
-
-
-        if (angleToPlayer <= _classDrone1._scriptableObject.VisualAngle && IsPathClear(_classDrone1.transform,
-                _classDrone1._ShipController.transform, _classDrone1._scriptableObject.VisualRange))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }*/
+    
     private bool IsPathClear(Transform self, Transform target, float maxDistance)
     {
         Vector3 direction = target.position - self.position;
