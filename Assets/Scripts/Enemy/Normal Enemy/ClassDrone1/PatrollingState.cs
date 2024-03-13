@@ -58,6 +58,32 @@ public class PatrollingState : CurrentState
 
     private bool isPlayerInRange()
     {
+        Vector3 toPlayer = _classDrone1._ShipController.transform.position - _classDrone1.transform.position;
+        float distanceSquared = toPlayer.sqrMagnitude;
+
+        if (distanceSquared > _classDrone1._scriptableObject.VisualRange * _classDrone1._scriptableObject.VisualRange)
+        {
+            return false;
+        }
+
+        toPlayer.Normalize();
+
+        float angleToPlayer = Vector3.Angle(_classDrone1.transform.forward, toPlayer);
+
+        if (angleToPlayer <= _classDrone1._scriptableObject.VisualAngle / 2f)
+        {
+            if (IsPathClear(_classDrone1.transform.position, _classDrone1._ShipController.transform.position, _classDrone1._scriptableObject.VisualRange))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+    /*private bool isPlayerInRange()
+    {
         Vector3 toPlayer = (_classDrone1._ShipController.transform.position - _classDrone1.transform.position);
 
         if (toPlayer.sqrMagnitude >
@@ -66,9 +92,10 @@ public class PatrollingState : CurrentState
             return false;
         }
         toPlayer.Normalize();
-        
-        float angleToPlayer = Vector3.Angle(_classDrone1.transform.forward, toPlayer);
-        
+
+        float angleToPlayer = Vector3.Angle(_classDrone1.transform.position, toPlayer);
+
+
         if (angleToPlayer <= _classDrone1._scriptableObject.VisualAngle && IsPathClear(_classDrone1.transform,
                 _classDrone1._ShipController.transform, _classDrone1._scriptableObject.VisualRange))
         {
@@ -78,7 +105,7 @@ public class PatrollingState : CurrentState
         {
             return false;
         }
-    }
+    }*/
     private bool IsPathClear(Transform self, Transform target, float maxDistance)
     {
         Vector3 direction = target.position - self.position;
