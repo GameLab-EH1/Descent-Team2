@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &549634479873615075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1400336468332384051}
+  - component: {fileID: 2420318685195828359}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1400336468332384051
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549634479873615075}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.10176848, y: -0, z: -0, w: 0.99480814}
+  m_LocalPosition: {x: 91.899994, y: -148.5, z: 275.8}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5133131864788327354}
+  m_LocalEulerAnglesHint: {x: 11.682, y: 0, z: 0}
+--- !u!65 &2420318685195828359
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549634479873615075}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 63.777107, y: 24.949541, z: 1.2827054}
+  m_Center: {x: -8.276176, y: 6.6835704, z: -0.14136386}
 --- !u!1 &1529289442699356405
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +328,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -1316446786287715958, guid: 1cc2ac3de7805cf43adae88225cd572d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1400336468332384051}
     - targetCorrespondingSourceObject: {fileID: 7255330604547153426, guid: 1cc2ac3de7805cf43adae88225cd572d, type: 3}
       insertIndex: 3
       addedObject: {fileID: 7391578025565300892}
@@ -882,6 +938,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!4 &5133131864788327354 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -1316446786287715958, guid: 1cc2ac3de7805cf43adae88225cd572d, type: 3}
+  m_PrefabInstance: {fileID: 3064566107704648240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5244911469928343127 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7083649369309480039, guid: 1cc2ac3de7805cf43adae88225cd572d, type: 3}
