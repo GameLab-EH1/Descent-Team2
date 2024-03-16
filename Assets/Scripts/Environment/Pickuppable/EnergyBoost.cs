@@ -10,7 +10,7 @@ public class EnergyBoost : MonoBehaviour
     {
         if (other.gameObject.layer == 30)
         {
-            EventManager.OnPowerPickup?.Invoke(_energyToRecharge);
+            EventManager.OnPowerPickup?.Invoke(_energyToRecharge, false);
             Destroy(gameObject);
         }
     }

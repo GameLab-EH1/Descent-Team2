@@ -15,6 +15,7 @@ public class UImanager : MonoBehaviour
     [SerializeField] private TMP_Text _shieldText;
     [SerializeField] private TMP_Text _scoreText;
     private int _score;
+
     
     private void OnEnable()
     {
@@ -64,6 +65,7 @@ public class UImanager : MonoBehaviour
     {
         _shieldText.text = "Shield Value: " + quantity;
     }
+    
     private void ScoreChange(int scoreToAdd)
     {
         _score += scoreToAdd;

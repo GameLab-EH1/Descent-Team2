@@ -42,6 +42,7 @@ public class WeaponsManager : MonoBehaviour
     {
         EventManager.OnWeaponSwap?.Invoke(WeaponUsing);
         EventManager.OnShooting?.Invoke(Ammo[WeaponUsing]);
+        EventManager.onScoreChange(0);
     }
     private void Update()
     {

@@ -55,17 +55,13 @@ public class ShipLogic : MonoBehaviour
             EventManager.OnLaserNoBullet?.Invoke();
         }
     }
-    private void OnPowerPickedUp(int toRecharge)
+    private void OnPowerPickedUp(int toRecharge, bool isRechargeZone)
     {
-        int shootPowerExpected = _shootPower + toRecharge;
-        if (shootPowerExpected < _maxShootPower)
+        if (_shootPower >= _maxShootPower && isRechargeZone)
         {
-            _shootPower += toRecharge;
+            return;
         }
-        else
-        {
-            _shootPower = _maxShootPower;
-        }
+        _shootPower += toRecharge;
         EventManager.OnPowerChange?.Invoke(_shootPower);
     }
     
