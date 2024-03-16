@@ -9,6 +9,7 @@ public class ShipLogic : MonoBehaviour
     [SerializeField] private int _shield;
     
     [SerializeField] private int _shootPower;
+    [SerializeField] private int _maxShootPower;
     private int _shootPowerSaver;
 
     [SerializeField] private UImanager _uiManager;
@@ -22,10 +23,12 @@ public class ShipLogic : MonoBehaviour
     private void OnEnable()
     {
         EventManager.OnLaserShooting += ShootPowerDecrease;
+        EventManager.OnPowerPickup += OnPowerPickedUp;
     }
     private void OnDisable()
     {
         EventManager.OnLaserShooting -= ShootPowerDecrease;
+        EventManager.OnPowerPickup -= OnPowerPickedUp;
     }
 
     private void ShootPowerDecrease(bool isFirstW)
@@ -51,6 +54,19 @@ public class ShipLogic : MonoBehaviour
         {
             EventManager.OnLaserNoBullet?.Invoke();
         }
+    }
+    private void OnPowerPickedUp(int toRecharge)
+    {
+        int shootPowerExpected = _shootPower + toRecharge;
+        if (shootPowerExpected < _maxShootPower)
+        {
+            _shootPower += toRecharge;
+        }
+        else
+        {
+            _shootPower = _maxShootPower;
+        }
+        EventManager.OnPowerChange?.Invoke(_shootPower);
     }
     
 

@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 
 public class ClassDrone1 : MonoBehaviour
 {
@@ -41,8 +43,14 @@ public class ClassDrone1 : MonoBehaviour
         _currentState.UpdateState(this);
         if (_healthManager.HP <= 0)
         {
-            Debug.Log("i'm dead");
-            
+            int randomDrop = Random.Range(1, 101);
+            if (randomDrop < _scriptableObject.PUp_DropRate)
+            {
+                int dropChooser = Random.Range(0, _scriptableObject.PUp_droppable.Length);
+                Instantiate(_scriptableObject.PUp_droppable[dropChooser], transform.position, transform.rotation);
+            }
+            EventManager.onScoreChange?.Invoke(_scriptableObject.score);
+            Destroy(gameObject);
         }
     }
     public void SwitchState(CurrentState state)

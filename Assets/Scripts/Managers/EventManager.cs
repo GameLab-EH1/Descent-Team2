@@ -12,6 +12,7 @@ public class EventManager : MonoBehaviour
     public static Action OnLaserNoBullet;
     
     public static Action<int> OnPowerChange;
+    public static Action<int> OnPowerPickup;
 
     public static Action<int> OnHealthChange;
     public static Action<int> OnShieldChange;

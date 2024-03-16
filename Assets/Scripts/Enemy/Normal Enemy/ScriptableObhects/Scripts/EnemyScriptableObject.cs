@@ -15,6 +15,7 @@ public class EnemyScriptableObject : ScriptableObject
     
     [Header("Game Mecchanics Variables")]
     public int score;
+    public GameObject[] PUp_droppable;
     public int PUp_DropRate;
     
     [Header("Moving Variables")]

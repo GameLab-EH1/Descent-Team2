@@ -6,7 +6,6 @@ using UnityEngine;
 public class SecretDoorScript : MonoBehaviour
 {
     [SerializeField] private Transform destination;
-    private bool _isOpening;
     private float _openSpeed = 50;
     private void OnTriggerEnter(Collider other)
     {
@@ -20,7 +19,6 @@ public class SecretDoorScript : MonoBehaviour
 
     private IEnumerator OpenDoor()
     {
-        _isOpening = true;
         Vector3 initialPosition = transform.position;
         float distance = Vector3.Distance(initialPosition, destination.position);
         float elapsedTime = 0f;
@@ -35,7 +33,6 @@ public class SecretDoorScript : MonoBehaviour
         }
 
         transform.position = destination.position;
-
-        _isOpening = false;
+        
     }
 }

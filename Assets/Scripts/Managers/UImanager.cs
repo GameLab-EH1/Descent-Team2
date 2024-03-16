@@ -13,6 +13,8 @@ public class UImanager : MonoBehaviour
     [SerializeField] private TMP_Text _powerText;
     [SerializeField] private TMP_Text _hpText;
     [SerializeField] private TMP_Text _shieldText;
+    [SerializeField] private TMP_Text _scoreText;
+    private int _score;
     
     private void OnEnable()
     {
@@ -21,6 +23,7 @@ public class UImanager : MonoBehaviour
         EventManager.OnPowerChange += PowerDecrease;
         EventManager.OnHealthChange += HpChange;
         EventManager.OnShieldChange += ShieldChange;
+        EventManager.onScoreChange += ScoreChange;
     }
     private void OnDisable()
     {
@@ -29,6 +32,7 @@ public class UImanager : MonoBehaviour
         EventManager.OnPowerChange -= PowerDecrease;
         EventManager.OnHealthChange -= HpChange;
         EventManager.OnShieldChange -= ShieldChange;
+        EventManager.onScoreChange -= ScoreChange;
     }
 
     private void WeaponSwap(int weaponIndex)
@@ -43,21 +47,26 @@ public class UImanager : MonoBehaviour
             _ammoText.gameObject.SetActive(true);
         }
     }
-    public void WeaponAmmo(int quantity)
+    private void WeaponAmmo(int quantity)
     {
         _ammoText.text = "Ammo: " + quantity;
     }
 
-    public void PowerDecrease(int quantity)
+    private void PowerDecrease(int quantity)
     {
         _powerText.text = "Laser Power: " + quantity;
     }
-    public void HpChange(int quantity)
+    private void HpChange(int quantity)
     {
         _hpText.text = "Hp Value: " + quantity;
     }
-    public void ShieldChange(int quantity)
+    private void ShieldChange(int quantity)
     {
         _shieldText.text = "Shield Value: " + quantity;
+    }
+    private void ScoreChange(int scoreToAdd)
+    {
+        _score += scoreToAdd;
+        _scoreText.text = "Score: " + _score;
     }
 }
