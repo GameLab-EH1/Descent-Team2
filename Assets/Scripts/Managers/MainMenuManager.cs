@@ -1,24 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _creditsMenu, settingsMenu, mainMenu;
+    [SerializeField] private GameObject _creditsMenu, _settingsMenu, _mainMenu;
 
 
     public void Credits(bool isToShow)
     {
         if (isToShow)
         {
-            mainMenu.SetActive(false);
+            _mainMenu.SetActive(false);
         }
         else
         {
-            mainMenu.SetActive(true);
+            _mainMenu.SetActive(true);
         }
         
         _creditsMenu.SetActive(isToShow);
+    }
+
+    public void Settings(bool isToShow)
+    {
+        if (isToShow)
+        {
+            _mainMenu.SetActive(false);
+        }
+        else
+        {
+            _mainMenu.SetActive(true);
+        }
+        
+        _settingsMenu.SetActive(isToShow);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    
+    public void playGame()
+    {
+        SceneManager.LoadScene("Game");
     }
     
     
