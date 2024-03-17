@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class ShipLogic : MonoBehaviour
 {
-    [SerializeField] private int _hp;
     [SerializeField] private int _shield;
+    [SerializeField] private int _maxShield;
     
     [SerializeField] private int _shootPower;
     [SerializeField] private int _maxShootPower;
@@ -16,7 +16,6 @@ public class ShipLogic : MonoBehaviour
 
     private void Start()
     {
-        EventManager.OnHealthChange?.Invoke(_hp);
         EventManager.OnShieldChange?.Invoke(_shield);
         EventManager.OnPowerChange?.Invoke(_shootPower);
     }
@@ -24,11 +23,13 @@ public class ShipLogic : MonoBehaviour
     {
         EventManager.OnLaserShooting += ShootPowerDecrease;
         EventManager.OnPowerPickup += OnPowerPickedUp;
+        EventManager.OnShieldPickOrDmg += ShieldValueChange;
     }
     private void OnDisable()
     {
         EventManager.OnLaserShooting -= ShootPowerDecrease;
         EventManager.OnPowerPickup -= OnPowerPickedUp;
+        EventManager.OnShieldPickOrDmg -= ShieldValueChange;
     }
 
     private void ShootPowerDecrease(bool isFirstW)
@@ -63,6 +64,23 @@ public class ShipLogic : MonoBehaviour
         }
         _shootPower += toRecharge;
         EventManager.OnPowerChange?.Invoke(_shootPower);
+    }
+
+    private void ShieldValueChange(int quantity)
+    {
+        if (_shield + quantity < _maxShield)
+        {
+            _shield += quantity;
+        }
+        else
+        {
+            _shield = _maxShield;
+        }
+        EventManager.OnShieldChange?.Invoke(_shield);
+        if (_shield <= 0)
+        {
+            EventManager.OnPlayerDeath?.Invoke();
+        }
     }
     
 

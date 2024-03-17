@@ -34,7 +34,6 @@ public class ClassDrone1 : MonoBehaviour
     }
     private void Start()
     {
-        
         _currentState = PatrollingState;
         _currentState.EnterState(this);
     }

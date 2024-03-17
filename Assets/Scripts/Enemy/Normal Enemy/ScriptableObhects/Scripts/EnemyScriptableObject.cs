@@ -10,9 +10,6 @@ public class EnemyScriptableObject : ScriptableObject
     public float FireRate;
     public float MovementSpeed;
     
-    [Header("Physics Variables")]
-    public float KnockbackForce;
-    
     [Header("Game Mecchanics Variables")]
     public int score;
     public GameObject[] PUp_droppable;

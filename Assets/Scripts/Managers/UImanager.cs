@@ -11,7 +11,6 @@ public class UImanager : MonoBehaviour
     [SerializeField] private TMP_Text _weaponText;
     [SerializeField] private TMP_Text _ammoText;
     [SerializeField] private TMP_Text _powerText;
-    [SerializeField] private TMP_Text _hpText;
     [SerializeField] private TMP_Text _shieldText;
     [SerializeField] private TMP_Text _scoreText;
     private int _score;
@@ -22,7 +21,6 @@ public class UImanager : MonoBehaviour
         EventManager.OnWeaponSwap += WeaponSwap;
         EventManager.OnShooting += WeaponAmmo;
         EventManager.OnPowerChange += PowerDecrease;
-        EventManager.OnHealthChange += HpChange;
         EventManager.OnShieldChange += ShieldChange;
         EventManager.onScoreChange += ScoreChange;
     }
@@ -31,7 +29,6 @@ public class UImanager : MonoBehaviour
         EventManager.OnWeaponSwap -= WeaponSwap;
         EventManager.OnShooting -= WeaponAmmo;
         EventManager.OnPowerChange -= PowerDecrease;
-        EventManager.OnHealthChange -= HpChange;
         EventManager.OnShieldChange -= ShieldChange;
         EventManager.onScoreChange -= ScoreChange;
     }
@@ -56,10 +53,6 @@ public class UImanager : MonoBehaviour
     private void PowerDecrease(int quantity)
     {
         _powerText.text = "Laser Power: " + quantity;
-    }
-    private void HpChange(int quantity)
-    {
-        _hpText.text = "Hp Value: " + quantity;
     }
     private void ShieldChange(int quantity)
     {

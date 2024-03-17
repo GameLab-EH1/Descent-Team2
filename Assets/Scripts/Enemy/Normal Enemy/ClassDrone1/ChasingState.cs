@@ -1,3 +1,4 @@
+using UnityEditor.Search;
 using UnityEditor.UI;
 using UnityEngine;
 
@@ -25,7 +26,7 @@ public class ChasingState : CurrentState
         LookAtLerped(classDrone1.transform,classDrone1._ShipController.transform, 3f);
         if (isPlayerInRange())
         {
-
+            Shoot();
             if (Vector3.Distance(classDrone1.transform.position, classDrone1._ShipController.transform.position) >
                 classDrone1._scriptableObject.StoppingDistance)
             {
@@ -79,6 +80,10 @@ public class ChasingState : CurrentState
         {
             classDrone1.SwitchState(classDrone1.PatrollingState);
         }
+    }
+    private void Shoot()
+    {
+        
     }
     
     private bool isPlayerInRange()
