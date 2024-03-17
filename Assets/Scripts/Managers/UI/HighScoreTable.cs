@@ -9,6 +9,7 @@ public class HighScoreTable : MonoBehaviour
 
     [SerializeField] private List<TextMeshProUGUI> _names;
     [SerializeField] private List<TextMeshProUGUI> _scores;
+    [SerializeField] private GameObject _menuButton;
 
     private string _leaderboardKey = "23463ccbe17a46b0b5ae4f2ebe136e032e18f055d1a2276d1c74b6013e1ad38b";
     private void Start()
@@ -36,5 +37,9 @@ public class HighScoreTable : MonoBehaviour
             username.Substring(0, 4);
             GetLeaderBoard();
         }));
+    }
+    public void mainMenuButton()
+    {
+        _menuButton.SetActive(true);
     }
 }

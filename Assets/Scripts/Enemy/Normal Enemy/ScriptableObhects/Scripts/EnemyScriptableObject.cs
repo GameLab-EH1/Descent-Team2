@@ -7,8 +7,9 @@ public class EnemyScriptableObject : ScriptableObject
 {
     [Header("Statistic Variables")]
     public int Hp;
-    public float FireRate;
+    public float FireDelay;
     public float MovementSpeed;
+    public int Dmg;
     
     [Header("Game Mecchanics Variables")]
     public int score;

@@ -79,7 +79,7 @@ public class ShipLogic : MonoBehaviour
         EventManager.OnShieldChange?.Invoke(_shield);
         if (_shield <= 0)
         {
-            EventManager.OnPlayerDeath?.Invoke();
+            EventManager.OnGameEnd?.Invoke(false);
         }
     }
     

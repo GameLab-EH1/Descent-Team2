@@ -23,6 +23,8 @@ public class ClassDrone1 : MonoBehaviour
     [SerializeField] private HealthManager _healthManager;
 
     [SerializeField] private WeaponsManager _weaponsManager;
+
+    public Transform[] shootingPoints;
     
     
     public EnemyScriptableObject _scriptableObject;
@@ -56,6 +58,15 @@ public class ClassDrone1 : MonoBehaviour
     {
         _currentState = state;
         state.EnterState(this);
+    }
+    public void Shoot()
+    {
+        for (int i = 0; i < shootingPoints.Length; i++)
+        {
+            GameObject bullet = Instantiate(_scriptableObject.BulletPref, shootingPoints[i].position, shootingPoints[i].rotation);
+            EnemyBullet1 enemyBullet1 = bullet.GetComponent<EnemyBullet1>();
+            enemyBullet1.Dmg = _scriptableObject.Dmg;
+        }
     }
     
     

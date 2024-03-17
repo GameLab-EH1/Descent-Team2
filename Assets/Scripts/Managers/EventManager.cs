@@ -21,7 +21,7 @@ public class EventManager : MonoBehaviour
 
     public static Action<int> onScoreChange;
 
-    public static Action OnPlayerDeath;
+    public static Action<bool> OnGameEnd;
 
     
 }

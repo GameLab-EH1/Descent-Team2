@@ -7,7 +7,8 @@ public class ChasingState : CurrentState
     private ClassDrone1 _classDrone1;
     private Vector3 _playerPos, _rotatingAround;
     private bool _isPlayerLost;
-    private float _rotTimer;
+    private float _rotTimer, _shootTimer;
+    
 
     public ChasingState(ClassDrone1 classDrone1)
     {
@@ -23,6 +24,7 @@ public class ChasingState : CurrentState
 
     public override void UpdateState(ClassDrone1 classDrone1)
     {
+        _shootTimer += Time.deltaTime;
         LookAtLerped(classDrone1.transform,classDrone1._ShipController.transform, 3f);
         if (isPlayerInRange())
         {
@@ -83,9 +85,14 @@ public class ChasingState : CurrentState
     }
     private void Shoot()
     {
-        
+        if (_shootTimer > _classDrone1._scriptableObject.FireDelay)
+        {
+            _classDrone1.Shoot();
+            _shootTimer = 0;
+        }
     }
     
+
     private bool isPlayerInRange()
     {
         Vector3 toPlayer = _classDrone1._ShipController.transform.position - _classDrone1.transform.position;
