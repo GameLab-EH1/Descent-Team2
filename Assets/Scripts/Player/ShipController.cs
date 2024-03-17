@@ -138,7 +138,7 @@ public class ShipController : MonoBehaviour
     }
     public void OnChangingWeapon(InputAction.CallbackContext cont)
     {
-        if (cont.canceled)
+        if (cont.performed)
         {
             _currentWeapon = WeaponsManager.WeaponUsing;
             if (_currentWeapon == 2)
