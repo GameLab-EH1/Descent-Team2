@@ -173,7 +173,7 @@ public class ShipController : MonoBehaviour
     }
     public void OnChangingRocket(InputAction.CallbackContext cont)
     {
-        if (cont.canceled)
+        if (cont.performed)
         {
             WeaponsManager.ChangeRocket();
         }
