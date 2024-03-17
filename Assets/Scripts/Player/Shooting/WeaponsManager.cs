@@ -10,7 +10,7 @@ public class WeaponsManager : MonoBehaviour
     [Header("Weapons")]
     [SerializeField, Tooltip("Weapons")] private GameObject[] _bullets;
     [SerializeField] private float[] _fireDelay;
-    public int[] _dmg;
+    public int[] Dmg;
     public int[] Ammo;
     [SerializeField] private int[] _chargingAmmo;
     [SerializeField] private bool[] _unlockedWeapons;
@@ -23,6 +23,10 @@ public class WeaponsManager : MonoBehaviour
     [SerializeField] private Transform[] _shootingPointsW1;
     [SerializeField] private Transform _shootingPointsW2;
     [SerializeField] private Transform _shootingPointsW3;
+
+    [SerializeField] private int _maxPowerUpLvlCounter;
+    [SerializeField] private int _dmgAddedOnPowerLvlUp;
+    private int _currentPowerUpLvl;
 
     private bool isLaserShootable = true;
     
@@ -54,10 +58,12 @@ public class WeaponsManager : MonoBehaviour
     private void OnEnable()
     {
         EventManager.OnLaserNoBullet += LaserNotShootable;
+        EventManager.OnPowerBoostLvl += PowerLvlUp;
     }
     private void OnDisable()
     {
         EventManager.OnLaserNoBullet -= LaserNotShootable;
+        EventManager.OnPowerBoostLvl -= PowerLvlUp;
     }
 
 
@@ -67,7 +73,14 @@ public class WeaponsManager : MonoBehaviour
         {
             do
             {
-                WeaponUsing++;
+                if (WeaponUsing == 2)
+                {
+                    WeaponUsing = 0;
+                }
+                else
+                {
+                    WeaponUsing++;
+                }
             } while (!_unlockedWeapons[WeaponUsing]);
         }
         else if (_unlockedWeapons[weaponIndex])
@@ -113,7 +126,7 @@ public class WeaponsManager : MonoBehaviour
                 bullet.transform.position = _shootingPointsW1[i].position;
                 bullet.transform.rotation = _shootingPointsW1[i].rotation;
                 LaserBullet bulScript = bullet.GetComponent<LaserBullet>();
-                bulScript.Dmg = _dmg[WeaponUsing];
+                bulScript.Dmg = Dmg[WeaponUsing];
                 
                 bullet.SetActive(true);
                 Debug.Log("sparoArma1");
@@ -131,7 +144,7 @@ public class WeaponsManager : MonoBehaviour
                 HealthManager enemy = hit.transform.GetComponent<HealthManager>();
                 if (enemy != null)
                 {
-                    enemy.GotDmg(_dmg[WeaponUsing]);
+                    enemy.GotDmg(Dmg[WeaponUsing]);
                 } 
                 GameObject effect = Instantiate(_hitEffect, hit.point, quaternion.identity); 
                 Destroy(effect , 1f);
@@ -153,7 +166,7 @@ public class WeaponsManager : MonoBehaviour
             bullet.transform.position = _shootingPointsW3.position;
             bullet.transform.rotation = _shootingPointsW3.rotation;
             LaserBullet bulScript = bullet.GetComponent<LaserBullet>();
-            bulScript.Dmg = _dmg[WeaponUsing];
+            bulScript.Dmg = Dmg[WeaponUsing];
 
             bullet.SetActive(true);
             EventManager.OnLaserShooting?.Invoke(false);
@@ -214,6 +227,16 @@ public class WeaponsManager : MonoBehaviour
     {
         _rocketAmmo[rocIndex] += AmmoToRecharge;
     }
+    
+    private void PowerLvlUp()
+    {
+        if (_currentPowerUpLvl < _maxPowerUpLvlCounter)
+        {
+            Dmg[0] += _dmgAddedOnPowerLvlUp;
+            _currentPowerUpLvl++;
+        }
+    }
+    
     private void LaserNotShootable()
     {
         isLaserShootable = false;

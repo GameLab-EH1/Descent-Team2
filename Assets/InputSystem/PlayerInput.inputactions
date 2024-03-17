@@ -106,8 +106,17 @@
                 },
                 {
                     "name": "WeaponJoystic",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "9ac36e58-fab2-44e6-b388-6b4705165d2c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=2,pressPoint=0.3)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "e20f1b90-dd5e-4140-8167-9fde107c9d9b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Hold(duration=2,pressPoint=0.3)",
@@ -508,6 +517,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "RocketSwap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0cf71632-6f8f-45d8-bb76-9dbba531cae5",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8c370ebc-7d9e-42f3-8b42-83c5e6a95d81",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

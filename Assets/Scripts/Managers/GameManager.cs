@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,25 +17,22 @@ public class GameManager : MonoBehaviour
         EventManager.OnGameEnd -= GameEnd;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            GamePause();
-        }
-    }
+    
 
-    private void GamePause()
+    public void GamePause(InputAction.CallbackContext cont)
     {
-        if (Time.timeScale == 0f)
+        if (cont.started)
         {
-            Time.timeScale = 1f;
-            _pauseMenu.SetActive(false);
-        }
-        else
-        {
-            Time.timeScale = 0f;
-            _pauseMenu.SetActive(true);
+            if (Time.timeScale == 0f)
+            {
+                Time.timeScale = 1f;
+                _pauseMenu.SetActive(false);
+            }
+            else
+            {
+                Time.timeScale = 0f;
+                _pauseMenu.SetActive(true);
+            }
         }
     }
 

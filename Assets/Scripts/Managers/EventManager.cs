@@ -14,6 +14,8 @@ public class EventManager : MonoBehaviour
     public static Action<int> OnPowerChange;
     public static Action<int, bool> OnPowerPickup;
     
+    public static Action OnPowerBoostLvl;
+    
     public static Action<int> OnShieldChange;
     public static Action<int> OnShieldPickOrDmg;
 
@@ -22,6 +24,5 @@ public class EventManager : MonoBehaviour
     public static Action<int> onScoreChange;
 
     public static Action<bool> OnGameEnd;
-
     
 }
