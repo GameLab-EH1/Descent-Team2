@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class RedKeyScript : MonoBehaviour
 {
+    [SerializeField] private int _scoreToAdd;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 30)
         {
             EventManager.OnRedKeyPickup?.Invoke();
-            Debug.Log("open");
+            EventManager.onScoreChange?.Invoke(_scoreToAdd);
             Destroy(gameObject);
         }
     }

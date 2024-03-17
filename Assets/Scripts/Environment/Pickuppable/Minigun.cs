@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Minigun : MonoBehaviour
 {
+    [SerializeField] private int _scoreToAdd;
     private void OnTriggerEnter(Collider other)
     {
         WeaponsManager weaponsManager = other.transform.GetComponent<WeaponsManager>();
@@ -16,6 +17,7 @@ public class Minigun : MonoBehaviour
             {
                 EventManager.OnShooting?.Invoke(weaponsManager.Ammo[1]);
             }
+            EventManager.onScoreChange?.Invoke(_scoreToAdd);
             Destroy(gameObject);
         }
     }
