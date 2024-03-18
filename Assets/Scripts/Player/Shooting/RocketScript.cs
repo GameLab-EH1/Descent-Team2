@@ -66,7 +66,7 @@ public class RocketScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer != _targetLayer)
+        if (other.gameObject.layer != 30)
         {
             {
                 HealthManager enemy = other.transform.GetComponent<HealthManager>();
