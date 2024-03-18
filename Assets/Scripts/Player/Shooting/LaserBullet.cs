@@ -13,7 +13,7 @@ public class LaserBullet : MonoBehaviour
     {
         transform.Translate(Vector3.forward * (_movementSpeed * Time.deltaTime));
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.layer != 30)
         {
@@ -22,8 +22,9 @@ public class LaserBullet : MonoBehaviour
                 if (enemy != null)
                 {
                     enemy.GotDmg(Dmg);
-                    gameObject.SetActive(false);
                 }
+                
+                gameObject.SetActive(false);
             }
         }
     }
