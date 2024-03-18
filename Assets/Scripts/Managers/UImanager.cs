@@ -35,7 +35,7 @@ public class UImanager : MonoBehaviour
 
     private void WeaponSwap(int weaponIndex)
     {
-        _weaponText.text = "You are using: " + _weaponName[weaponIndex];
+        _weaponText.text = _weaponName[weaponIndex];
         if (weaponIndex != 1)
         {
             _ammoText.gameObject.SetActive(false);
@@ -47,21 +47,21 @@ public class UImanager : MonoBehaviour
     }
     private void WeaponAmmo(int quantity)
     {
-        _ammoText.text = "Ammo: " + quantity;
+        _ammoText.text = quantity.ToString();
     }
 
     private void PowerDecrease(int quantity)
     {
-        _powerText.text = "Laser Power: " + quantity;
+        _powerText.text = quantity.ToString();
     }
     private void ShieldChange(int quantity)
     {
-        _shieldText.text = "Shield Value: " + quantity;
+        _shieldText.text = quantity.ToString();
     }
     
     private void ScoreChange(int scoreToAdd)
     {
         _score += scoreToAdd;
-        _scoreText.text = "Score: " + _score;
+        _scoreText.text = scoreToAdd.ToString();
     }
 }
