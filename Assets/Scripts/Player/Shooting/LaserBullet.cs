@@ -13,7 +13,7 @@ public class LaserBullet : MonoBehaviour
     {
         transform.Translate(Vector3.forward * (_movementSpeed * Time.deltaTime));
     }
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer != 30)
         {

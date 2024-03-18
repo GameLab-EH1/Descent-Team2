@@ -73,8 +73,9 @@ public class RocketScript : MonoBehaviour
                 if (enemy != null)
                 {
                     enemy.GotDmg(Dmg);
-                    Destroy(gameObject);
                 }
+                
+                Destroy(gameObject);
             }
         }
     }
