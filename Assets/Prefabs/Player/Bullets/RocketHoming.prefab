@@ -121,8 +121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dmg: 0
   IsNormalRocket: 0
-  _movementSpeed: 25
-  _rotateSpeed: 200
+  _movementSpeed: 50
+  _rotateSpeed: 250
   _targetLayer:
     serializedVersion: 2
     m_Bits: 268435456
