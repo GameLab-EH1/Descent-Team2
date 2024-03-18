@@ -4752,8 +4752,8 @@ MonoBehaviour:
   _maxPowerUpLvlCounter: 1
   _dmgAddedOnPowerLvlUp: 10
   _rockets:
-  - {fileID: 674956266225932752, guid: c976d79c192b7de4b93937de1d9637fd, type: 3}
-  - {fileID: 674956266225932752, guid: fcb76195e8a71a548ac38c40435902bd, type: 3}
+  - {fileID: 115657514961826599, guid: 3eb311ac08981404cb800955e509b931, type: 3}
+  - {fileID: 7254381112919894662, guid: b2e5f59b9983ce143975f2dfa822ac71, type: 3}
   _rocketDelay: 1
   _rocketAmmo: 0500000005000000
   _dmgRocket: 6400000050000000
