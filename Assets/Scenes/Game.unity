@@ -3572,6 +3572,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9657bd9612dd4cd469898c1cbe7b94d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shields:
+  - {fileID: 22396916}
+  - {fileID: 2100133862}
+  - {fileID: 1264468880}
+  - {fileID: 81456212}
+  _energy:
+  - {fileID: 1446668100}
+  - {fileID: 397838600}
+  - {fileID: 2106373908}
+  - {fileID: 1232380289}
+  - {fileID: 1249995147}
+  _redKey: {fileID: 1054507340}
   _weaponName:
   - Laser
   - Minigun
@@ -6275,6 +6287,10 @@ PrefabInstance:
     - target: {fileID: 1414662946998574178, guid: ebf6518afe84ef24c85500f3f05e7d55, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721051536206745028, guid: ebf6518afe84ef24c85500f3f05e7d55, type: 3}
+      propertyPath: m_Layer
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2006617195184397368, guid: ebf6518afe84ef24c85500f3f05e7d55, type: 3}
       propertyPath: m_StaticEditorFlags

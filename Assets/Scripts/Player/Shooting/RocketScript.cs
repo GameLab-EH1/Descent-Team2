@@ -20,7 +20,6 @@ public class RocketScript : MonoBehaviour
         if (IsNormalRocket)
         {
             transform.Translate(Vector3.forward * (_movementSpeed * Time.deltaTime));
-            Debug.Log("helloscemo2");
         }
         else
         {
@@ -32,10 +31,8 @@ public class RocketScript : MonoBehaviour
                 
                 Quaternion lookRotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, _rotateSpeed * Time.deltaTime);
-                Debug.Log("helloscemo");
             }
             transform.Translate(Vector3.forward * _movementSpeed * Time.deltaTime);
-            Debug.Log("helloscemo1");
         }
     }
     void FindTarget()
@@ -66,7 +63,7 @@ public class RocketScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer != 30)
+        if (other.gameObject.layer != 30 && other.gameObject.layer != 25)
         {
             {
                 HealthManager enemy = other.transform.GetComponent<HealthManager>();

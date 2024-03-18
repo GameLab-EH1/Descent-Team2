@@ -15,7 +15,7 @@ public class LaserBullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer != 30)
+        if (other.gameObject.layer != 30 && other.gameObject.layer != 25)
         {
             {
                 HealthManager enemy = other.transform.GetComponent<HealthManager>();
