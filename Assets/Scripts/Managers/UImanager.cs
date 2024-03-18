@@ -96,13 +96,19 @@ public class UImanager : MonoBehaviour
             {
                 _energy[i].SetActive(false);
             }
-        }else
+        }else if (quantity > 0)
         {
             for (int i = 0; i < _energy.Length - 4; i++)
             {
                 _energy[i].SetActive(true);
             }
             for (int i = _energy.Length - 4; i < _energy.Length; i++)
+            {
+                _energy[i].SetActive(false);
+            }
+        }else
+        {
+            for (int i = 0; i < _energy.Length; i++)
             {
                 _energy[i].SetActive(false);
             }
