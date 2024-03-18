@@ -53,8 +53,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.2220383, y: 1, z: 2.2219086}
-  m_Center: {x: -0.0133628845, y: 0, z: -0.01826477}
+  m_Size: {x: 2.2220383, y: 3.0176086, z: 2.2219086}
+  m_Center: {x: -0.0133628845, y: 0.034923553, z: -0.01826477}
 --- !u!114 &3406102401324787318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,8 +67,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e3e43b8144f9674f9e04ee98e120629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _energyToRecharge: 50
-  _scoreToAdd: 0
+  _energyToRecharge: 25
+  _scoreToAdd: 500
 --- !u!1001 &274607847583289779
 PrefabInstance:
   m_ObjectHideFlags: 0

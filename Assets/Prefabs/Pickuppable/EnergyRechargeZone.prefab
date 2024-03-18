@@ -66,4 +66,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602031131f9bda0488f3c3d17d84a2b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _secToRecharge1: 0.2
+  _secToRecharge1: 0.05
