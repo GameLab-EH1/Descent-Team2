@@ -26,6 +26,7 @@ MonoBehaviour:
   VisualAngle: 90
   StoppingDistance: 5
   RotAroundDelay: 3
+  IsChasingDrone: 1
   BulletPref: {fileID: 674956266225932752, guid: 53900e015820da04b958e44f616ca476, type: 3}
   PlayerLayer:
     serializedVersion: 2
