@@ -4363,7 +4363,7 @@ MonoBehaviour:
   - 1
   - 0.01
   - 5
-  Dmg: 
+  Dmg: 03000000010000000a000000
   Ammo: 90010000e803000064000000
   _chargingAmmo: 64000000e803000032000000
   _unlockedWeapons: 010001
