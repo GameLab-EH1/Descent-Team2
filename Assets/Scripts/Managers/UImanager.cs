@@ -158,6 +158,6 @@ public class UImanager : MonoBehaviour
     private void ScoreChange(int scoreToAdd)
     {
         _score += scoreToAdd;
-        _scoreText.text = scoreToAdd.ToString();
+        _scoreText.text = _score.ToString();
     }
 }
