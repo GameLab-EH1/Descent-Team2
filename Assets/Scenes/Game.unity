@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -329,13 +329,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38609833}
-  m_LocalRotation: {x: 0.012530859, y: -0.095181346, z: 0.12992328, w: 0.9868655}
+  m_LocalRotation: {x: -0.106821716, y: -0.25103182, z: 0.10970184, w: 0.95579165}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1202512987}
-  m_LocalEulerAnglesHint: {x: 2.835, y: -10.651, z: 14.736}
+  m_LocalEulerAnglesHint: {x: -8.576, y: -30.597, z: 15.445}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 177.6, y: 116}
@@ -370,8 +370,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294962432
+  m_fontColor: {r: 0, g: 0.92941177, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -889,8 +889,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294962432
+  m_fontColor: {r: 0, g: 0.92941177, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1063,8 +1063,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294962432
+  m_fontColor: {r: 0, g: 0.9278722, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2833,7 +2833,7 @@ RectTransform:
   m_GameObject: {fileID: 1173001715}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75248, y: 0.75248, z: 0.75248}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 966558408}
@@ -2872,8 +2872,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294962432
+  m_fontColor: {r: 0, g: 0.92941177, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3296,16 +3296,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271828476}
-  m_LocalRotation: {x: -0, y: -0, z: 0.17098406, w: 0.98527384}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.106824115, y: -0.25102764, z: 0.10970201, w: 0.9557925}
+  m_LocalPosition: {x: 0, y: 0, z: -0.09999995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1202512987}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 19.69}
+  m_LocalEulerAnglesHint: {x: -8.576, y: -30.597, z: 15.445}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 191.3, y: 212}
+  m_AnchoredPosition: {x: 191, y: 211.9}
   m_SizeDelta: {x: 350, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1271828478
@@ -3337,8 +3337,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294962432
+  m_fontColor: {r: 0, g: 0.92941177, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4282,7 +4282,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 1
-  m_AngularDrag: 1
+  m_AngularDrag: 3
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -4311,12 +4311,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a155c48d9c103ca4ea6efd3e762a81f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _yawForce: 10
-  _pitchForce: 10
-  _rollForce: 10
-  _thrustForce: 800
-  _upDownForce: 500
-  _strafeForce: 400
+  _yawForce: 30
+  _pitchForce: 30
+  _rollForce: 30
+  _thrustForce: 1200
+  _upDownForce: 800
+  _strafeForce: 800
   _thrustReduction: 0.5
   _upDownReduction: 0.5
   _strafeReduction: 0.5
@@ -4374,8 +4374,8 @@ MonoBehaviour:
   _fireDelay:
   - 0.3
   - 0.01
-  - 5
-  Dmg: 03000000010000000a000000
+  - 1
+  Dmg: 14000000020000000a000000
   Ammo: 90010000e803000064000000
   _chargingAmmo: 64000000e803000032000000
   _unlockedWeapons: 010001
@@ -4387,14 +4387,14 @@ MonoBehaviour:
   - {fileID: 62442958}
   _shootingPointsW2: {fileID: 1505972765}
   _shootingPointsW3: {fileID: 1505972765}
-  _maxPowerUpLvlCounter: 0
-  _dmgAddedOnPowerLvlUp: 0
+  _maxPowerUpLvlCounter: 1
+  _dmgAddedOnPowerLvlUp: 10
   _rockets:
   - {fileID: 674956266225932752, guid: c976d79c192b7de4b93937de1d9637fd, type: 3}
   - {fileID: 674956266225932752, guid: fcb76195e8a71a548ac38c40435902bd, type: 3}
-  _rocketDelay: 5
+  _rocketDelay: 1
   _rocketAmmo: 0500000005000000
-  _dmgRocket: 0a00000014000000
+  _dmgRocket: 6400000050000000
 --- !u!114 &1507663308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4410,7 +4410,7 @@ MonoBehaviour:
   _shield: 100
   _maxShield: 200
   _shootPower: 100
-  _maxShootPower: 150
+  _maxShootPower: 200
   _uiManager: {fileID: 1350800443}
 --- !u!136 &1507663309
 CapsuleCollider:

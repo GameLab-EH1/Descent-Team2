@@ -129,7 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712eebfc793ae95448ffa51af60930eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shieldToRecharge: 50
+  _shieldToRecharge: 25
+  _scoreToAdd: 500
 --- !u!135 &6555660318939389998
 SphereCollider:
   m_ObjectHideFlags: 0

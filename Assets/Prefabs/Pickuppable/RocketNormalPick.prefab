@@ -151,4 +151,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isNormal: 1
-  _ammoToCharge: 1
+  _ammoToCharge: 4
+  _scoreToAdd: 500

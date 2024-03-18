@@ -68,7 +68,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isNormal: 0
-  _ammoToCharge: 1
+  _ammoToCharge: 4
+  _scoreToAdd: 500
 --- !u!1 &3385520786842069327
 GameObject:
   m_ObjectHideFlags: 0
