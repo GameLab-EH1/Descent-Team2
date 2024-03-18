@@ -22,6 +22,7 @@ public class EnemyScriptableObject : ScriptableObject
     public float VisualAngle;
     public float StoppingDistance;
     public float RotAroundDelay;
+    public bool IsChasingDrone;
     
     [Header("Shooting Variables")]
     public GameObject BulletPref;

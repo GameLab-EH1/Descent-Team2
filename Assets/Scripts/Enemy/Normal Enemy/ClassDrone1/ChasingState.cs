@@ -45,26 +45,28 @@ public class ChasingState : CurrentState
                     Vector3.MoveTowards(classDrone1.transform.position, oppositeDirection,
                         classDrone1._scriptableObject.MovementSpeed * Time.deltaTime);
             }
-            
-            if (Vector3.Distance(classDrone1.transform.position, classDrone1._ShipController.transform.position) >
-                classDrone1._scriptableObject.StoppingDistance - 1)
+            if (classDrone1._scriptableObject.IsChasingDrone)
             {
-                if (_rotTimer > classDrone1._scriptableObject.RotAroundDelay)
+                if (Vector3.Distance(classDrone1.transform.position, classDrone1._ShipController.transform.position) >
+                    classDrone1._scriptableObject.StoppingDistance - 1)
                 {
-                    _rotatingAround = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-                    _rotTimer = 0;
+                    if (_rotTimer > classDrone1._scriptableObject.RotAroundDelay)
+                    {
+                        _rotatingAround = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+                        _rotTimer = 0;
+                    }
+                    else
+                    {
+                        _rotTimer += Time.deltaTime;
+                    }
+                    Vector3 moveDirection = _rotatingAround.normalized * (classDrone1._scriptableObject.MovementSpeed * Time.deltaTime * 10);
+                    
+                    if (Physics.Raycast(classDrone1.transform.position, moveDirection, moveDirection.magnitude))
+                    {
+                        _rotatingAround = -_rotatingAround;
+                    }
+                    classDrone1.transform.RotateAround(classDrone1._ShipController.transform.position, _rotatingAround, (classDrone1._scriptableObject.MovementSpeed * Time.deltaTime) * 10);
                 }
-                else
-                {
-                    _rotTimer += Time.deltaTime;
-                }
-                Vector3 moveDirection = _rotatingAround.normalized * (classDrone1._scriptableObject.MovementSpeed * Time.deltaTime * 10);
-                
-                if (Physics.Raycast(classDrone1.transform.position, moveDirection, moveDirection.magnitude))
-                {
-                    _rotatingAround = -_rotatingAround;
-                }
-                classDrone1.transform.RotateAround(classDrone1._ShipController.transform.position, _rotatingAround, (classDrone1._scriptableObject.MovementSpeed * Time.deltaTime) * 10);
             }
         }
         else

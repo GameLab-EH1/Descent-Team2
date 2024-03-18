@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fccca457f157c0547936d6a9da99ff7c, type: 3}
+  m_Name: E_ClassDrone2
+  m_EditorClassIdentifier: 
+  Hp: 300
+  FireDelay: 2.5
+  MovementSpeed: 2
+  Dmg: -15
+  score: 1500
+  PUp_droppable:
+  - {fileID: 7523556925452115900, guid: d0fa4c65fe654b04c88025e476fdc23a, type: 3}
+  - {fileID: 3604663821196170162, guid: 2ac160bd6a5f79b469c80e5832a4d16a, type: 3}
+  - {fileID: 5197198670086244527, guid: 66177f57677e57046bfa1b7c6eb8c721, type: 3}
+  - {fileID: 1981018200469254491, guid: 36d1de42e1b1c8a49b775c8bf7075699, type: 3}
+  - {fileID: 6896781951041894492, guid: 21dc3280b74fc454ab859628692c3950, type: 3}
+  PUp_DropRate: 10
+  TimeBeforeMoving: 1
+  VisualRange: 40
+  VisualAngle: 120
+  StoppingDistance: 3
+  RotAroundDelay: 3
+  BulletPref: {fileID: 0}
+  PlayerLayer:
+    serializedVersion: 2
+    m_Bits: 0
