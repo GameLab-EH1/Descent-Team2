@@ -3,7 +3,17 @@ guid: 604a8ac53f63c7649ac45cf83654fcf3
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shield1
+    second: {fileID: 2100000, guid: f1f04b44d21a2214ea30cfb64470d879, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Shield_standardSurface1_BaseColor.1001
+    second: {fileID: 2800000, guid: 116ce773bbe2a0440977e97d3e7f777f, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
