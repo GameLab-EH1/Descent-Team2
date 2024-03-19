@@ -39,7 +39,7 @@ public class BossScript : MonoBehaviour
             {
                 if (IsPlayerInRange())
                 {
-                    Shoot();
+                    //Shoot();
                 }
             }
         }
