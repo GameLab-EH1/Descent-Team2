@@ -12,13 +12,13 @@ public class BossScript : MonoBehaviour
     [SerializeField] private float _dmg;
     [SerializeField] private GameObject _bulletPref;
     [SerializeField] private LayerMask _playerLayer;
-    private Transform _playerPos;
+    private ShipController _shipController;
     private bool _isDoorUnlocked;
     private float _timer;
     
     private void Start()
     {
-        _playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        _shipController = GameObject.FindGameObjectWithTag("Player").GetComponent<ShipController>();
     }
     private void OnEnable()
     {
@@ -56,18 +56,22 @@ public class BossScript : MonoBehaviour
 
     private bool IsPlayerInRange()
     {
-        float distance = Vector3.Distance(transform.position, _playerPos.position) + 10;
-        if (Physics.Raycast(transform.position, _playerPos.position, distance, _playerLayer))
+        float distance = Vector3.Distance(transform.position, _shipController.transform.position) + 10;
+        Debug.DrawRay(transform.position, _shipController.transform.position, Color.green);
+        if (Physics.Raycast(transform.position, _shipController.transform.position, 200, _playerLayer))
         {
+            Debug.Log("player there");
             return true;
         }
+        Debug.Log("u dumb");
         return false;
     }
 
     private void Shoot()
     {
+        Debug.Log("piu piu piu");
         GameObject bullet = Instantiate(_bulletPref, transform.position, quaternion.identity);
-        Vector3 directionToPlayer = (_playerPos.position - transform.position).normalized;
+        Vector3 directionToPlayer = (_shipController.transform.position - transform.position).normalized;
         bullet.transform.forward = directionToPlayer;
     }
 
