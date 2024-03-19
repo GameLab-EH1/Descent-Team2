@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyBullet1 : MonoBehaviour
 {
     [SerializeField] private float _movementSpeed;
-    [HideInInspector] public int Dmg;
+    [Header("Only For Boss")]public int Dmg;
 
     
     void Update()

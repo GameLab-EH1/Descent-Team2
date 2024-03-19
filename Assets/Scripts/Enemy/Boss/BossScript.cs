@@ -42,6 +42,11 @@ public class BossScript : MonoBehaviour
                 }
             }
         }
+        if (Hp <= 0)
+        {
+            EventManager.OnBossDeath?.Invoke();
+            Destroy(gameObject);
+        }
     }
 
     private void DoorUnlocked()
