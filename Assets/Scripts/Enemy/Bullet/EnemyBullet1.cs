@@ -18,7 +18,11 @@ public class EnemyBullet1 : MonoBehaviour
         {
             {
                 EventManager.OnShieldPickOrDmg?.Invoke(Dmg);
+                Destroy(gameObject);
             }
+        }else if (other.gameObject.layer != 20 && other.gameObject.layer != 28)
+        {
+            Destroy(gameObject);
         }
     }
 }

@@ -604,7 +604,7 @@ GameObject:
   - component: {fileID: 6567179560200276382}
   - component: {fileID: 6722006592840157318}
   - component: {fileID: 7921874063319997327}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: EnemyIA 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

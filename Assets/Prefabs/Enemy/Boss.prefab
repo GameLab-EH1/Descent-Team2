@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8990923613203935596}
   - component: {fileID: 6782186135704295716}
   - component: {fileID: 8857167655050032890}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,6 +53,7 @@ MonoBehaviour:
   _playerLayer:
     serializedVersion: 2
     m_Bits: 1073741824
+  _score: 0
 --- !u!65 &8857167655050032890
 BoxCollider:
   m_ObjectHideFlags: 0

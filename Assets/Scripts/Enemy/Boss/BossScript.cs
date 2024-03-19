@@ -12,6 +12,7 @@ public class BossScript : MonoBehaviour
     [SerializeField] private float _dmg;
     [SerializeField] private GameObject _bulletPref;
     [SerializeField] private LayerMask _playerLayer;
+    [SerializeField] private int _score;
     private ShipController _shipController;
     private bool _isDoorUnlocked;
     private float _timer;
@@ -45,6 +46,7 @@ public class BossScript : MonoBehaviour
         if (Hp <= 0)
         {
             EventManager.OnBossDeath?.Invoke();
+            EventManager.onScoreChange?.Invoke(_score);
             Destroy(gameObject);
         }
     }
@@ -56,23 +58,24 @@ public class BossScript : MonoBehaviour
 
     private bool IsPlayerInRange()
     {
+        Vector3 direction = _shipController.transform.position - transform.position;
         float distance = Vector3.Distance(transform.position, _shipController.transform.position) + 10;
-        Debug.DrawRay(transform.position, _shipController.transform.position, Color.green);
-        if (Physics.Raycast(transform.position, _shipController.transform.position, 200, _playerLayer))
+        Debug.DrawRay(transform.position, direction, Color.green);
+        if (Physics.Raycast(transform.position, direction, distance, _playerLayer))
         {
-            Debug.Log("player there");
+           // Debug.Log("player there");
             return true;
         }
-        Debug.Log("u dumb");
+        //Debug.Log("u dumb");
         return false;
     }
 
-    private void Shoot()
-    {
-        Debug.Log("piu piu piu");
-        GameObject bullet = Instantiate(_bulletPref, transform.position, quaternion.identity);
-        Vector3 directionToPlayer = (_shipController.transform.position - transform.position).normalized;
-        bullet.transform.forward = directionToPlayer;
-    }
+    // private void Shoot()
+    // {
+    //     Debug.Log("piu piu piu");
+    //     GameObject bullet = Instantiate(_bulletPref, transform.position, quaternion.identity);
+    //     Vector3 directionToPlayer = (_shipController.transform.position - transform.position).normalized;
+    //     bullet.transform.forward = directionToPlayer;
+    // }
 
 }

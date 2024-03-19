@@ -128,10 +128,8 @@ public class ChasingState : CurrentState
         RaycastHit hit;
         if (Physics.Raycast(self.position, direction, out hit, maxDistance + 2, _classDrone1._scriptableObject.PlayerLayer))
         {
-            Debug.Log(hit.transform.name);
             return true;
         }
-        Debug.Log(hit.transform.name);
         return false;
     }
     private bool isDirectionClear(Transform self, Vector3 direction)
