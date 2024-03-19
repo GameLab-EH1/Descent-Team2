@@ -3,7 +3,32 @@ guid: b879a1acaecd48444a54f9c27db7af3e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rocket_one
+    second: {fileID: 2100000, guid: 5c4da002b911308498fa23365b1cdd65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: scatola2
+    second: {fileID: 2100000, guid: 705e910ff00217a43b3ccefd3d4bfe56, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rocket_standardSurface1_BaseColor.1001
+    second: {fileID: 2800000, guid: 4e939f3938fed524b9096bc178db3131, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: scatola_coriandoli_standardSurface1_MetallicSmoothness.1001
+    second: {fileID: 2800000, guid: 1918f46b91d3a0c4abb1e980cf79900f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: scatola_coriandoli_standardSurface1_Normal.1001
+    second: {fileID: 2800000, guid: 223b34c16eb2fe648a05675c43b90457, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
