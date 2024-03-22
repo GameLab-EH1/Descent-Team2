@@ -3994,6 +3994,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc70e7ca10252614ea2111575493ff66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEffectSource: {fileID: 0}
+  musicSource: {fileID: 2070147461959601901}
 --- !u!1 &1388207046
 GameObject:
   m_ObjectHideFlags: 0
@@ -6510,6 +6512,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+--- !u!82 &2070147461959601901 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2759480955534135646, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+  m_PrefabInstance: {fileID: 2070147461959601900}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2118098165263485095
 PrefabInstance:
   m_ObjectHideFlags: 0
