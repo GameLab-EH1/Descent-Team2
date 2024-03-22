@@ -145,7 +145,13 @@ public class WeaponsManager : MonoBehaviour
                 if (enemy != null)
                 {
                     enemy.GotDmg(Dmg[WeaponUsing]);
-                } 
+                }
+                SecretDoorScript door = hit.transform.GetComponent<SecretDoorScript>();
+                if (door != null)
+                {
+                    door.OpenWithMinigun();
+                }
+                
                 GameObject effect = Instantiate(_hitEffect, hit.point, quaternion.identity); 
                 Destroy(effect , 1f);
                 

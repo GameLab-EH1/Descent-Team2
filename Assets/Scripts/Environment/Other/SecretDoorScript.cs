@@ -15,7 +15,11 @@ public class SecretDoorScript : MonoBehaviour
             StartCoroutine(OpenDoor());
         }
     }
-    
+
+    public void OpenWithMinigun()
+    {
+        StartCoroutine(OpenDoor());
+    }
 
     private IEnumerator OpenDoor()
     {
