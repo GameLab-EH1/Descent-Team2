@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hp: 300
   FireDelay: 2.5
-  MovementSpeed: 2
+  MovementSpeed: 5
   Dmg: -15
   score: 1500
   PUp_droppable:
@@ -27,10 +27,10 @@ MonoBehaviour:
   TimeBeforeMoving: 1
   VisualRange: 40
   VisualAngle: 120
-  StoppingDistance: 3
+  StoppingDistance: 1500
   RotAroundDelay: 3
   IsChasingDrone: 0
-  BulletPref: {fileID: 0}
+  BulletPref: {fileID: 674956266225932752, guid: 53900e015820da04b958e44f616ca476, type: 3}
   PlayerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1073741824
