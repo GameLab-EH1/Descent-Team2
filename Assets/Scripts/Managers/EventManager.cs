@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
-    //ui
     public static Action<int> OnWeaponSwap;
     public static Action<int> OnShooting;
+    public static Action<int> OnFireRocket;
 
     public static Action<bool> OnLaserShooting;
     public static Action OnLaserNoBullet;

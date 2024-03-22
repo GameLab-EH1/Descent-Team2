@@ -14,6 +14,11 @@ public class ShipLogic : MonoBehaviour
 
     [SerializeField] private UImanager _uiManager;
 
+    [Header("Sound")]
+    public AudioClip LaserSound, FlareSound, MissileSound, MinigunSound, AmmoCollectible, HostageCollectible;
+
+    public AudioSource Effects;
+
     private void Start()
     {
         EventManager.OnShieldChange?.Invoke(_shield);
@@ -21,19 +26,24 @@ public class ShipLogic : MonoBehaviour
     }
     private void OnEnable()
     {
-        EventManager.OnLaserShooting += ShootPowerDecrease;
+        EventManager.OnLaserShooting += ShootLaserLogic;
         EventManager.OnPowerPickup += OnPowerPickedUp;
         EventManager.OnShieldPickOrDmg += ShieldValueChange;
+        EventManager.OnShooting += MinigunShootingSound;
+        EventManager.OnFireRocket += RocketShootingSound;
     }
     private void OnDisable()
     {
-        EventManager.OnLaserShooting -= ShootPowerDecrease;
+        EventManager.OnLaserShooting -= ShootLaserLogic;
         EventManager.OnPowerPickup -= OnPowerPickedUp;
         EventManager.OnShieldPickOrDmg -= ShieldValueChange;
+        EventManager.OnShooting -= MinigunShootingSound;
+        EventManager.OnFireRocket -= RocketShootingSound;
     }
 
-    private void ShootPowerDecrease(bool isFirstW)
+    private void ShootLaserLogic(bool isFirstW)
     {
+        AudioManager.instance.soundEffectSource = Effects;
         if (isFirstW)
         {
             if (_shootPowerSaver == 3)
@@ -45,15 +55,18 @@ public class ShipLogic : MonoBehaviour
             {
                 _shootPowerSaver++;
             }
+            AudioManager.instance.PlaySoundEffect(LaserSound);
         }
         else
         {
             _shootPower--;
+            AudioManager.instance.PlaySoundEffect(FlareSound);
         }
         EventManager.OnPowerChange?.Invoke(_shootPower);
         if (_shootPower <= 0)
         {
             EventManager.OnLaserNoBullet?.Invoke();
+            return;
         }
     }
     private void OnPowerPickedUp(int toRecharge, bool isRechargeZone)
@@ -82,7 +95,30 @@ public class ShipLogic : MonoBehaviour
             EventManager.OnGameEnd?.Invoke(false);
         }
     }
-    
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Hostage")
+        {
+            AudioManager.instance.soundEffectSource = Effects;
+            AudioManager.instance.PlaySoundEffect(HostageCollectible);
+        }
+        if (other.gameObject.tag == "Minigun")
+        {
+            AudioManager.instance.soundEffectSource = Effects;
+            AudioManager.instance.PlaySoundEffect(AmmoCollectible);
+        }
+    }
+
+    private void MinigunShootingSound(int i)
+    {
+        AudioManager.instance.soundEffectSource = Effects;
+        AudioManager.instance.PlaySoundEffect(MinigunSound);
+    }
+    private void RocketShootingSound(int i)
+    {
+        AudioManager.instance.soundEffectSource = Effects;
+        AudioManager.instance.PlaySoundEffect(MissileSound);
+    }
 
 
 }

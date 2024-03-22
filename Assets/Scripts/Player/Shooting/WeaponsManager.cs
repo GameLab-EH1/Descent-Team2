@@ -201,6 +201,7 @@ public class WeaponsManager : MonoBehaviour
                     rocket.SetActive(true);
                     Debug.Log("rocket1");
                     _rocketAmmo[0]--;
+                    EventManager.OnFireRocket?.Invoke(_rocketAmmo[0]);
                 }
                 else
                 {
@@ -219,6 +220,7 @@ public class WeaponsManager : MonoBehaviour
                     
                     Debug.Log("rocket2");
                     _rocketAmmo[1]--;
+                    EventManager.OnFireRocket?.Invoke(_rocketAmmo[1]);
                 }
                 else
                 {

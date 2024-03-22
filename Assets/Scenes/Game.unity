@@ -2629,7 +2629,7 @@ GameObject:
   m_Component:
   - component: {fileID: 971881901}
   m_Layer: 5
-  m_Name: Weapons (1)
+  m_Name: Rockets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3229,6 +3229,11 @@ RectTransform:
   m_AnchoredPosition: {x: -848, y: -387}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!82 &1224031181 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2415449289167512355, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+  m_PrefabInstance: {fileID: 2070147461959601900}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1232380289
 GameObject:
   m_ObjectHideFlags: 0
@@ -3766,6 +3771,7 @@ GameObject:
   - component: {fileID: 1350800446}
   - component: {fileID: 1350800447}
   - component: {fileID: 1350800448}
+  - component: {fileID: 1350800449}
   m_Layer: 0
   m_Name: --- GAMEMANAGER ---
   m_TagString: Untagged
@@ -3994,8 +4000,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc70e7ca10252614ea2111575493ff66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffectSource: {fileID: 0}
+  soundEffectSource: {fileID: 1224031181}
   musicSource: {fileID: 2070147461959601901}
+--- !u!114 &1350800449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350800440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e84dab06d3927f4eb0aff71c950ad9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musicClip: {fileID: 8300000, guid: b6c20af093c6bf44cabac99359ed966f, type: 3}
+  _escapeMusicClip: {fileID: 8300000, guid: 053568b74fa122e4397084ab50be8e3d, type: 3}
 --- !u!1 &1388207046
 GameObject:
   m_ObjectHideFlags: 0
@@ -6504,9 +6524,33 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7977158556874595905, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: Effects
+      value: 
+      objectReference: {fileID: 1224031181}
+    - target: {fileID: 7977158556874595905, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: FlareSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 873e7fab137026a41b2d570569536e1d, type: 3}
+    - target: {fileID: 7977158556874595905, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: LaserSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a3068bf6bdcb70e4aabdab6dfdba185c, type: 3}
+    - target: {fileID: 7977158556874595905, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
       propertyPath: _uiManager
       value: 
       objectReference: {fileID: 1350800443}
+    - target: {fileID: 7977158556874595905, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: MissileSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9acc59f272c76c1429c264c54f0e286a, type: 3}
+    - target: {fileID: 7977158556874595905, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: AmmoCollectible
+      value: 
+      objectReference: {fileID: 8300000, guid: 91b5dee0938832748811af0546f210c7, type: 3}
+    - target: {fileID: 7977158556874595905, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: HostageCollectible
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e5dc7caabd1ac44588948ef2b7fd748, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
