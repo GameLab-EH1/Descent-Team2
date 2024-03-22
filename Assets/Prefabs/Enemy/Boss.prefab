@@ -53,7 +53,7 @@ MonoBehaviour:
   _playerLayer:
     serializedVersion: 2
     m_Bits: 1073741824
-  _score: 0
+  _score: 6000
 --- !u!65 &8857167655050032890
 BoxCollider:
   m_ObjectHideFlags: 0

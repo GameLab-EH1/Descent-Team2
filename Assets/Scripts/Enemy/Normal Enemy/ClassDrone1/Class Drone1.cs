@@ -42,6 +42,7 @@ public class ClassDrone1 : MonoBehaviour
     private void Update()
     {
         _currentState.UpdateState(this);
+        Debug.Log(_healthManager.HP);
         if (_healthManager.HP <= 0)
         {
             int randomDrop = Random.Range(1, 101);
