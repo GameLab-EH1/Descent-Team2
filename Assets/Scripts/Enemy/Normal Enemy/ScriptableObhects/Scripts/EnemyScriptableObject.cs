@@ -27,5 +27,5 @@ public class EnemyScriptableObject : ScriptableObject
     [Header("Shooting Variables")]
     public GameObject BulletPref;
     public LayerMask PlayerLayer;
-    
+
 }

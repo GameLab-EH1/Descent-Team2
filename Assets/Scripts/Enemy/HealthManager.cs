@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 public class HealthManager : MonoBehaviour
 {
     [SerializeField] EnemyScriptableObject _scriptableObject;
-    [HideInInspector] public int HP;
+    public int HP;
     [SerializeField] private ClassDrone1 _classDrone1;
 
     private void Awake()

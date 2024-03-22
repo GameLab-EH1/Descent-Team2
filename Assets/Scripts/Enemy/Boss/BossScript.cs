@@ -39,7 +39,7 @@ public class BossScript : MonoBehaviour
             {
                 if (IsPlayerInRange())
                 {
-                    //Shoot();
+                    Shoot();
                 }
             }
         }
@@ -61,21 +61,24 @@ public class BossScript : MonoBehaviour
         Vector3 direction = _shipController.transform.position - transform.position;
         float distance = Vector3.Distance(transform.position, _shipController.transform.position) + 10;
         Debug.DrawRay(transform.position, direction, Color.green);
-        if (Physics.Raycast(transform.position, direction, distance, _playerLayer))
+        RaycastHit hit;
+        Physics.Raycast(transform.position, direction, out hit, distance);
+        
+        if (hit.transform.gameObject.layer == 30)
         {
-           // Debug.Log("player there");
+           Debug.Log("player there");
             return true;
-        }
-        //Debug.Log("u dumb");
+        } 
+        Debug.Log("u dumb");
         return false;
     }
 
-    // private void Shoot()
-    // {
-    //     Debug.Log("piu piu piu");
-    //     GameObject bullet = Instantiate(_bulletPref, transform.position, quaternion.identity);
-    //     Vector3 directionToPlayer = (_shipController.transform.position - transform.position).normalized;
-    //     bullet.transform.forward = directionToPlayer;
-    // }
+    private void Shoot()
+    {
+        Debug.Log("piu piu piu");
+        GameObject bullet = Instantiate(_bulletPref, transform.position, quaternion.identity);
+        Vector3 directionToPlayer = (_shipController.transform.position - transform.position).normalized;
+        bullet.transform.forward = directionToPlayer;
+    }
 
 }
