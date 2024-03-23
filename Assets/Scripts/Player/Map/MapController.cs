@@ -5,5 +5,5 @@ using UnityEngine;
 public class MapController : MonoBehaviour
 {
     [SerializeField] private float _movementSpeed;
-    [SerializeField] private GameObject _middlePoint
+    [SerializeField] private GameObject _middlePoint;
 }
