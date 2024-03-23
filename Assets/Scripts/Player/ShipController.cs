@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.MPE;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -24,11 +25,14 @@ public class ShipController : MonoBehaviour
     private int _currentWeapon;
     
     [SerializeField] private float _fireDelay;
+
+    [Header("Map Ui")] [SerializeField] private GameObject _cameraMap;
+    [SerializeField] private GameObject inGameUI;
     
     //input
     private float _thrust, _upDown, _strafe, _roll;
     private Vector2 _pitch;
-    private bool _shoot, _rocket, _isPaused;
+    private bool _shoot, _rocket, _isPaused, _isMap;
     
     //logic variables
     private bool isShooting1;
@@ -42,18 +46,25 @@ public class ShipController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Gamepad.current.selectButton.wasPressedThisFrame || Input.GetKeyDown(KeyCode.Tab))
         {
-            if (_isPaused)
-            {
-                _isPaused = false;
-            }
-            else
-            {
-                _isPaused = true;
-            }
+            _isMap = !_isMap;
         }
-        if (_isPaused)
+        if (_isMap)
+        {
+            _cameraMap.SetActive(true);
+            PostProcessVolume ppVolume = Camera.main.gameObject.GetComponent<PostProcessVolume>();
+            ppVolume.enabled = true;
+            inGameUI.SetActive(false);
+        }
+        else
+        {
+            _cameraMap.SetActive(false);
+            PostProcessVolume ppVolume = Camera.main.gameObject.GetComponent<PostProcessVolume>();
+            ppVolume.enabled = false;
+            inGameUI.SetActive(true);
+        }
+        if (_isPaused || _isMap)
         {
             return;
         }
@@ -69,6 +80,10 @@ public class ShipController : MonoBehaviour
     
     private void FixedUpdate()
     {
+        if (_isPaused || _isMap)
+        {
+            return;
+        }
         MovementLogic();
     }
 
@@ -184,6 +199,14 @@ public class ShipController : MonoBehaviour
         if (cont.performed)
         {
             WeaponsManager.ChangeRocket();
+        }
+    }
+    
+    public void OnPausing(InputAction.CallbackContext cont)
+    {
+        if (cont.performed)
+        {
+            _isPaused = !_isPaused;
         }
     }
     #endregion

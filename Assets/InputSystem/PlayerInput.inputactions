@@ -74,7 +74,7 @@
                     "id": "6b88efb3-6622-47c8-8887-cc8e3245e751",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=0.1,pressPoint=0.3)",
+                    "interactions": "Hold(duration=1,pressPoint=0.3)",
                     "initialStateCheck": false
                 },
                 {
@@ -120,6 +120,15 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Hold(duration=2,pressPoint=0.3)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Map",
+                    "type": "PassThrough",
+                    "id": "cd7757a7-d8c3-463e-bbd0-6b083213536a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=1,pressPoint=0.3)",
                     "initialStateCheck": false
                 }
             ],
@@ -539,6 +548,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e246e2c7-13f3-4b53-8897-36170179d27f",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Map",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ba4488fa-8816-4ce0-9859-8bd862ab9336",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Map",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
