@@ -14,10 +14,8 @@ public class ShipLogic : MonoBehaviour
 
     [SerializeField] private UImanager _uiManager;
 
-    [Header("Sound")]
-    public AudioClip LaserSound, FlareSound, MissileSound, MinigunSound, AmmoCollectible, HostageCollectible;
-
-    public AudioSource Effects;
+    [Header("Sound")] public AudioClip LaserSound, FlareSound, WallHitSound;
+    
 
     private void Start()
     {
@@ -29,21 +27,16 @@ public class ShipLogic : MonoBehaviour
         EventManager.OnLaserShooting += ShootLaserLogic;
         EventManager.OnPowerPickup += OnPowerPickedUp;
         EventManager.OnShieldPickOrDmg += ShieldValueChange;
-        EventManager.OnShooting += MinigunShootingSound;
-        EventManager.OnFireRocket += RocketShootingSound;
     }
     private void OnDisable()
     {
         EventManager.OnLaserShooting -= ShootLaserLogic;
         EventManager.OnPowerPickup -= OnPowerPickedUp;
         EventManager.OnShieldPickOrDmg -= ShieldValueChange;
-        EventManager.OnShooting -= MinigunShootingSound;
-        EventManager.OnFireRocket -= RocketShootingSound;
     }
 
     private void ShootLaserLogic(bool isFirstW)
     {
-        AudioManager.instance.soundEffectSource = Effects;
         if (isFirstW)
         {
             if (_shootPowerSaver == 3)
@@ -55,12 +48,12 @@ public class ShipLogic : MonoBehaviour
             {
                 _shootPowerSaver++;
             }
-            AudioManager.instance.PlaySoundEffect(LaserSound);
+            AudioManager.instance.PlaySoundEffect(LaserSound, transform, 1f);
         }
         else
         {
             _shootPower--;
-            AudioManager.instance.PlaySoundEffect(FlareSound);
+            AudioManager.instance.PlaySoundEffect(FlareSound, transform, 1f);
         }
         EventManager.OnPowerChange?.Invoke(_shootPower);
         if (_shootPower <= 0)
@@ -95,30 +88,16 @@ public class ShipLogic : MonoBehaviour
             EventManager.OnGameEnd?.Invoke(false);
         }
     }
+
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Hostage")
+        if (other.gameObject.layer != 6 &&
+            other.gameObject.layer != 27 &&
+            other.gameObject.layer != 31 &&
+            other.gameObject.layer != 28)
         {
-            AudioManager.instance.soundEffectSource = Effects;
-            AudioManager.instance.PlaySoundEffect(HostageCollectible);
-        }
-        if (other.gameObject.tag == "Minigun")
-        {
-            AudioManager.instance.soundEffectSource = Effects;
-            AudioManager.instance.PlaySoundEffect(AmmoCollectible);
+            AudioManager.instance.PlaySoundEffect(WallHitSound, transform, 1f);
         }
     }
-
-    private void MinigunShootingSound(int i)
-    {
-        AudioManager.instance.soundEffectSource = Effects;
-        AudioManager.instance.PlaySoundEffect(MinigunSound);
-    }
-    private void RocketShootingSound(int i)
-    {
-        AudioManager.instance.soundEffectSource = Effects;
-        AudioManager.instance.PlaySoundEffect(MissileSound);
-    }
-
 
 }

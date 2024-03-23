@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.MPE;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -27,7 +28,7 @@ public class ShipController : MonoBehaviour
     //input
     private float _thrust, _upDown, _strafe, _roll;
     private Vector2 _pitch;
-    private bool _shoot, _rocket;
+    private bool _shoot, _rocket, _isPaused;
     
     //logic variables
     private bool isShooting1;
@@ -41,6 +42,21 @@ public class ShipController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (_isPaused)
+            {
+                _isPaused = false;
+            }
+            else
+            {
+                _isPaused = true;
+            }
+        }
+        if (_isPaused)
+        {
+            return;
+        }
         if (_shoot)
         {
             WeaponsManager.Shoot();

@@ -5,8 +5,9 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-    public AudioSource soundEffectSource;
-    public AudioSource musicSource;
+    [SerializeField] private AudioSource _soundObject;
+    
+    [SerializeField] private AudioSource musicSource;
 
     private void Awake()
     {
@@ -22,9 +23,14 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
     
-    public void PlaySoundEffect(AudioClip clip)
+    public void PlaySoundEffect(AudioClip clip, Transform playPosition, float volume)
     {
-        soundEffectSource.PlayOneShot(clip);
+        AudioSource audioSource = Instantiate(_soundObject, playPosition.position, Quaternion.identity);
+        audioSource.clip = clip;
+        audioSource.volume = volume;
+        audioSource.Play();
+        float clipLenght = audioSource.clip.length;
+        Destroy(audioSource.gameObject, clipLenght);
     }
     
     public void PlayMusic(AudioClip clip)

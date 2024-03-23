@@ -54,6 +54,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1073741824
   _score: 6000
+  _shootingAudio: {fileID: 8300000, guid: 6d7479145398c7e42b8eb4cfc3e4bc8f, type: 3}
+  _dieingAudio: {fileID: 8300000, guid: bc89a3a93806dc8499d3fb02d396eed3, type: 3}
+  _allarmAudio: {fileID: 8300000, guid: f56707d56cc935942925106cf8096832, type: 3}
 --- !u!65 &8857167655050032890
 BoxCollider:
   m_ObjectHideFlags: 0

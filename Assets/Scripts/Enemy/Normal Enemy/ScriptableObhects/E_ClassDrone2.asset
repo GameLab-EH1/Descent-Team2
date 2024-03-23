@@ -34,3 +34,6 @@ MonoBehaviour:
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 1073741824
+  ExplosionAudio: {fileID: 8300000, guid: e9c97e09e2f25a648aa69ac9f99c374b, type: 3}
+  ShootingAudio: {fileID: 8300000, guid: 6d7479145398c7e42b8eb4cfc3e4bc8f, type: 3}
+  PlayerCollisionAudio: {fileID: 8300000, guid: c9245399094f9e84fb7aa0fb15d509b0, type: 3}

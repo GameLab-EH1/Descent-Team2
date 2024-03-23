@@ -81,6 +81,7 @@ MonoBehaviour:
   _targetLayer:
     serializedVersion: 2
     m_Bits: 268435456
+  _explosionAudio: {fileID: 8300000, guid: 89381ad54beb99342a25c2201cf88bda, type: 3}
 --- !u!65 &5466913341245840177
 BoxCollider:
   m_ObjectHideFlags: 0

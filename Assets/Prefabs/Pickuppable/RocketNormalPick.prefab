@@ -70,6 +70,7 @@ MonoBehaviour:
   _isNormal: 1
   _ammoToCharge: 4
   _scoreToAdd: 500
+  _pickUpSound: {fileID: 8300000, guid: 91b5dee0938832748811af0546f210c7, type: 3}
 --- !u!1001 &2900250583212744358
 PrefabInstance:
   m_ObjectHideFlags: 0

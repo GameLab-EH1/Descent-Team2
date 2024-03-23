@@ -52,6 +52,7 @@ public class ClassDrone1 : MonoBehaviour
                 Instantiate(_scriptableObject.PUp_droppable[dropChooser], transform.position, transform.rotation);
             }
             EventManager.onScoreChange?.Invoke(_scriptableObject.score);
+            AudioManager.instance.PlaySoundEffect(_scriptableObject.ExplosionAudio, transform, 1f);
             Destroy(gameObject);
         }
     }
@@ -69,6 +70,13 @@ public class ClassDrone1 : MonoBehaviour
             enemyBullet1.Dmg = _scriptableObject.Dmg;
         }
     }
-    
-    
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.layer == 30)
+        {
+            AudioManager.instance.PlaySoundEffect(_scriptableObject.PlayerCollisionAudio, transform, 1f);
+        }
+    }
+
+
 }

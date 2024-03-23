@@ -42,6 +42,9 @@ public class WeaponsManager : MonoBehaviour
     private bool _isNormRocket=true;
     private float _timerR;
 
+    [Header("Audio")] [SerializeField] private AudioClip _minigunAudio;
+    [SerializeField] private AudioClip _rocketAudio;
+
     private void Start()
     {
         EventManager.OnWeaponSwap?.Invoke(WeaponUsing);
@@ -151,7 +154,7 @@ public class WeaponsManager : MonoBehaviour
                 {
                     door.OpenWithMinigun();
                 }
-                
+                AudioManager.instance.PlaySoundEffect(_minigunAudio, transform, 1f);
                 GameObject effect = Instantiate(_hitEffect, hit.point, quaternion.identity); 
                 Destroy(effect , 1f);
                 
@@ -202,6 +205,7 @@ public class WeaponsManager : MonoBehaviour
                     Debug.Log("rocket1");
                     _rocketAmmo[0]--;
                     EventManager.OnFireRocket?.Invoke(_rocketAmmo[0]);
+                    AudioManager.instance.PlaySoundEffect(_rocketAudio, transform, 1f);
                 }
                 else
                 {
@@ -221,6 +225,7 @@ public class WeaponsManager : MonoBehaviour
                     Debug.Log("rocket2");
                     _rocketAmmo[1]--;
                     EventManager.OnFireRocket?.Invoke(_rocketAmmo[1]);
+                    AudioManager.instance.PlaySoundEffect(_rocketAudio, transform, 1f);
                 }
                 else
                 {

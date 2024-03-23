@@ -69,6 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _energyToRecharge: 25
   _scoreToAdd: 500
+  _pickUpSound: {fileID: 0}
 --- !u!1001 &274607847583289779
 PrefabInstance:
   m_ObjectHideFlags: 0
