@@ -151,4 +151,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreToAdd: 1000
-  _pickUpSound: {fileID: 8300000, guid: 91b5dee0938832748811af0546f210c7, type: 3}
+  _pickUpSound: {fileID: 8300000, guid: 3ffdf40b105437a49a25d2205de9e29f, type: 3}
