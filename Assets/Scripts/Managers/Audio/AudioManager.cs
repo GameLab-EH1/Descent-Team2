@@ -26,7 +26,11 @@ public class AudioManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        
+        EventManager.OnBossDeath += StopMusicBoss;
+    }
+    private void OnDisable()
+    {
+        EventManager.OnBossDeath -= StopMusicBoss;
     }
 
     public void PlaySoundEffect(AudioClip clip, Transform playPosition, float volume)
@@ -53,5 +57,9 @@ public class AudioManager : MonoBehaviour
     public void StopMusic()
     {
         musicSource.Stop();
+    }
+    public void StopMusicBoss()
+    {
+        musicSource2.Stop();
     }
 }
