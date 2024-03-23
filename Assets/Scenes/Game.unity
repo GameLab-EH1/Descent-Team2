@@ -1509,7 +1509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e84dab06d3927f4eb0aff71c950ad9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _musicClip: {fileID: 8300000, guid: dc5311ec454d29a46825d8dcbb618f63, type: 3}
+  _musicClip: {fileID: 8300000, guid: b6c20af093c6bf44cabac99359ed966f, type: 3}
   _escapeMusicClip: {fileID: 8300000, guid: 053568b74fa122e4397084ab50be8e3d, type: 3}
 --- !u!1 &532809759
 GameObject:
