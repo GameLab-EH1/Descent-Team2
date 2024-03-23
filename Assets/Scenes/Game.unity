@@ -883,6 +883,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191941623}
   m_CullTransparentMesh: 1
+--- !u!1 &227493287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 227493288}
+  m_Layer: 0
+  m_Name: GameObject (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &227493288
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227493287}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 177.15308, y: 73.678246, z: 180.40822}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &227565690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1601,6 +1632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundObject: {fileID: 2898358359534533262, guid: e813ce49148d8ae439b8b7037240cd06, type: 3}
   musicSource: {fileID: 2070147461959601901}
+  musicSource2: {fileID: 1969029365}
 --- !u!114 &415323043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4230,6 +4262,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beda895753cf2144b9641c92f32a14f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1552390693 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5812489434332048412, guid: ebf6518afe84ef24c85500f3f05e7d55, type: 3}
+  m_PrefabInstance: {fileID: 2118098165263485095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1557508423
 GameObject:
   m_ObjectHideFlags: 0
@@ -4582,6 +4619,73 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675536422}
   m_CullTransparentMesh: 1
+--- !u!1 &1701350045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1701350046}
+  - component: {fileID: 1701350048}
+  - component: {fileID: 1701350047}
+  m_Layer: 0
+  m_Name: MusicBossStarter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1701350046
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701350045}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0009592458, y: -0.1872955, z: 0.00018289915, w: 0.98230314}
+  m_LocalPosition: {x: -14.253723, y: -91.5347, z: 48.909058}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1552390693}
+  m_LocalEulerAnglesHint: {x: 0, y: -21.59, z: 0}
+--- !u!114 &1701350047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701350045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d311a56a98ee04bb367a91744f25b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicBoss: {fileID: 8300000, guid: e790faab6487c764191ac89a6baa563d, type: 3}
+--- !u!65 &1701350048
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701350045}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 20.703339, z: 21.413033}
+  m_Center: {x: 0.000003836681, y: 7.9755554, z: -0.4215989}
 --- !u!1 &1753476261
 GameObject:
   m_ObjectHideFlags: 0
@@ -5025,6 +5129,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962857227}
   m_CullTransparentMesh: 1
+--- !u!82 &1969029365 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1952836458377347478, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+  m_PrefabInstance: {fileID: 2070147461959601900}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1981047394
 GameObject:
   m_ObjectHideFlags: 0
@@ -6129,6 +6238,14 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1350800445}
+    - target: {fileID: 1952836458377347478, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e790faab6487c764191ac89a6baa563d, type: 3}
+    - target: {fileID: 1952836458377347478, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2755368320666534630, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
       propertyPath: m_LocalPosition.x
       value: 161.18
@@ -6169,61 +6286,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2759480955534135646, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
-      propertyPath: Loop
-      value: 1
+    - target: {fileID: 2976688758492085215, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: m_Name
+      value: Music 2
       objectReference: {fileID: 0}
-    - target: {fileID: 2759480955534135646, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: 77104a56cd57999468049bff2855ebf3, type: 2}
     - target: {fileID: 3083343518151678636, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4106442230612164664, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
-      propertyPath: _rocketAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 6041781372f1d694481d2c6e296a44e0, type: 3}
-    - target: {fileID: 4106442230612164664, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
-      propertyPath: _minigunAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: be633be21ed5a404b9bba93a0a2626fb, type: 3}
-    - target: {fileID: 7977158556874595905, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
-      propertyPath: Effects
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7977158556874595905, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
-      propertyPath: FlareSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 873e7fab137026a41b2d570569536e1d, type: 3}
-    - target: {fileID: 7977158556874595905, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
-      propertyPath: LaserSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 4299b0f2e0028474fbfe65f590a25d0e, type: 3}
     - target: {fileID: 7977158556874595905, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
       propertyPath: _uiManager
       value: 
       objectReference: {fileID: 1350800443}
-    - target: {fileID: 7977158556874595905, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
-      propertyPath: MissileSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 9acc59f272c76c1429c264c54f0e286a, type: 3}
-    - target: {fileID: 7977158556874595905, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
-      propertyPath: WallHitSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 38e6df07ff2d5ce4f91f03c3e267aacf, type: 3}
-    - target: {fileID: 7977158556874595905, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
-      propertyPath: AmmoCollectible
-      value: 
-      objectReference: {fileID: 8300000, guid: 91b5dee0938832748811af0546f210c7, type: 3}
-    - target: {fileID: 7977158556874595905, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
-      propertyPath: HostageCollectible
-      value: 
-      objectReference: {fileID: 8300000, guid: 5e5dc7caabd1ac44588948ef2b7fd748, type: 3}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 6859954541861782619, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
@@ -6286,7 +6362,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5812489434332048412, guid: ebf6518afe84ef24c85500f3f05e7d55, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1701350046}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebf6518afe84ef24c85500f3f05e7d55, type: 3}
 --- !u!1001 &2822943075279956809
@@ -6447,3 +6526,4 @@ SceneRoots:
   - {fileID: 159788414}
   - {fileID: 861105333}
   - {fileID: 108662837}
+  - {fileID: 227493288}
