@@ -6338,11 +6338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beda895753cf2144b9641c92f32a14f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
---- !u!1 &1528926250
-=======
+
 --- !u!1 &1534417599
->>>>>>> 860a432b81f7d2b0fecc0fc150ff1428089b54fc
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6350,22 +6347,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
+
   - component: {fileID: 1528926252}
   - component: {fileID: 1528926251}
   m_Layer: 0
   m_Name: freccia_gialla (2)
-=======
+
   - component: {fileID: 1534417600}
   m_Layer: 0
   m_Name: Minimap
->>>>>>> 860a432b81f7d2b0fecc0fc150ff1428089b54fc
+
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
+
 --- !u!212 &1528926251
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6419,15 +6416,11 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1528926252
-=======
---- !u!4 &1534417600
->>>>>>> 860a432b81f7d2b0fecc0fc150ff1428089b54fc
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1528926250}
   serializedVersion: 2
   m_LocalRotation: {x: 0.09102264, y: -0.9268627, z: -0.057299808, w: 0.3596626}
@@ -6504,7 +6497,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 20.703339, z: 21.413033}
   m_Center: {x: 0.000003836681, y: 7.9755554, z: -0.4215989}
-=======
   m_GameObject: {fileID: 1534417599}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -6515,7 +6507,6 @@ BoxCollider:
   - {fileID: 808640064}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> 860a432b81f7d2b0fecc0fc150ff1428089b54fc
 --- !u!4 &1552390693 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5812489434332048412, guid: ebf6518afe84ef24c85500f3f05e7d55, type: 3}
@@ -9127,7 +9118,6 @@ SceneRoots:
   - {fileID: 159788414}
   - {fileID: 861105333}
   - {fileID: 227493288}
-<<<<<<< HEAD
   - {fileID: 252838962}
   - {fileID: 227947731}
   - {fileID: 1802748119}
@@ -9148,7 +9138,5 @@ SceneRoots:
   - {fileID: 262808357}
   - {fileID: 1862700415}
   - {fileID: 487463138}
-=======
   - {fileID: 1534417600}
   - {fileID: 846120175}
->>>>>>> 860a432b81f7d2b0fecc0fc150ff1428089b54fc
