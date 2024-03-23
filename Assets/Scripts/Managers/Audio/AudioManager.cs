@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource _soundObject;
     
     [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioSource musicSource2;
 
     private void Awake()
     {
@@ -22,7 +24,11 @@ public class AudioManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
-    
+    private void OnEnable()
+    {
+        
+    }
+
     public void PlaySoundEffect(AudioClip clip, Transform playPosition, float volume)
     {
         AudioSource audioSource = Instantiate(_soundObject, playPosition.position, Quaternion.identity);
@@ -37,6 +43,11 @@ public class AudioManager : MonoBehaviour
     {
         musicSource.clip = clip;
         musicSource.Play();
+    }
+    public void PlayMusicBoss(AudioClip clip)
+    {
+        musicSource2.clip = clip;
+        musicSource2.Play();
     }
     
     public void StopMusic()
