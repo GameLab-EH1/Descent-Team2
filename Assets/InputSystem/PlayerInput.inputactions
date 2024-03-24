@@ -61,7 +61,7 @@
                 },
                 {
                     "name": "Rocket",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "cb5c5bf2-717f-468f-a34c-7aa64f32cb55",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -74,7 +74,7 @@
                     "id": "6b88efb3-6622-47c8-8887-cc8e3245e751",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=1,pressPoint=0.3)",
+                    "interactions": "Hold(duration=1,pressPoint=0.2)",
                     "initialStateCheck": false
                 },
                 {
