@@ -13,8 +13,12 @@ public class UImanager : MonoBehaviour
     
     [Header("TMP Things")]
     [SerializeField] private string[] _weaponName;
+    [SerializeField] private string[] _rocketName;
     [SerializeField] private TMP_Text _weaponText;
     [SerializeField] private TMP_Text _ammoText;
+    [SerializeField] private TMP_Text _rocketText;
+    [SerializeField] private TMP_Text _rocketAmmoText;
+    [SerializeField] private GameObject _rocketImage;
     [SerializeField] private TMP_Text _powerText;
     [SerializeField] private TMP_Text _shieldText;
     [SerializeField] private TMP_Text _scoreText;
@@ -29,6 +33,8 @@ public class UImanager : MonoBehaviour
         EventManager.OnShieldChange += ShieldChange;
         EventManager.onScoreChange += ScoreChange;
         EventManager.OnRedKeyPickup += RedKeyActivation;
+        EventManager.OnChangingRocket += RocketSwap;
+        EventManager.OnFireRocket += RocketAmmo;
     }
     private void OnDisable()
     {
@@ -38,6 +44,8 @@ public class UImanager : MonoBehaviour
         EventManager.OnShieldChange -= ShieldChange;
         EventManager.onScoreChange -= ScoreChange;
         EventManager.OnRedKeyPickup -= RedKeyActivation;
+        EventManager.OnChangingRocket -= RocketSwap;
+        EventManager.OnFireRocket -= RocketAmmo;
     }
 
     private void WeaponSwap(int weaponIndex)
@@ -55,6 +63,25 @@ public class UImanager : MonoBehaviour
     private void WeaponAmmo(int quantity)
     {
         _ammoText.text = quantity.ToString();
+    }
+
+    private void RocketSwap(int ammo)
+    {
+        if (_rocketImage.activeSelf)
+        {
+            _rocketImage.SetActive(false);
+            _rocketText.text = _rocketName[0];
+        }
+        else
+        {
+            _rocketText.text = _rocketName[1];
+            _rocketImage.SetActive(true);
+        }
+        RocketAmmo(ammo);
+    }
+    private void RocketAmmo(int ammo)
+    {
+        _rocketAmmoText.text = ammo.ToString();
     }
 
     private void PowerDecrease(int quantity)

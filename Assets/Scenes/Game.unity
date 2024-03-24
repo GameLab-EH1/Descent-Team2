@@ -7309,8 +7309,14 @@ MonoBehaviour:
   - Laser
   - Minigun
   - Flare
+  _rocketName:
+  - Normal
+  - Homing
   _weaponText: {fileID: 1271828478}
   _ammoText: {fileID: 38609835}
+  _rocketText: {fileID: 1660232944}
+  _rocketAmmoText: {fileID: 191941625}
+  _rocketImage: {fileID: 770198916}
   _powerText: {fileID: 274790862}
   _shieldText: {fileID: 1173001717}
   _scoreText: {fileID: 227565692}
@@ -8338,7 +8344,7 @@ GameObject:
   - component: {fileID: 1660232945}
   - component: {fileID: 1660232944}
   m_Layer: 5
-  m_Name: WeaponText
+  m_Name: RocketText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8383,7 +8389,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You are using '
+  m_text: Normal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
