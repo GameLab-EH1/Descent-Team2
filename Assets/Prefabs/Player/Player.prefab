@@ -195,6 +195,7 @@ MonoBehaviour:
   WeaponsManager: {fileID: 4106442230612164664}
   _fireDelay: 0.4
   _cameraMap: {fileID: 0}
+  inGameUI: {fileID: 0}
 --- !u!114 &4106442230612164664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,7 +616,7 @@ Transform:
   m_GameObject: {fileID: 4863254627918454978}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.15, z: 0.8}
+  m_LocalPosition: {x: 0, y: 0.15, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -817,7 +818,7 @@ Transform:
   m_GameObject: {fileID: 8173146759369031424}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 0.15, z: 0.6999998}
+  m_LocalPosition: {x: 0.2, y: 0.15, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -848,7 +849,7 @@ Transform:
   m_GameObject: {fileID: 8336509448644784421}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2, y: 0.15, z: 0.6999998}
+  m_LocalPosition: {x: -0.2, y: 0.15, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
