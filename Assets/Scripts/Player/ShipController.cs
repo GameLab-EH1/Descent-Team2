@@ -32,7 +32,7 @@ public class ShipController : MonoBehaviour
     //input
     private float _thrust, _upDown, _strafe, _roll;
     private Vector2 _pitch;
-    private bool _shoot, _rocket, _isPaused, _isMap;
+    private bool _shoot, _rocket,_rocketSwap, _isPaused, _isMap;
     
     //logic variables
     private bool isShooting1;
@@ -53,6 +53,14 @@ public class ShipController : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Tab))
         {
             _isMap = !_isMap;
+        }
+        if (Gamepad.current != null && Gamepad.current.buttonWest.wasPressedThisFrame)
+        {
+            WeaponsManager.ChangeRocket();
+        }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            WeaponsManager.ChangeRocket();
         }
         if (_isMap)
         {
@@ -79,6 +87,11 @@ public class ShipController : MonoBehaviour
         if (_rocket)
         {
             WeaponsManager.ShootRocket();
+        }
+        if (_rocketSwap)
+        {
+            Debug.Log("performed");
+            WeaponsManager.ChangeRocket();
         }
     }
     
@@ -198,13 +211,7 @@ public class ShipController : MonoBehaviour
     {
         _rocket = cont.performed;
     }
-    public void OnChangingRocket(InputAction.CallbackContext cont)
-    {
-        if (cont.performed)
-        {
-            WeaponsManager.ChangeRocket();
-        }
-    }
+    
     
     public void OnPausing(InputAction.CallbackContext cont)
     {
