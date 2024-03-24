@@ -251,9 +251,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shield: 100
+  _lifeCounter: 0
   _maxShield: 200
   _shootPower: 100
   _maxShootPower: 200
+  _spawnPoint: {fileID: 0}
   _uiManager: {fileID: 0}
   LaserSound: {fileID: 8300000, guid: 4299b0f2e0028474fbfe65f590a25d0e, type: 3}
   FlareSound: {fileID: 8300000, guid: 873e7fab137026a41b2d570569536e1d, type: 3}
@@ -561,8 +563,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.5046234, y: 1.993988, z: 1.39534}
+  m_Center: {x: 0.034843445, y: -0.04699707, z: -0.19766998}
 --- !u!1 &4376478994730727665
 GameObject:
   m_ObjectHideFlags: 0
