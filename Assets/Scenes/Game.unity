@@ -10861,6 +10861,10 @@ PrefabInstance:
       propertyPath: _cameraMap
       value: 
       objectReference: {fileID: 846120172}
+    - target: {fileID: 7794077773155720239, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: objectToPool
+      value: 
+      objectReference: {fileID: 674956266225932752, guid: c46272faa6da7a54b93f0ece94a11019, type: 3}
     - target: {fileID: 7977158556874595905, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
       propertyPath: _uiManager
       value: 

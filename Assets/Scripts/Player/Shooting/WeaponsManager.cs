@@ -169,8 +169,7 @@ public class WeaponsManager : MonoBehaviour
         }
         else if (WeaponUsing == 2 && _fireDelay[WeaponUsing] < _timerW3 && isLaserShootable)
         {
-            ObjectPooler.SharedInstance.objectToPool = _bullets[2];
-            GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject();
+            GameObject bullet = Instantiate(_bullets[WeaponUsing]);
             
             bullet.transform.position = _shootingPointsW3.position;
             bullet.transform.rotation = _shootingPointsW3.rotation;
