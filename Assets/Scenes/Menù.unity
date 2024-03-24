@@ -1509,7 +1509,7 @@ MonoBehaviour:
   _creditsMenu: {fileID: 239931767}
   _settingsMenu: {fileID: 1732446840}
   _mainMenu: {fileID: 1026298212}
-  _controlMenu: {fileID: 0}
+  _controlMenu: {fileID: 321107829}
 --- !u!4 &737978579
 Transform:
   m_ObjectHideFlags: 0
