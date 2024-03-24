@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -49,7 +50,8 @@ public class WeaponsManager : MonoBehaviour
     {
         EventManager.OnWeaponSwap?.Invoke(WeaponUsing);
         EventManager.OnShooting?.Invoke(Ammo[WeaponUsing]);
-        EventManager.onScoreChange(0);
+        EventManager.onScoreChange?.Invoke(0);
+        EventManager.OnFireRocket?.Invoke(_rocketAmmo[0]);
     }
     private void Update()
     {
@@ -111,10 +113,12 @@ public class WeaponsManager : MonoBehaviour
         if (_isNormRocket)
         {
             _isNormRocket = false;
+            EventManager.OnChangingRocket?.Invoke(_rocketAmmo[1]);
         }
         else
         {
             _isNormRocket = true;
+            EventManager.OnChangingRocket?.Invoke(_rocketAmmo[0]);
         }
     }
     public void Shoot()
@@ -169,8 +173,7 @@ public class WeaponsManager : MonoBehaviour
         }
         else if (WeaponUsing == 2 && _fireDelay[WeaponUsing] < _timerW3 && isLaserShootable)
         {
-            ObjectPooler.SharedInstance.objectToPool = _bullets[2];
-            GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject();
+            GameObject bullet = Instantiate(_bullets[WeaponUsing]);
             
             bullet.transform.position = _shootingPointsW3.position;
             bullet.transform.rotation = _shootingPointsW3.rotation;
@@ -221,7 +224,6 @@ public class WeaponsManager : MonoBehaviour
                     RocketScript rocScript = rocket.GetComponent<RocketScript>();
                     rocScript.Dmg = _dmgRocket[1];
                     rocScript.IsNormalRocket = false;
-                    
                     Debug.Log("rocket2");
                     _rocketAmmo[1]--;
                     EventManager.OnFireRocket?.Invoke(_rocketAmmo[1]);
@@ -239,6 +241,14 @@ public class WeaponsManager : MonoBehaviour
     public void RocketAmmoReload(int AmmoToRecharge, int rocIndex)
     {
         _rocketAmmo[rocIndex] += AmmoToRecharge;
+        if (rocIndex == 0 && _isNormRocket)
+        {
+            EventManager.OnFireRocket?.Invoke(_rocketAmmo[rocIndex]);
+        }
+        else if (rocIndex == 1 && !_isNormRocket)
+        {
+            EventManager.OnFireRocket?.Invoke(_rocketAmmo[rocIndex]);
+        }
     }
     
     private void PowerLvlUp()
@@ -250,9 +260,10 @@ public class WeaponsManager : MonoBehaviour
         }
     }
     
-    private void LaserNotShootable()
+    
+    private void LaserNotShootable(bool isShootable)
     {
-        isLaserShootable = false;
+        isLaserShootable = isShootable;
     }
     
 }

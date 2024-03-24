@@ -15,6 +15,7 @@ public class EnergyBoost : MonoBehaviour
             EventManager.OnPowerPickup?.Invoke(_energyToRecharge, false);
             EventManager.onScoreChange?.Invoke(_scoreToAdd);
             AudioManager.instance.PlaySoundEffect(_pickUpSound, transform, 1f);
+            EventManager.OnLaserNoBullet(true);
             Destroy(gameObject);
         }
     }

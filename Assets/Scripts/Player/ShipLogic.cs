@@ -5,13 +5,16 @@ using UnityEngine;
 
 public class ShipLogic : MonoBehaviour
 {
-    [SerializeField] private int _shield;
+    [SerializeField] private int _shield, _lifeCounter;
     [SerializeField] private int _maxShield;
+    private int _originalShield, _originalShoot;
     
     [SerializeField] private int _shootPower;
     [SerializeField] private int _maxShootPower;
     private int _shootPowerSaver;
 
+    [SerializeField] private Transform _spawnPoint;
+    
     [SerializeField] private UImanager _uiManager;
 
     [Header("Sound")] public AudioClip LaserSound, FlareSound, WallHitSound;
@@ -21,6 +24,8 @@ public class ShipLogic : MonoBehaviour
     {
         EventManager.OnShieldChange?.Invoke(_shield);
         EventManager.OnPowerChange?.Invoke(_shootPower);
+        _originalShoot = _shootPower;
+        _originalShield = _shield;
     }
     private void OnEnable()
     {
@@ -58,7 +63,7 @@ public class ShipLogic : MonoBehaviour
         EventManager.OnPowerChange?.Invoke(_shootPower);
         if (_shootPower <= 0)
         {
-            EventManager.OnLaserNoBullet?.Invoke();
+            EventManager.OnLaserNoBullet?.Invoke(false);
             return;
         }
     }
@@ -83,9 +88,20 @@ public class ShipLogic : MonoBehaviour
             _shield = _maxShield;
         }
         EventManager.OnShieldChange?.Invoke(_shield);
-        if (_shield <= 0)
+        
+        if (_shield <= 0 && _lifeCounter <= 0)
         {
             EventManager.OnGameEnd?.Invoke(false);
+        }
+        else if (_shield <= 0)
+        {
+            _lifeCounter--;
+            _shootPower = _originalShoot;
+            EventManager.OnPowerChange?.Invoke(_shootPower);
+            EventManager.OnShieldPickOrDmg?.Invoke(_originalShield);
+            EventManager.OnPlayerLoosingLife?.Invoke(_lifeCounter);
+            transform.position = _spawnPoint.position;
+            transform.rotation = _spawnPoint.rotation;
         }
     }
 
@@ -99,5 +115,6 @@ public class ShipLogic : MonoBehaviour
             AudioManager.instance.PlaySoundEffect(WallHitSound, transform, 1f);
         }
     }
+    
 
 }

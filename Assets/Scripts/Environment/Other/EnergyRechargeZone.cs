@@ -21,8 +21,10 @@ public class EnergyRechargeZone : MonoBehaviour
         if (other.gameObject.layer == 30 && canObtain)
         {
             EventManager.OnPowerPickup?.Invoke(1, true);
+            EventManager.OnLaserNoBullet?.Invoke(true);
             timer = 0;
             canObtain = false;
         }
+        
     }
 }
