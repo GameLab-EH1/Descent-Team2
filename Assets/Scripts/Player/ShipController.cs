@@ -46,7 +46,11 @@ public class ShipController : MonoBehaviour
 
     private void Update()
     {
-        if (Gamepad.current.selectButton.wasPressedThisFrame || Input.GetKeyDown(KeyCode.Tab))
+        if (Gamepad.current != null && Gamepad.current.selectButton.wasPressedThisFrame)
+        {
+            _isMap = !_isMap;
+        }
+        else if (Input.GetKeyDown(KeyCode.Tab))
         {
             _isMap = !_isMap;
         }
