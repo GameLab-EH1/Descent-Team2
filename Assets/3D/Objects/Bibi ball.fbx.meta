@@ -3,7 +3,17 @@ guid: fef21202f61128d429d58de98e617c92
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bibi_ball
+    second: {fileID: 2100000, guid: e14c7600467c80f47a93c9169e6f1fa8, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Little ball_standardSurface1_BaseColor.1001
+    second: {fileID: 2800000, guid: 905835eafa270ee4aa0ba95f62b0ae69, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
