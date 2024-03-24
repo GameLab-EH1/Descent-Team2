@@ -113,12 +113,12 @@ public class WeaponsManager : MonoBehaviour
         if (_isNormRocket)
         {
             _isNormRocket = false;
-            EventManager.OnChangingRocket?.Invoke(_rocketAmmo[0]);
+            EventManager.OnChangingRocket?.Invoke(_rocketAmmo[1]);
         }
         else
         {
             _isNormRocket = true;
-            EventManager.OnChangingRocket?.Invoke(_rocketAmmo[1]);
+            EventManager.OnChangingRocket?.Invoke(_rocketAmmo[0]);
         }
     }
     public void Shoot()
