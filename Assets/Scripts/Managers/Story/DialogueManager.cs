@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _textComponent;
     [SerializeField] private string[] _lines;
     [SerializeField] private float _textSpeed;
+    [SerializeField] private GameObject _bibiTalk, _waxTalk, _waxPresentation;
 
     private bool _isControllerPressed;
 
@@ -32,6 +33,16 @@ public class DialogueManager : MonoBehaviour
         {
             if (_textComponent.text == _lines[index])
             {
+                if (_bibiTalk.activeSelf)
+                {
+                    _waxTalk.SetActive(true);
+                    _bibiTalk.SetActive(false);
+                }
+                else
+                {
+                    _bibiTalk.SetActive(true);
+                    _waxTalk.SetActive(false);
+                }
                 NextLine();
             }
             else
@@ -60,12 +71,15 @@ public class DialogueManager : MonoBehaviour
         if (index < _lines.Length - 1)
         {
             index++;
-            _textComponent.text =String.Empty;
+            _textComponent.text = String.Empty;
             StartCoroutine(TypeLine());
         }
-        else
+        else if (index >= _lines.Length - 1)
         {
-            gameObject.SetActive(false);
+            _waxTalk.SetActive(false);
+            _bibiTalk.SetActive(false);
+            _textComponent.gameObject.SetActive(false);
+            _waxPresentation.SetActive(true);
         }
     }
 }
