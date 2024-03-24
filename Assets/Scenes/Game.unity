@@ -1522,6 +1522,14 @@ PrefabInstance:
       value: 10.795
       objectReference: {fileID: 0}
     - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
+      propertyPath: _ShipController
+      value: 
+      objectReference: {fileID: 1507663303}
+    - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
+      propertyPath: _weaponsManager
+      value: 
+      objectReference: {fileID: 1507663307}
+    - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
       propertyPath: PatrollingPoints.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -2734,6 +2742,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _ShipController
+      value: 
+      objectReference: {fileID: 1507663303}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _weaponsManager
+      value: 
+      objectReference: {fileID: 1507663307}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
       propertyPath: PatrollingPoints.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -3130,6 +3146,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _ShipController
+      value: 
+      objectReference: {fileID: 1507663303}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _weaponsManager
+      value: 
+      objectReference: {fileID: 1507663307}
     - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
       propertyPath: PatrollingPoints.Array.size
       value: 3
@@ -3824,6 +3848,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _ShipController
+      value: 
+      objectReference: {fileID: 1507663303}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _weaponsManager
+      value: 
+      objectReference: {fileID: 1507663307}
     - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
       propertyPath: PatrollingPoints.Array.size
       value: 3
@@ -4834,6 +4866,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _ShipController
+      value: 
+      objectReference: {fileID: 1507663303}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _weaponsManager
+      value: 
+      objectReference: {fileID: 1507663307}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
       propertyPath: PatrollingPoints.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -5111,6 +5151,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _ShipController
+      value: 
+      objectReference: {fileID: 1507663303}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _weaponsManager
+      value: 
+      objectReference: {fileID: 1507663307}
     - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
       propertyPath: PatrollingPoints.Array.size
       value: 3
@@ -7394,6 +7442,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _ShipController
+      value: 
+      objectReference: {fileID: 1507663303}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _weaponsManager
+      value: 
+      objectReference: {fileID: 1507663307}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
       propertyPath: PatrollingPoints.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -8212,6 +8268,14 @@ PrefabInstance:
       value: 10.795
       objectReference: {fileID: 0}
     - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
+      propertyPath: _ShipController
+      value: 
+      objectReference: {fileID: 1507663303}
+    - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
+      propertyPath: _weaponsManager
+      value: 
+      objectReference: {fileID: 1507663307}
+    - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
       propertyPath: PatrollingPoints.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -8544,6 +8608,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 10.795
       objectReference: {fileID: 0}
+    - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
+      propertyPath: _ShipController
+      value: 
+      objectReference: {fileID: 1507663303}
+    - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
+      propertyPath: _weaponsManager
+      value: 
+      objectReference: {fileID: 1507663307}
     - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
       propertyPath: PatrollingPoints.Array.size
       value: 3
@@ -10052,6 +10124,14 @@ PrefabInstance:
       value: 10.795
       objectReference: {fileID: 0}
     - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
+      propertyPath: _ShipController
+      value: 
+      objectReference: {fileID: 1507663303}
+    - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
+      propertyPath: _weaponsManager
+      value: 
+      objectReference: {fileID: 1507663307}
+    - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
       propertyPath: PatrollingPoints.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -10248,6 +10328,14 @@ PrefabInstance:
       value: 10.795
       objectReference: {fileID: 0}
     - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
+      propertyPath: _ShipController
+      value: 
+      objectReference: {fileID: 1507663303}
+    - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
+      propertyPath: _weaponsManager
+      value: 
+      objectReference: {fileID: 1507663307}
+    - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
       propertyPath: PatrollingPoints.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -10363,6 +10451,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _ShipController
+      value: 
+      objectReference: {fileID: 1507663303}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _weaponsManager
+      value: 
+      objectReference: {fileID: 1507663307}
     - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
       propertyPath: PatrollingPoints.Array.size
       value: 3
@@ -10904,6 +11000,7 @@ MonoBehaviour:
   _rocketImage: {fileID: 770198916}
   _powerText: {fileID: 274790862}
   _shieldText: {fileID: 1173001717}
+  _lifeText: {fileID: 0}
   _scoreText: {fileID: 227565692}
 --- !u!114 &1350800444
 MonoBehaviour:
@@ -12280,6 +12377,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _ShipController
+      value: 
+      objectReference: {fileID: 1507663303}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _weaponsManager
+      value: 
+      objectReference: {fileID: 1507663307}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
       propertyPath: PatrollingPoints.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -12885,6 +12990,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _ShipController
+      value: 
+      objectReference: {fileID: 1507663303}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _weaponsManager
+      value: 
+      objectReference: {fileID: 1507663307}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
       propertyPath: PatrollingPoints.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -13025,6 +13138,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _ShipController
+      value: 
+      objectReference: {fileID: 1507663303}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _weaponsManager
+      value: 
+      objectReference: {fileID: 1507663307}
     - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
       propertyPath: PatrollingPoints.Array.size
       value: 3
@@ -13780,6 +13901,14 @@ PrefabInstance:
       value: 10.795
       objectReference: {fileID: 0}
     - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
+      propertyPath: _ShipController
+      value: 
+      objectReference: {fileID: 1507663303}
+    - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
+      propertyPath: _weaponsManager
+      value: 
+      objectReference: {fileID: 1507663307}
+    - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
       propertyPath: PatrollingPoints.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -14259,6 +14388,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _ShipController
+      value: 
+      objectReference: {fileID: 1507663303}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _weaponsManager
+      value: 
+      objectReference: {fileID: 1507663307}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
       propertyPath: PatrollingPoints.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -14508,6 +14645,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 10.795
       objectReference: {fileID: 0}
+    - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
+      propertyPath: _ShipController
+      value: 
+      objectReference: {fileID: 1507663303}
+    - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
+      propertyPath: _weaponsManager
+      value: 
+      objectReference: {fileID: 1507663307}
     - target: {fileID: 6567179560200276382, guid: 6b74176ee1dc47e48a13116780a53419, type: 3}
       propertyPath: PatrollingPoints.Array.size
       value: 3
@@ -15315,6 +15460,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _ShipController
+      value: 
+      objectReference: {fileID: 1507663303}
+    - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
+      propertyPath: _weaponsManager
+      value: 
+      objectReference: {fileID: 1507663307}
     - target: {fileID: 6567179560200276382, guid: c4ca21b52c125554e8f67afa603b3176, type: 3}
       propertyPath: PatrollingPoints.Array.size
       value: 3
