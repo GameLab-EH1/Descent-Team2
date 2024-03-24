@@ -6,11 +6,15 @@ using UnityEngine.InputSystem.Controls;
 
 public class StoryManagerScript : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _storyImages;
+    [SerializeField] private GameObject[] _storyImages, storyImages2;
     [SerializeField] private float _timeForEachFrame;
     private float _timer;
     private bool _isControllerButtonPressed;
     private int _index;
+    
+
+    
+    [SerializeField] private GameObject story1, dialogue, story2;
 
 
     private void Update()
@@ -22,10 +26,16 @@ public class StoryManagerScript : MonoBehaviour
                     _isControllerButtonPressed = true;
             }
         }
-        if (_index < _storyImages.Length - 1)
+        if (_index < _storyImages.Length && story1.activeSelf)
         {
             FirstScrollingStory();
         }
+        else
+        {
+            story1.SetActive(false);
+            dialogue.SetActive(true);
+        }
+        
     }
 
     private void FirstScrollingStory()
