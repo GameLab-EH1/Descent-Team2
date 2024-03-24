@@ -918,13 +918,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 823848100}
+  - component: {fileID: 823848101}
   m_Layer: 0
   m_Name: WaxTalk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &823848100
 Transform:
   m_ObjectHideFlags: 0
@@ -942,6 +943,21 @@ Transform:
   - {fileID: 1662199585}
   m_Father: {fileID: 1414381551}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &823848101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823848099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2dae93ad4872c54aaaa274113123ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frame: {fileID: 1343036668}
+  _frame2: {fileID: 1662199584}
+  _animationSpeed: 0.01
 --- !u!1 &1038510909
 GameObject:
   m_ObjectHideFlags: 0
@@ -2641,6 +2657,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1783058518}
+  - component: {fileID: 1783058519}
   m_Layer: 0
   m_Name: BibiTalk
   m_TagString: Untagged
@@ -2665,6 +2682,21 @@ Transform:
   - {fileID: 684016665}
   m_Father: {fileID: 1414381551}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1783058519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783058517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2dae93ad4872c54aaaa274113123ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frame: {fileID: 1385516039}
+  _frame2: {fileID: 684016664}
+  _animationSpeed: 0.01
 --- !u!1 &1820309382
 GameObject:
   m_ObjectHideFlags: 0
