@@ -260,9 +260,10 @@ public class WeaponsManager : MonoBehaviour
         }
     }
     
-    private void LaserNotShootable()
+    
+    private void LaserNotShootable(bool isShootable)
     {
-        isLaserShootable = false;
+        isLaserShootable = isShootable;
     }
     
 }

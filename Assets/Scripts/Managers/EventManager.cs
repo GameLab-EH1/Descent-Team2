@@ -11,7 +11,7 @@ public class EventManager : MonoBehaviour
     
 
     public static Action<bool> OnLaserShooting;
-    public static Action OnLaserNoBullet;
+    public static Action<bool> OnLaserNoBullet;
     
     public static Action<int> OnPowerChange;
     public static Action<int, bool> OnPowerPickup;
@@ -26,6 +26,7 @@ public class EventManager : MonoBehaviour
     public static Action<int> onScoreChange;
 
     public static Action<bool> OnGameEnd;
+    public static Action<int> OnPlayerLoosingLife;
 
     public static Action OnBossDeath;
 

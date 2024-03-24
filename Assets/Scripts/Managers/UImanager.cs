@@ -21,6 +21,7 @@ public class UImanager : MonoBehaviour
     [SerializeField] private GameObject _rocketImage;
     [SerializeField] private TMP_Text _powerText;
     [SerializeField] private TMP_Text _shieldText;
+    [SerializeField] private TMP_Text _lifeText;
     [SerializeField] private TMP_Text _scoreText;
     private int _score;
 
@@ -35,6 +36,7 @@ public class UImanager : MonoBehaviour
         EventManager.OnRedKeyPickup += RedKeyActivation;
         EventManager.OnChangingRocket += RocketSwap;
         EventManager.OnFireRocket += RocketAmmo;
+        EventManager.OnPlayerLoosingLife += PlayerLostLife;
     }
     private void OnDisable()
     {
@@ -46,6 +48,7 @@ public class UImanager : MonoBehaviour
         EventManager.OnRedKeyPickup -= RedKeyActivation;
         EventManager.OnChangingRocket -= RocketSwap;
         EventManager.OnFireRocket -= RocketAmmo;
+        EventManager.OnPlayerLoosingLife -= PlayerLostLife;
     }
 
     private void WeaponSwap(int weaponIndex)
@@ -188,9 +191,15 @@ public class UImanager : MonoBehaviour
         _redKey.gameObject.SetActive(true);
     }
     
+    
     private void ScoreChange(int scoreToAdd)
     {
         _score += scoreToAdd;
         _scoreText.text = _score.ToString();
+    }
+
+    private void PlayerLostLife(int quantity)
+    {
+        _lifeText.text = quantity.ToString();
     }
 }
