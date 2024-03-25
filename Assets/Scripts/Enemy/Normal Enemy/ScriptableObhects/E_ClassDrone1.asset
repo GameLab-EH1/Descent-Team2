@@ -22,8 +22,8 @@ MonoBehaviour:
   - {fileID: 6896781951041894492, guid: 21dc3280b74fc454ab859628692c3950, type: 3}
   PUp_DropRate: 10
   TimeBeforeMoving: 1.5
-  VisualRange: 35
-  VisualAngle: 90
+  VisualRange: 50
+  VisualAngle: 120
   StoppingDistance: 1500
   RotAroundDelay: 3
   IsChasingDrone: 1

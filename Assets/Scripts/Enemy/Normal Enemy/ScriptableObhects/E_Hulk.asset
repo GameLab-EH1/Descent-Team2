@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fccca457f157c0547936d6a9da99ff7c, type: 3}
   m_Name: E_Hulk
   m_EditorClassIdentifier: 
-  Hp: 400
-  FireDelay: 3
+  Hp: 300
+  FireDelay: 1.8
   MovementSpeed: 5
-  Dmg: -15
+  Dmg: -10
   score: 1500
   PUp_droppable:
   - {fileID: 7523556925452115900, guid: d0fa4c65fe654b04c88025e476fdc23a, type: 3}
@@ -25,15 +25,15 @@ MonoBehaviour:
   - {fileID: 6896781951041894492, guid: 21dc3280b74fc454ab859628692c3950, type: 3}
   PUp_DropRate: 10
   TimeBeforeMoving: 1
-  VisualRange: 40
+  VisualRange: 120
   VisualAngle: 120
-  StoppingDistance: 4
+  StoppingDistance: 1000
   RotAroundDelay: 4
   IsChasingDrone: 0
-  BulletPref: {fileID: 0}
+  BulletPref: {fileID: 674956266225932752, guid: 53900e015820da04b958e44f616ca476, type: 3}
   PlayerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1073741824
   ExplosionAudio: {fileID: 8300000, guid: e9c97e09e2f25a648aa69ac9f99c374b, type: 3}
   ShootingAudio: {fileID: 8300000, guid: 6d7479145398c7e42b8eb4cfc3e4bc8f, type: 3}
   PlayerCollisionAudio: {fileID: 8300000, guid: c9245399094f9e84fb7aa0fb15d509b0, type: 3}

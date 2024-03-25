@@ -18342,6 +18342,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1829924275}
     m_Modifications:
+    - target: {fileID: 598166887050711016, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: m_Size.z
+      value: 2.6050818
+      objectReference: {fileID: 0}
+    - target: {fileID: 598166887050711016, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: m_Center.x
+      value: 0.034843445
+      objectReference: {fileID: 0}
+    - target: {fileID: 598166887050711016, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: m_Center.z
+      value: -0.014169574
+      objectReference: {fileID: 0}
     - target: {fileID: 1135880831266110070, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
       propertyPath: m_ActionEvents.Array.size
       value: 14
@@ -18473,6 +18485,22 @@ PrefabInstance:
     - target: {fileID: 7017799694756181849, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
       propertyPath: _pitchForce
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017799694756181849, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: _strafeForce
+      value: 1800
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017799694756181849, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: _strafeReduction
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017799694756181849, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: _thrustReduction
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017799694756181849, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: _upDownReduction
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7794077773155720239, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
       propertyPath: objectToPool

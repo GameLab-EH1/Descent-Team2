@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fccca457f157c0547936d6a9da99ff7c, type: 3}
   m_Name: E_ClassDrone2
   m_EditorClassIdentifier: 
-  Hp: 250
-  FireDelay: 0.9
+  Hp: 150
+  FireDelay: 0.8
   MovementSpeed: 9.5
-  Dmg: -8
+  Dmg: -5
   score: 1000
   PUp_droppable:
   - {fileID: 7523556925452115900, guid: d0fa4c65fe654b04c88025e476fdc23a, type: 3}
@@ -25,7 +25,7 @@ MonoBehaviour:
   - {fileID: 6896781951041894492, guid: 21dc3280b74fc454ab859628692c3950, type: 3}
   PUp_DropRate: 10
   TimeBeforeMoving: 1
-  VisualRange: 40
+  VisualRange: 59
   VisualAngle: 120
   StoppingDistance: 1500
   RotAroundDelay: 3
