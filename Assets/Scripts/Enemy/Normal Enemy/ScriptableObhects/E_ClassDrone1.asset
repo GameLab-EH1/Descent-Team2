@@ -15,7 +15,7 @@ MonoBehaviour:
   Hp: 100
   FireDelay: 1
   MovementSpeed: 8
-  Dmg: -5
+  Dmg: -3
   score: 500
   PUp_droppable:
   - {fileID: 7523556925452115900, guid: d0fa4c65fe654b04c88025e476fdc23a, type: 3}
