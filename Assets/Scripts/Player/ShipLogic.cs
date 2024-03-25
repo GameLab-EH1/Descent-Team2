@@ -5,34 +5,42 @@ using UnityEngine;
 
 public class ShipLogic : MonoBehaviour
 {
-    [SerializeField] private int _shield;
+    [SerializeField] private int _shield, _lifeCounter;
     [SerializeField] private int _maxShield;
+    private int _originalShield, _originalShoot;
     
     [SerializeField] private int _shootPower;
     [SerializeField] private int _maxShootPower;
     private int _shootPowerSaver;
 
+    [SerializeField] private Transform _spawnPoint;
+    
     [SerializeField] private UImanager _uiManager;
+
+    [Header("Sound")] public AudioClip LaserSound, FlareSound, WallHitSound;
+    
 
     private void Start()
     {
         EventManager.OnShieldChange?.Invoke(_shield);
         EventManager.OnPowerChange?.Invoke(_shootPower);
+        _originalShoot = _shootPower;
+        _originalShield = _shield;
     }
     private void OnEnable()
     {
-        EventManager.OnLaserShooting += ShootPowerDecrease;
+        EventManager.OnLaserShooting += ShootLaserLogic;
         EventManager.OnPowerPickup += OnPowerPickedUp;
         EventManager.OnShieldPickOrDmg += ShieldValueChange;
     }
     private void OnDisable()
     {
-        EventManager.OnLaserShooting -= ShootPowerDecrease;
+        EventManager.OnLaserShooting -= ShootLaserLogic;
         EventManager.OnPowerPickup -= OnPowerPickedUp;
         EventManager.OnShieldPickOrDmg -= ShieldValueChange;
     }
 
-    private void ShootPowerDecrease(bool isFirstW)
+    private void ShootLaserLogic(bool isFirstW)
     {
         if (isFirstW)
         {
@@ -45,15 +53,18 @@ public class ShipLogic : MonoBehaviour
             {
                 _shootPowerSaver++;
             }
+            AudioManager.instance.PlaySoundEffect(LaserSound, transform, 1f);
         }
         else
         {
             _shootPower--;
+            AudioManager.instance.PlaySoundEffect(FlareSound, transform, 1f);
         }
         EventManager.OnPowerChange?.Invoke(_shootPower);
         if (_shootPower <= 0)
         {
-            EventManager.OnLaserNoBullet?.Invoke();
+            EventManager.OnLaserNoBullet?.Invoke(false);
+            return;
         }
     }
     private void OnPowerPickedUp(int toRecharge, bool isRechargeZone)
@@ -77,12 +88,33 @@ public class ShipLogic : MonoBehaviour
             _shield = _maxShield;
         }
         EventManager.OnShieldChange?.Invoke(_shield);
-        if (_shield <= 0)
+        
+        if (_shield <= 0 && _lifeCounter <= 0)
         {
             EventManager.OnGameEnd?.Invoke(false);
         }
+        else if (_shield <= 0)
+        {
+            _lifeCounter--;
+            _shootPower = _originalShoot;
+            EventManager.OnPowerChange?.Invoke(_shootPower);
+            EventManager.OnShieldPickOrDmg?.Invoke(_originalShield);
+            EventManager.OnPlayerLoosingLife?.Invoke(_lifeCounter);
+            transform.position = _spawnPoint.position;
+            transform.rotation = _spawnPoint.rotation;
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.layer != 6 &&
+            other.gameObject.layer != 27 &&
+            other.gameObject.layer != 31 &&
+            other.gameObject.layer != 28)
+        {
+            AudioManager.instance.PlaySoundEffect(WallHitSound, transform, 1f);
+        }
     }
     
-
 
 }

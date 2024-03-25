@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2060404463960568825}
   m_Layer: 0
   m_Name: Ostage
-  m_TagString: Untagged
+  m_TagString: Hostage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,3 +153,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreToAdd: 5000
+  _pickUpSound: {fileID: 8300000, guid: 5e5dc7caabd1ac44588948ef2b7fd748, type: 3}

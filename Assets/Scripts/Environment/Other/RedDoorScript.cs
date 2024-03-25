@@ -8,6 +8,7 @@ public class RedDoorScript : MonoBehaviour
     private bool _canBeOpened;
     [SerializeField] private Transform destination;
     private float _openSpeed = 50;
+    [SerializeField] private AudioClip openDoorAudio;
     
     private void OnEnable()
     {
@@ -31,6 +32,7 @@ public class RedDoorScript : MonoBehaviour
     }
     private IEnumerator OpenDoor()
     {
+        AudioManager.instance.PlaySoundEffect(openDoorAudio, transform, 1f);
         Vector3 initialPosition = transform.position;
         float distance = Vector3.Distance(initialPosition, destination.position);
         float elapsedTime = 0f;

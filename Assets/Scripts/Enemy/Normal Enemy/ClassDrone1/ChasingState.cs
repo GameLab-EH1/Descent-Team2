@@ -91,6 +91,7 @@ public class ChasingState : CurrentState
         {
             _classDrone1.Shoot();
             _shootTimer = 0;
+            AudioManager.instance.PlaySoundEffect(_classDrone1._scriptableObject.ShootingAudio, _classDrone1.transform, 1f);
         }
     }
     

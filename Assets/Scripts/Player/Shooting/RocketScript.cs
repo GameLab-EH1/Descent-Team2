@@ -12,6 +12,7 @@ public class RocketScript : MonoBehaviour
     [SerializeField] private float _movementSpeed;
     [SerializeField] private float _rotateSpeed;
     [SerializeField] private LayerMask _targetLayer;
+    [SerializeField] private AudioClip _explosionAudio;
 
     private Transform target;
     
@@ -67,6 +68,8 @@ public class RocketScript : MonoBehaviour
         {
             BossScript boss = other.transform.GetComponent<BossScript>();
             boss.Hp -= Dmg;
+            AudioManager.instance.PlaySoundEffect(_explosionAudio, transform, 1f);
+            Destroy(gameObject);
         }
         else if (other.gameObject.layer != 30 && other.gameObject.layer != 25)
         {
@@ -76,7 +79,7 @@ public class RocketScript : MonoBehaviour
                 {
                     enemy.GotDmg(Dmg);
                 }
-                
+                AudioManager.instance.PlaySoundEffect(_explosionAudio, transform, 1f);
                 Destroy(gameObject);
             }
         }

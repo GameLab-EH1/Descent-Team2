@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Minigun
+  - Hostage
   layers:
   - Default
   - TransparentFX
@@ -11,11 +13,11 @@ TagManager:
   - 
   - Water
   - UI
+  - EnemyBullet
+  - Post processing
   - 
   - 
-  - 
-  - 
-  - 
+  - Minimap
   - 
   - 
   - 
@@ -29,7 +31,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - SecretDoor
   - Door
   - 
   - Pickuppable

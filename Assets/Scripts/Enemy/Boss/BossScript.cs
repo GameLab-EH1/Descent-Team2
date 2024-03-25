@@ -16,6 +16,9 @@ public class BossScript : MonoBehaviour
     private ShipController _shipController;
     private bool _isDoorUnlocked;
     private float _timer;
+
+    [Header("Audio")] [SerializeField] private AudioClip _shootingAudio;
+    [SerializeField] private AudioClip _dieingAudio, _allarmAudio;
     
     private void Start()
     {
@@ -47,6 +50,9 @@ public class BossScript : MonoBehaviour
         {
             EventManager.OnBossDeath?.Invoke();
             EventManager.onScoreChange?.Invoke(_score);
+            AudioManager.instance.PlaySoundEffect(_dieingAudio, transform, 1f);
+            AudioManager.instance.PlaySoundEffect(_allarmAudio, transform, 1f);
+            
             Destroy(gameObject);
         }
     }
@@ -79,6 +85,7 @@ public class BossScript : MonoBehaviour
         GameObject bullet = Instantiate(_bulletPref, transform.position, quaternion.identity);
         Vector3 directionToPlayer = (_shipController.transform.position - transform.position).normalized;
         bullet.transform.forward = directionToPlayer;
+        AudioManager.instance.PlaySoundEffect(_shootingAudio, transform, 1f);
     }
 
 }

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _creditsMenu, _settingsMenu, _mainMenu;
+    [SerializeField] private GameObject _creditsMenu, _settingsMenu, _mainMenu, _controlMenu;
 
 
     public void Credits(bool isToShow)
@@ -35,6 +35,19 @@ public class MainMenuManager : MonoBehaviour
         }
         
         _settingsMenu.SetActive(isToShow);
+    }
+    public void Controlls(bool isToShow)
+    {
+        if (isToShow)
+        {
+            _mainMenu.SetActive(false);
+        }
+        else
+        {
+            _mainMenu.SetActive(true);
+        }
+        
+        _controlMenu.SetActive(isToShow);
     }
 
     public void QuitGame()

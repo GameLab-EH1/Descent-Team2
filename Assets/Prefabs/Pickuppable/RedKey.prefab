@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreToAdd: 2500
+  _pickUpSound: {fileID: 8300000, guid: 3a5311f18ed8bd146aed9b9119212b5b, type: 3}
 --- !u!1001 &4466161810701290647
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -28,4 +28,7 @@ public class EnemyScriptableObject : ScriptableObject
     public GameObject BulletPref;
     public LayerMask PlayerLayer;
 
+    [Header("Audio")] public AudioClip ExplosionAudio;
+    public AudioClip ShootingAudio, PlayerCollisionAudio;
+
 }

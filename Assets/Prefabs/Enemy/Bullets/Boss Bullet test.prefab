@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7026955140566649854}
   - component: {fileID: 6171281693140940077}
   - component: {fileID: 2852660460013472846}
-  m_Layer: 31
+  m_Layer: 6
   m_Name: Boss Bullet test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,4 +119,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 60
-  Dmg: 5
+  Dmg: -1

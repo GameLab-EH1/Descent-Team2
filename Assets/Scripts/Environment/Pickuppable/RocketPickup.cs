@@ -8,6 +8,7 @@ public class RocketPickup : MonoBehaviour
     [SerializeField] private bool _isNormal;
     [SerializeField] private int _ammoToCharge;
     [SerializeField] private int _scoreToAdd;
+    [SerializeField] private AudioClip _pickUpSound;
     private void OnTriggerEnter(Collider other)
     {
         WeaponsManager weaponsManager = other.transform.GetComponent<WeaponsManager>();
@@ -22,6 +23,7 @@ public class RocketPickup : MonoBehaviour
                 weaponsManager.RocketAmmoReload(_ammoToCharge, 1);
             }
             EventManager.onScoreChange?.Invoke(_scoreToAdd);
+            AudioManager.instance.PlaySoundEffect(_pickUpSound, transform, 1f);
             Destroy(gameObject);
         }
     }
