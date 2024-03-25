@@ -7,6 +7,19 @@ public class OstageScript : MonoBehaviour
 {
     [SerializeField] private int _scoreToAdd;
     [SerializeField] private AudioClip _pickUpSound;
+    private Camera _mainCamera;
+
+    private void Start()
+    {
+        _mainCamera = Camera.main;
+    }
+
+    private void Update()
+    {
+        LookAtLerped(transform, _mainCamera.transform, 1f);
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 30)
@@ -15,5 +28,11 @@ public class OstageScript : MonoBehaviour
             AudioManager.instance.PlaySoundEffect(_pickUpSound, transform, 1f);
             Destroy(gameObject);
         }
+    }
+    private void LookAtLerped(Transform self, Transform target, float t)
+    {
+        Vector3 relativePos = target.position - self.position;
+        Quaternion toRotation = Quaternion.LookRotation(relativePos);
+        self.rotation = Quaternion.Lerp(self.rotation, toRotation, t);
     }
 }

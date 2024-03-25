@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _creditsMenu, _settingsMenu, _mainMenu, _controlMenu;
+    [SerializeField] private GameObject _creditsMenu, _settingsMenu, _mainMenu, _controlMenu, _controller, _keyboard, _mouse;
 
 
     public void Credits(bool isToShow)
@@ -57,7 +57,23 @@ public class MainMenuManager : MonoBehaviour
     
     public void playGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("CUTSCENE");
+    }
+
+    public void ControllSwapper()
+    {
+        if (_keyboard.activeSelf)
+        {
+            _keyboard.SetActive(false);
+            _mouse.SetActive(false);
+            _controller.SetActive(true);
+        }
+        else
+        {
+            _keyboard.SetActive(true);
+            _mouse.SetActive(true);
+            _controller.SetActive(false);
+        }
     }
     
     

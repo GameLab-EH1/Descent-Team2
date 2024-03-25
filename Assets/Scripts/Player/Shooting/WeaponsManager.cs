@@ -153,19 +153,21 @@ public class WeaponsManager : MonoBehaviour
                 {
                     enemy.GotDmg(Dmg[WeaponUsing]);
                 }
+                BossScript boss = hit.transform.GetComponent<BossScript>();
+                if (boss != null)
+                {
+                    boss.Hp -= Dmg[WeaponUsing];
+                }
                 SecretDoorScript door = hit.transform.GetComponent<SecretDoorScript>();
                 if (door != null)
                 {
                     door.OpenWithMinigun();
                 }
                 AudioManager.instance.PlaySoundEffect(_minigunAudio, transform, 1f);
-                GameObject effect = Instantiate(_hitEffect, hit.point, quaternion.identity); 
+                GameObject effect = Instantiate(_hitEffect, transform.position, transform.rotation); 
                 Destroy(effect , 1f);
                 
             }
-            Debug.DrawRay(_shootingPointsW2.position, transform.TransformDirection(Vector3.forward) * 200, Color.cyan);
-            
-            Debug.Log(hit.point);
 
             _timerW2 = 0;
             Ammo[WeaponUsing]--;

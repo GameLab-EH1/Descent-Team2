@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using TreeEditor;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -72,16 +68,13 @@ public class BossScript : MonoBehaviour
         
         if (hit.transform.gameObject.layer == 30)
         {
-           Debug.Log("player there");
             return true;
         } 
-        Debug.Log("u dumb");
         return false;
     }
 
     private void Shoot()
     {
-        Debug.Log("piu piu piu");
         GameObject bullet = Instantiate(_bulletPref, transform.position, quaternion.identity);
         Vector3 directionToPlayer = (_shipController.transform.position - transform.position).normalized;
         bullet.transform.forward = directionToPlayer;
