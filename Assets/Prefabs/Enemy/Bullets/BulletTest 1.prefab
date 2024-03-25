@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6171281693140940077}
   - component: {fileID: 2852660460013472846}
   m_Layer: 6
-  m_Name: Boss Bullet test
+  m_Name: BulletTest 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.87, y: 0.57, z: 5.096}
-  m_LocalScale: {x: 0.19829985, y: 0.19829985, z: 0.19829985}
+  m_LocalScale: {x: 0.11679, y: 0.11679, z: 0.4993473}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 08d88ffe37fe5534e918d2be669bafe1, type: 2}
+  - {fileID: 2100000, guid: 771e64e6da7e272488c954e71bf50373, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -119,4 +119,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 60
-  Dmg: -1
+  Dmg: 0

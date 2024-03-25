@@ -30,7 +30,7 @@ MonoBehaviour:
   StoppingDistance: 300
   RotAroundDelay: 4
   IsChasingDrone: 0
-  BulletPref: {fileID: 674956266225932752, guid: 53900e015820da04b958e44f616ca476, type: 3}
+  BulletPref: {fileID: 674956266225932752, guid: 6b6c9c9b7a1e463469591c3bc8e86dfb, type: 3}
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 1073741824
