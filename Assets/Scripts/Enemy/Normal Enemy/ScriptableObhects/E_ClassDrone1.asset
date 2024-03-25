@@ -21,11 +21,11 @@ MonoBehaviour:
   - {fileID: 7523556925452115900, guid: d0fa4c65fe654b04c88025e476fdc23a, type: 3}
   - {fileID: 6896781951041894492, guid: 21dc3280b74fc454ab859628692c3950, type: 3}
   PUp_DropRate: 10
-  TimeBeforeMoving: 2
+  TimeBeforeMoving: 1.5
   VisualRange: 35
   VisualAngle: 90
-  StoppingDistance: 5
-  RotAroundDelay: 5
+  StoppingDistance: 1500
+  RotAroundDelay: 3
   IsChasingDrone: 1
   BulletPref: {fileID: 674956266225932752, guid: 53900e015820da04b958e44f616ca476, type: 3}
   PlayerLayer:

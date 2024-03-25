@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fccca457f157c0547936d6a9da99ff7c, type: 3}
   m_Name: E_Hulk
   m_EditorClassIdentifier: 
-  Hp: 350
-  FireDelay: 2
+  Hp: 400
+  FireDelay: 3
   MovementSpeed: 5
   Dmg: -15
   score: 1500

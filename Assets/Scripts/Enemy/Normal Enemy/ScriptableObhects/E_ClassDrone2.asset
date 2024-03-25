@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: E_ClassDrone2
   m_EditorClassIdentifier: 
   Hp: 250
-  FireDelay: 2.5
+  FireDelay: 0.9
   MovementSpeed: 9.5
-  Dmg: -9
+  Dmg: -8
   score: 1000
   PUp_droppable:
   - {fileID: 7523556925452115900, guid: d0fa4c65fe654b04c88025e476fdc23a, type: 3}
