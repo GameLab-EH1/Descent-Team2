@@ -164,7 +164,7 @@ public class WeaponsManager : MonoBehaviour
                     door.OpenWithMinigun();
                 }
                 AudioManager.instance.PlaySoundEffect(_minigunAudio, transform, 1f);
-                GameObject effect = Instantiate(_hitEffect, transform.position, quaternion.identity); 
+                GameObject effect = Instantiate(_hitEffect, transform.position, transform.rotation); 
                 Destroy(effect , 1f);
                 
             }
