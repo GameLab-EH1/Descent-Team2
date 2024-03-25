@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private string[] _lines;
     [SerializeField] private float _textSpeed;
     [SerializeField] private GameObject _bibiTalk, _waxTalk, _waxPresentation;
+    
 
     private bool _isControllerPressed;
 

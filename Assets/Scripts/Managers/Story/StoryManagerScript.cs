@@ -6,15 +6,15 @@ using UnityEngine.InputSystem.Controls;
 
 public class StoryManagerScript : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _storyImages, storyImages2;
+    [SerializeField] private GameObject[] _storyImages;
     [SerializeField] private float _timeForEachFrame;
     private float _timer;
     private bool _isControllerButtonPressed;
     private int _index;
-    
 
-    
-    [SerializeField] private GameObject story1, dialogue, story2;
+
+
+    [SerializeField] private GameObject story1, nextFrame;
 
 
     private void Update()
@@ -33,7 +33,7 @@ public class StoryManagerScript : MonoBehaviour
         else
         {
             story1.SetActive(false);
-            dialogue.SetActive(true);
+            nextFrame.SetActive(true);
         }
         
     }
