@@ -104,10 +104,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5424986812323903808}
-  - component: {fileID: 8229595274864758725}
   - component: {fileID: 6567179560200276382}
   - component: {fileID: 6722006592840157318}
   - component: {fileID: 7921874063319997327}
+  - component: {fileID: 603780909692803600}
   m_Layer: 28
   m_Name: EnemyIA 1
   m_TagString: Untagged
@@ -132,27 +132,6 @@ Transform:
   - {fileID: 1336696845480016385}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &8229595274864758725
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8325541658078063803}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 2.6887183
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &6567179560200276382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +197,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &603780909692803600
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8325541658078063803}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.2710035
+  m_Height: 5.5509024
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.057306767, z: 0}
 --- !u!1001 &1515003669895306730
 PrefabInstance:
   m_ObjectHideFlags: 0
