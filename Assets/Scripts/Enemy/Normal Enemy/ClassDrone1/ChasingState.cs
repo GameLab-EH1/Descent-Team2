@@ -1,5 +1,3 @@
-using UnityEditor.Search;
-using UnityEditor.UI;
 using UnityEngine;
 
 public class ChasingState : CurrentState
