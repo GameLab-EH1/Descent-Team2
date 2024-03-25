@@ -221,7 +221,7 @@ MonoBehaviour:
   _chargingAmmo: 64000000e803000032000000
   _unlockedWeapons: 010001
   _minigunRange: 200
-  _hitEffect: {fileID: 100008, guid: 7075bd5fe1480184695a32611c15da57, type: 3}
+  _hitEffect: {fileID: 1793657428729228592, guid: 02bdaff002127f74b8610d3e8410030b, type: 3}
   WeaponUsing: 0
   _shootingPointsW1:
   - {fileID: 5390211744449118137}

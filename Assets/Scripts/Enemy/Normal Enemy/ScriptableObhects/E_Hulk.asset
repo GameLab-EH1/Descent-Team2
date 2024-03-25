@@ -27,7 +27,7 @@ MonoBehaviour:
   TimeBeforeMoving: 1
   VisualRange: 120
   VisualAngle: 120
-  StoppingDistance: 1000
+  StoppingDistance: 300
   RotAroundDelay: 4
   IsChasingDrone: 0
   BulletPref: {fileID: 674956266225932752, guid: 53900e015820da04b958e44f616ca476, type: 3}
