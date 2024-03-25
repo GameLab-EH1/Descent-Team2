@@ -1602,7 +1602,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: S P I R I T
+  m_text: P I R I T
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2461,19 +2461,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _textComponent: {fileID: 1901551348}
   _lines:
-  - This is ...; it uses his magical hands to throw spells at you. It's not a big
-    threat, but dont undestimate him.
+  - This is Pirit; it uses his magical hands to throw spells at you. It's not a big
+    threat, but don't undestimate him.
   - 'This is Wendy; she uses rocket arms to make you go boom. She''s very fast and
     loves escaping, but how could you blame her? '
-  - 'This is Joor; it is very scary and durable. Be cautions because slow equals
-    strong and if he gets you its no fun. '
-  - This is Eyeboxer; you will likely not see him because is shy, but keep your eye
-    open, he loves hiding things in the walls
-  - This is Chompy; i know, its cute, but its the head of all of this. He created
-    a carousel and it is protecting it. Destroy it and you will keep dreaming
+  - 'This is Joor; it is very scary and durable. Be careful because slow equals strong
+    and if he gets you it''s no fun. '
+  - This is Eyeboxer; you will likely not see him because he is shy, but keep your
+    eye open, he loves hiding things in the walls
+  - This is Chompy; i know, it's cute, but it's the head of all of this. He created
+    a carousel and it's protecting it. Destroy it and you will keep dreaming!
   - After destroying the carousel you have to escape through this door, so find it
     before going pew pew
-  - HOW COULD I FORGOT... they kidnapped Bobo and Neko, save them before escaping.
+  - HOW COULD I FORGET... they kidnapped Bobo and Neko, save them before escaping.
     They're our friends you know UwU
   - Oh yeah this is Martha, she will help you go pew pew with many different pew
     pews. Say Hi to her :>
@@ -3418,27 +3418,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _textComponent: {fileID: 1123665785}
   _lines:
-  - 'Wax: Youre sleeping well Bibi. Is your new pillow soft enought?? '
-  - 'Bibi: Absolutly! I fell asleep in seconds with it and my cute elephant peluche
-    near me :3'
+  - 'Wax: You''re sleeping well Bibi. Is your new pillow soft enough?? '
+  - 'Bibi: Absolutely! I fell asleep in just a few seconds with it and my cute elephant
+    plush was near me :3'
   - 'Wax: I''m so happy to hear it girl. But Bibi... tonight there is a problem...
     a big one... '
-  - 'Bibi: What happend Wax? Did you burn the house while trying to cook the cake?'
+  - 'Bibi: What happened Wax? Did you burn the house while trying to bake a cake?'
   - 'Wax: That was ANOTHER problem, and no, it''s not the cake... it''s those clowns
     fault!'
   - 'Bibi: Clowns??'
   - 'Wax: Yeah... They arrived dancing and making many loud noises from a WHOLE STAR!
-    CAN YOU BELIVE THAT?!'
+    CAN YOU BELIEVE THAT?!'
   - 'Bibi: Wow, they seem cool... but where''s the problem?'
-  - 'Wax: Don''t you undestand Bibi? If they keep doing this much of a noise they
+  - 'Wax: Don''t you understand, Bibi? If they keep doing this much of a noise, they
     COULD WAKE YOU UP!!'
   - 'Bibi: HELL NAAAHHH, I WANT TO KEEP DREAMING, AND YOU PROMISED ME A CAKE FOR
-    TONIGHT, not a burned one :/'
-  - 'Wax: The cake is already in the hoven dont worry, i''ve taken some precaution
+    TONIGHT, not a burned one tho/'
+  - 'Wax: The cake is already in the oven don''t worry, i''ve taken some precaution
     measures'
-  - 'Bibi: I cant wait to taste it :P'
+  - 'Bibi: I can''t wait to taste it :P'
   - 'Wax: Yeah, but first you need to solve this problem or im gonna eat the cake
-    alone.'
+    all by myself.'
   - 'Bibi: Tell me... what do i have to do?'
   - 'Wax: I prepared a fantastic presentation for this extreme super impossbile crazy
     mission... just take a look here..'
