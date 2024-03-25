@@ -57,7 +57,7 @@ public class MainMenuManager : MonoBehaviour
     
     public void playGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("CUTSCENE");
     }
     
     
