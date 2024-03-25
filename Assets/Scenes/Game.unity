@@ -18187,6 +18187,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4106442230612164664, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: Dmg.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4106442230612164664, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: Dmg.Array.data[2]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4106442230612164664, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
       propertyPath: _bullets.Array.data[0]
       value: 
       objectReference: {fileID: 674956266225932752, guid: c46272faa6da7a54b93f0ece94a11019, type: 3}

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hp: 300
   FireDelay: 2.5
-  MovementSpeed: 5
+  MovementSpeed: 8
   Dmg: -15
-  score: 1500
+  score: 1000
   PUp_droppable:
   - {fileID: 7523556925452115900, guid: d0fa4c65fe654b04c88025e476fdc23a, type: 3}
   - {fileID: 3604663821196170162, guid: 2ac160bd6a5f79b469c80e5832a4d16a, type: 3}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hp: 300
   FireDelay: 2.5
-  MovementSpeed: 2
+  MovementSpeed: 5
   Dmg: -15
   score: 1500
   PUp_droppable:
