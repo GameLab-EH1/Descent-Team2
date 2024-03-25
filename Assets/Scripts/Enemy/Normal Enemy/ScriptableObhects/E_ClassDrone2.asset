@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fccca457f157c0547936d6a9da99ff7c, type: 3}
   m_Name: E_ClassDrone2
   m_EditorClassIdentifier: 
-  Hp: 300
+  Hp: 250
   FireDelay: 2.5
-  MovementSpeed: 8
-  Dmg: -15
+  MovementSpeed: 9.5
+  Dmg: -9
   score: 1000
   PUp_droppable:
   - {fileID: 7523556925452115900, guid: d0fa4c65fe654b04c88025e476fdc23a, type: 3}
