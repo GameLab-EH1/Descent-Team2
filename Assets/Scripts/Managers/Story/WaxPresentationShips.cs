@@ -8,6 +8,7 @@ public class WaxPresentationShips : MonoBehaviour
     private bool _isControllerButtonPressed;
     private int _index;
     [SerializeField] private GameObject story2;
+    [SerializeField] private DialogueManager _dialogueManager;
     
 
 
@@ -34,11 +35,14 @@ public class WaxPresentationShips : MonoBehaviour
 
     private void FirstScrollingStory()
     {
-        if (Input.anyKeyDown || _isControllerButtonPressed)
+        if (_dialogueManager.IsNextString())
         {
-            _images[_index].SetActive(false);
-            _index++;
-            _isControllerButtonPressed = false;
+            if (Input.anyKeyDown || _isControllerButtonPressed)
+            {
+                _images[_index].SetActive(false);
+                _index++;
+                _isControllerButtonPressed = false;
+            }
         }
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
@@ -13,7 +14,8 @@ public class DialogueManager : MonoBehaviour
     
 
     private bool _isControllerPressed;
-
+    private bool _isTextFullyWritten;
+    
     private int index;
 
     private void Start()
@@ -32,7 +34,7 @@ public class DialogueManager : MonoBehaviour
         }
         if (Input.anyKeyDown || _isControllerPressed)
         {
-            if (_textComponent.text == _lines[index])
+            if (_isTextFullyWritten)
             {
                 if (_bibiTalk.activeSelf)
                 {
@@ -50,12 +52,14 @@ public class DialogueManager : MonoBehaviour
             {
                 StopAllCoroutines();
                 _textComponent.text = _lines[index];
+                _isTextFullyWritten = true;
             }
         }
     }
     private void StartDialogue()
     {
         index = 0;
+        _isTextFullyWritten = false;
         StartCoroutine(TypeLine());
     }
 
@@ -66,6 +70,7 @@ public class DialogueManager : MonoBehaviour
             _textComponent.text += c;
             yield return new WaitForSeconds(_textSpeed);
         }
+        _isTextFullyWritten = true;
     }
     private void NextLine()
     {
@@ -73,6 +78,7 @@ public class DialogueManager : MonoBehaviour
         {
             index++;
             _textComponent.text = String.Empty;
+            _isTextFullyWritten = false;
             StartCoroutine(TypeLine());
         }
         else if (index >= _lines.Length - 1)
@@ -82,5 +88,10 @@ public class DialogueManager : MonoBehaviour
             _textComponent.gameObject.SetActive(false);
             _waxPresentation.SetActive(true);
         }
+    }
+
+    public bool IsNextString()
+    {
+        return _isTextFullyWritten;
     }
 }
