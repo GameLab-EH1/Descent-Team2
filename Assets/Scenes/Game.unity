@@ -20623,6 +20623,14 @@ PrefabInstance:
       propertyPath: _upDownReduction
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7358682919651947604, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7358682919651947604, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7794077773155720239, guid: ad47d571f8f8c8f4b9dcd1b39f264a31, type: 3}
       propertyPath: objectToPool
       value: 

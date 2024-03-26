@@ -136,7 +136,6 @@ public class WeaponsManager : MonoBehaviour
                 bulScript.Dmg = Dmg[WeaponUsing];
                 
                 bullet.SetActive(true);
-                Debug.Log("sparoArma1");
             }
             _timerW1 = 0;
             EventManager.OnLaserShooting?.Invoke(true);
@@ -164,7 +163,7 @@ public class WeaponsManager : MonoBehaviour
                     door.OpenWithMinigun();
                 }
                 AudioManager.instance.PlaySoundEffect(_minigunAudio, transform, 1f);
-                GameObject effect = Instantiate(_hitEffect, transform.position, transform.rotation); 
+                GameObject effect = Instantiate(_hitEffect, _shootingPointsW3.transform.position, transform.rotation); 
                 Destroy(effect , 1f);
                 
             }
